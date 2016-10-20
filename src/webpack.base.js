@@ -7,12 +7,12 @@
   var ExtractTextPlugin = require('extract-text-webpack-plugin');
   var HtmlWebpackPlugin = require('html-webpack-plugin');
   var PurifyCSSPlugin = require('purifycss-webpack-plugin');
-  var webpackEntries = entries('modules/**/*.js');
+  var webpackEntries = entries(config.appEntries);
   var webpackPlugins = [
     new webpack.ProvidePlugin({}),
     new webpack.NoErrorsPlugin(),
     // split vendor js into its own file,
-    new ExtractTextPlugin('[name][hash:5].css')
+    new ExtractTextPlugin('styles/index-[hash:5].css')
   ];
 
   console.log(webpackEntries);
@@ -22,9 +22,10 @@
     initMultiHtmlWebpackPlugins: function() {
       Object.keys(webpackEntries).forEach(function(name) {
         if (name.indexOf('index') > -1) {
+          console.log(name);
           var plugin = new HtmlWebpackPlugin({
-            filename: name + '.html',
-            template: name + '.html',
+            filename: 'index.html',
+            template: 'index.html',
             inject: true,
             chunks: [config.venderName, name]
           });

@@ -31,7 +31,7 @@
     }),
     new PurifyCSSPlugin({
       paths: [
-        'modules/**/*.html'
+        'app/index.html'
       ],
       purifyOptions: {
         minify: true,
@@ -41,7 +41,7 @@
   ];
 
   $.initMultiHtmlWebpackPlugins();
-  
+
   productPlugins = $.plugins.concat(productPlugins);
 
   module.exports = {

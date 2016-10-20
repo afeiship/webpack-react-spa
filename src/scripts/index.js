@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
+import '../styles/index';
 class IndexApp extends React.Component {
   render() {
     console.log('render');

@@ -9,14 +9,13 @@
   var PurifyCSSPlugin = require('purifycss-webpack-plugin');
   var webpackEntries = entries('modules/**/*.js');
   var webpackPlugins = [
-    new webpack.ProvidePlugin({
-      Vue: 'vue'
-    }),
+    new webpack.ProvidePlugin({}),
     new webpack.NoErrorsPlugin(),
     // split vendor js into its own file,
     new ExtractTextPlugin('[name][hash:5].css')
   ];
 
+  console.log(webpackEntries);
   module.exports = {
     entry: webpackEntries,
     plugins: webpackPlugins,
@@ -59,14 +58,14 @@
       }, {
         test: /\.(html|tpl)$/,
         loader: 'html-loader'
+      }, {
+        test: /\.js|jsx$/,
+        loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react,presets[]=stage-0'],
+        include: path.join(__dirname, 'js')
       }]
     },
-    babel: {
-      presets: ['es2015'],
-      plugins: ['transform-runtime']
-    },
     resolve: {
-      extensions: ['', '.js','.scss'],
+      extensions: ['', '.js', '.scss'],
       alias: {
         components: path.join(__dirname, 'components'),
         images: path.join(__dirname, 'assets/images')

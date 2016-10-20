@@ -1,0 +1,24 @@
+{
+  "name": "webpack-recact-spa",
+  "description": "React single page app based on webpack.",
+  "main": "dist/webpack-recact-spa.js",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/webpack-recact-spa",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ]
+}

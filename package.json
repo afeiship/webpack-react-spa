@@ -1,0 +1,11 @@
+{
+  "name": "webpack-recact-spa",
+  "version": "0.0.0",
+  "description": "React single page app based on webpack.",
+  "homepage": "https://github.com/afeiship/webpack-recact-spa",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT"
+}

@@ -4,8 +4,16 @@ import '../styles/index';
 class IndexApp extends React.Component {
   render() {
     console.log('render');
+    var spanList=[];
+    var space=' ';
+    for (var i = 0; i < 3; i++) {
+      spanList.push(<span key={i}>Hello index view{i}~~~</span>);
+      spanList.push(space);
+    }
     return (
-      <div>Hello index view1</div>
+      <div className="test-justify">
+        {spanList}
+      </div>
     )
   }
 }

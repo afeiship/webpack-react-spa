@@ -3,7 +3,7 @@
   var path = require('path');
   var webpack = require('webpack');
   var $ = require('./webpack.base');
-  var config = require('./config.json');
+  var config = require('./webpack_config.json');
 
   $.initMultiHtmlWebpackPlugins();
 
@@ -20,7 +20,7 @@
   module.exports = {
     entry: $.entry,
     output: {
-      path: path.join(__dirname, '..', 'dist'),
+      path: path.join(__dirname,'dist'),
       filename: '[name].js',
       chunkFilename: '[id].js',
       minify: false,

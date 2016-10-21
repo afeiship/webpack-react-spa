@@ -1,6 +1,6 @@
 (function() {
 
-  var config = require('./config.json');
+  var config = require('./webpack_config.json');
   var path = require('path');
   var webpack = require('webpack');
   var entries = require('webpack-entries');
@@ -8,13 +8,14 @@
   var HtmlWebpackPlugin = require('html-webpack-plugin');
   var PurifyCSSPlugin = require('purifycss-webpack-plugin');
   var webpackEntries = entries(config.appEntries);
+
   var webpackPlugins = [
     new webpack.ProvidePlugin({}),
     new webpack.NoErrorsPlugin(),
     // split vendor js into its own file,
     new ExtractTextPlugin('styles/index-[hash:5].css')
   ];
-
+  console.log('__dirname',':::::>',__dirname);
   console.log(webpackEntries);
   module.exports = {
     entry: webpackEntries,
@@ -69,6 +70,7 @@
       extensions: ['', '.js', '.scss'],
       alias: {
         components: path.join(__dirname, 'components'),
+        bower_components: path.join(__dirname, 'bower_components'),
         images: path.join(__dirname, 'assets/images')
       }
     }

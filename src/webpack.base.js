@@ -10,13 +10,14 @@
   var webpackEntries = entries(config.appEntries);
 
   var webpackPlugins = [
-    new webpack.ProvidePlugin({}),
+    new webpack.ProvidePlugin({
+      'React': 'react',
+      'ReactDom': 'react-dom'
+    }),
     new webpack.NoErrorsPlugin(),
     // split vendor js into its own file,
     new ExtractTextPlugin('styles/index-[hash:5].css')
   ];
-  console.log('__dirname',':::::>',__dirname);
-  console.log(webpackEntries);
   module.exports = {
     entry: webpackEntries,
     plugins: webpackPlugins,

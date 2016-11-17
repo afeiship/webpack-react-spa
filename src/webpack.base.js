@@ -71,6 +71,8 @@
       extensions: ['', '.js', '.scss'],
       alias: {
         components: path.join(__dirname, 'components'),
+        scripts: path.join(__dirname, 'scripts'),
+        styles: path.join(__dirname, 'styles'),
         bower_components: path.join(__dirname, 'bower_components'),
         images: path.join(__dirname, 'assets/images')
       }

@@ -11,9 +11,10 @@
   let baseEntries = $.baseEntries;
   let productEntries = {};
   let productPlugins = [];
+  let sliceLength = config.spa ? 4 : 12;
 
   nx.each(baseEntries,function(key){
-    productEntries[key.slice(12)] = baseEntries[key];
+    productEntries[key.slice(sliceLength)] = baseEntries[key];
   });
 
   productPlugins = [
@@ -34,14 +35,13 @@
     })
   ];
 
-
   Object.keys(baseEntries).forEach(function(name) {
     if (name.indexOf('index') > -1) {
       let plugin = new HtmlWebpackPlugin(
         nx.mix(config.htmlWebpackOptions,{
-          filename: name.slice(12) + '.html',
+          filename: name.slice(sliceLength) + '.html',
           template: name + '.ejs',
-          chunks: [config.vendorName, name.slice(12)]
+          chunks: [config.vendorName, name.slice(sliceLength)]
         })
       );
       productPlugins.push(plugin);

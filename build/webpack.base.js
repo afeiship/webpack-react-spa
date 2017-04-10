@@ -6,8 +6,7 @@
   const ExtractTextPlugin = require('extract-text-webpack-plugin');
   const webpack = require('webpack');
   let entries = require('webpack-entries');
-
-  let baseEntries = entries('src/index.js');
+  let baseEntries = entries(config.baseEntryPath);
 
 
   let webpackPlugins = [

@@ -4,5 +4,12 @@
     "react",
     "stage-0"
   ],
-  "plugins": []
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-es2015-spread",
+    "transform-object-rest-spread"
+  ],
+  "ignore": [
+  ]
 }

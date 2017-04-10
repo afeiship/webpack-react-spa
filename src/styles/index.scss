@@ -1,22 +1,22 @@
 //all path are relative to `src`
-@import "./test-import.scss";
-@import "../bower_components/webkit-sassui-layout-justify/dist/webkit-sassui-justify.scss";
+// @import "./test-import.scss";
+// @import "../bower_components/webkit-sassui-layout-justify/dist/webkit-sassui-justify.scss";
 body{
   background: #f60;
   color:#fff;
   font-size: 14px;
-  @include test;
+  // @include test;
 }
-#index-app{
-  background: #eee;
-  color:#333;
-}
-.grid1{
-  @include display-flex;
-  @include flex;
-  display: inline-block;
-}
+// #index-app{
+//   background: #eee;
+//   color:#333;
+// }
+// .grid1{
+//   @include display-flex;
+//   @include flex;
+//   display: inline-block;
+// }
 
-.test-justify{
-  @include webkit-sassui-justify-dib(14px);
-}
+// .test-justify{
+//   @include webkit-sassui-justify-dib(14px);
+// }

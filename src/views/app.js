@@ -3,7 +3,7 @@ import HomeApp from './home/index';
 import DetailApp from './detail/index';
 import ListApp from './list/index';
 
-export default class RootView extends React.Component{
+export default class extends React.Component{
   render() {
     return (
       <Router history={hashHistory}>

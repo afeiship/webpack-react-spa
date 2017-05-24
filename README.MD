@@ -2,6 +2,10 @@
 > React single page app based on webpack.
 
 
+## local:
++ http://localhost:8090/src/#/
+
+
 ## todos:
 - [x] react-router
 

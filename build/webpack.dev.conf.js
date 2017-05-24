@@ -1,13 +1,13 @@
 (function () {
 
-  let path = require('path');
-  let webpack = require('webpack');
-  let $ = require('./webpack.base');
-  let webpackMerge = require('webpack-merge');
-  let config = require('./webpack.config.js');
-  let HtmlWebpackPlugin = require('html-webpack-plugin');
-  let devEnties = $.baseEntries;
-  let nx = require('next-js-core2');
+  const path = require('path');
+  const webpack = require('webpack');
+  const $ = require('./webpack.base');
+  const webpackMerge = require('webpack-merge');
+  const config = require('./webpack.config.js');
+  const HtmlWebpackPlugin = require('html-webpack-plugin');
+  const devEnties = $.baseEntries;
+  const nx = require('next-js-core2');
   let devPlugins = [
     new webpack.DefinePlugin({
       'process.env': {

@@ -1,7 +1,6 @@
-import App from './views/app';
-import './styles/index';
+import App from "./app";
 
 ReactDOM.render(
   <App />,
-  document.getElementById('app')
+  document.getElementById("root")
 );

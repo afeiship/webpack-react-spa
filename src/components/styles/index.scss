@@ -1,0 +1,11 @@
+@import "node_modules/webkit-scss-reset/dist/webkit-sass-reset.scss";
+
+.app {
+  font-family: helvetica, arial, sans-serif;
+  padding: 2em;
+  border: 5px solid red;
+
+  p {
+    background-color: yellow;
+  }
+}

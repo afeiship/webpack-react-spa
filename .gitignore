@@ -1,5 +1,5 @@
-node_modules
-bower_components
-coverage
-.idea
-dist
+.idea/
+coverage/
+dist/*
+!dist/index.html
+node_modules/

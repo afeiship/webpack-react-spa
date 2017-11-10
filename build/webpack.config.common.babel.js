@@ -12,7 +12,7 @@ export default {
     path: resolve(__dirname, '../dist')
   },
   resolve: {
-    extensions: ['.js', '.json', '.scss', '.css'],
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css'],
     alias: {
       components: resolve(__dirname, '../src/components'),
       views: resolve(__dirname, '../src/views'),

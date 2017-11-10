@@ -16,7 +16,6 @@ export default {
   ],
   entry: {
     vendors: [
-      'next-js-core2',
       'mixin-decorator'
     ]
   },

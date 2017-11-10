@@ -15,4 +15,5 @@ export const TestComp = require('./test-comp').default;
 
 
 /*===services start===*/
+export const $route = require('services/route').default;
 /*===services end===*/

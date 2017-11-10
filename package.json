@@ -37,6 +37,7 @@
     "koa-react-view": "^3.0.0",
     "mixin-decorator": "github:afeiship/mixin-decorator",
     "next-js-core2": "github:afeiship/next-js-core2",
+    "next-react-redux": "github:afeiship/next-react-redux",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^4.2.0",

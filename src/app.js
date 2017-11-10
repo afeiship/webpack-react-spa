@@ -1,18 +1,27 @@
-import 'styles/index';
-import reactLogo from 'images/react_logo.svg';
-import snipImg from 'images/Snip20170830_1.png';
+import AppBase from 'components/scripts/index';
 import {
   HashRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-import {Button} from 'element-react';
 import 'element-theme-default';
 import Home from 'views/home';
 import About from 'views/about';
 
-
-export default class extends React.Component {
+export default class extends AppBase {
+  static initialState() {
+    return {
+      memory: {
+        initialData: {
+          tes: 123,
+          age: 100,
+          items: []
+        },
+        myInitial: 0,
+        sum: 0
+      }
+    }
+  }
 
   _onClick = e => {
     console.log('img!');
@@ -24,17 +33,17 @@ export default class extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router ref="root">
         <div className="app route-container">
           <ul className="global-nav">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about/1">About</Link></li>
+            <li><Link to="/about/1/dc1234">About</Link></li>
           </ul>
 
           <Route exact path="/" component={Home}/>
-          <Route path="/about/:id" component={About}/>
+          <Route path="/about/:id/:uid" component={About}/>
         </div>
       </Router>
     );
   }
-};
+}

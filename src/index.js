@@ -1,6 +1,5 @@
-import App from "./app";
+import 'components/styles/index.scss';
+import {ReduxBoot} from 'next-react-redux';
+import App from './app';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById("root")
-);
+ReduxBoot.run(App, 'root');

@@ -22,7 +22,9 @@
           "styles": "./src/components/styles",
           "services": "./src/components/services",
           "scripts": "./src/components/scripts",
-          "mixins": "./src/components/mixins"
+          "mixins": "./src/components/mixins",
+          "components": "./src/components",
+          "views": "./src/views"
         }
       }
     ]

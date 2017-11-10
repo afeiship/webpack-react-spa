@@ -15,6 +15,7 @@ export default {
     extensions: ['.js', '.json', '.scss', '.css'],
     alias: {
       components: resolve(__dirname, '../src/components'),
+      views: resolve(__dirname, '../src/views'),
     }
   },
   context: resolve(__dirname, '../src'),

@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom'
 import {Button} from 'element-react';
 import 'element-theme-default';
-import Home from 'components/pages/home';
-import About from 'components/pages/about';
+import Home from 'views/home';
+import About from 'views/about';
 
 
 export default class extends React.Component {

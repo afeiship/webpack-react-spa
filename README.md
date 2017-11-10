@@ -13,3 +13,13 @@
 ## resource:
 + https://github.com/vikpe/react-webpack-babel-starter
 + http://www.php.cn/js-tutorial-376046.html
+
+
+## webpack bug:
+```bash
+
+# ERROR in main-7f12c4.bundle.js from UglifyJs
+# Unexpected token: name (urlParts)
+
+npm install webpack-dev-server@~2.7.0 --save-dev --registry=https://registry.npm.taobao.org
+```

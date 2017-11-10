@@ -12,7 +12,7 @@ export default {
     path: resolve(__dirname, '../dist')
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.scss', '.css']
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css'],
   },
   context: resolve(__dirname, '../src'),
   module: {

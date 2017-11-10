@@ -1,8 +1,9 @@
 export default class extends React.Component {
-  render(){
+  render() {
+    const { title } = this.props
     return (
       <div>
-        <h2>Home</h2>
+        <h2>{title}</h2>
         <p>Home page content.</p>
       </div>
     )

@@ -11,7 +11,8 @@
     "prebuild": "npm run clean && npm run dll-prd",
     "build": "webpack -p --env=prd",
     "dev": "webpack-dev-server -p --env=dev",
-    "start": "npm run build && node express.js"
+    "start": "npm run build && node express.js",
+    "ssr":"nodemon src/server/startup --exec babel-node"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,8 @@
     "autobind-decorator": "^2.1.0",
     "element-react": "^1.1.9",
     "element-theme-default": "^1.4.3",
+    "koa": "^2.4.1",
+    "koa-react-view": "^3.0.0",
     "mixin-decorator": "github:afeiship/mixin-decorator",
     "next-js-core2": "github:afeiship/next-js-core2",
     "react": "^15.6.1",
@@ -68,9 +71,6 @@
     "import-glob-loader": "^1.1.0",
     "node-sass": "^4.5.3",
     "postcss-loader": "^1.3.3",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-hot-loader": "^3.0.0-beta.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "svg-inline-loader": "^0.8.0",

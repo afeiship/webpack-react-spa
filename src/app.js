@@ -2,7 +2,7 @@ import 'styles/index';
 import reactLogo from 'images/react_logo.svg';
 import snipImg from 'images/Snip20170830_1.png';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
@@ -25,8 +25,8 @@ export default class extends React.Component {
   render() {
     return (
       <Router>
-        <div className="route-container">
-          <ul>
+        <div className="app route-container">
+          <ul className="global-nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
           </ul>

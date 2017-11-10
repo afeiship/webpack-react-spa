@@ -1,15 +1,22 @@
 @import "node_modules/webkit-sass-reset/dist/webkit-sass-reset.scss";
-
-
 @import "views/*";
 @import "components/*";
 
 .app {
   font-family: helvetica, arial, sans-serif;
   padding: 2em;
-  border: 5px solid red;
 
   p {
     background-color: yellow;
+  }
+
+  .global-nav {
+    li {
+      display: inline-block;
+      padding: 10px;
+      background: #eee;
+      border-right:1px solid #fff;
+      width: 50%;
+    }
   }
 }

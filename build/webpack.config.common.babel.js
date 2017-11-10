@@ -13,6 +13,9 @@ export default {
   },
   resolve: {
     extensions: ['.js', '.json', '.scss', '.css'],
+    alias: {
+      components: resolve(__dirname, '../src/components'),
+    }
   },
   context: resolve(__dirname, '../src'),
   module: {

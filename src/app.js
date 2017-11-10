@@ -1,8 +1,15 @@
 import 'styles/index';
 import reactLogo from 'images/react_logo.svg';
 import snipImg from 'images/Snip20170830_1.png';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 import {Button} from 'element-react';
 import 'element-theme-default';
+import Home from 'components/pages/home';
+import About from 'components/pages/about';
 
 
 export default class extends React.Component {
@@ -16,14 +23,18 @@ export default class extends React.Component {
   };
 
   render() {
-    return <div className="app">
-      <h1>Hello World Fei?!</h1>
-      <p>Foo to the bar</p>
-      <Button type="primary" onClick={this._onClick2}>Button From element-react</Button>
-      <img src={reactLogo} onClick={this._onClick}/>
-      <p className="tc">
-        <img src={snipImg} alt=""/>
-      </p>
-    </div>;
+    return (
+      <Router>
+        <div className="route-container">
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+
+          <Route exact path="/" component={Home}/>
+          <Route path="/about" component={About}/>
+        </div>
+      </Router>
+    );
   }
 };

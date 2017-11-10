@@ -28,11 +28,11 @@ export default class extends React.Component {
         <div className="app route-container">
           <ul className="global-nav">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/about/1">About</Link></li>
           </ul>
 
           <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
+          <Route path="/about/:id" component={About}/>
         </div>
       </Router>
     );

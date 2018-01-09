@@ -2,13 +2,12 @@ import AppBase from 'components/scripts/index';
 
 export default class {
 
-  static push(inUrl, inOptions) {
+  static push(inUrl, inData) {
     const {history} = AppBase.$.memory;
-    history && history.push(
-      nx.mix({
-        pathname: inUrl
-      }, inOptions)
-    );
+    history && history.push({
+      pathname: inUrl,
+      state: inData
+    });
   }
 
   static replace(inUrl, inData) {

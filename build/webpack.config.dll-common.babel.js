@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-
+import {vendors} from '../config.json';
 export default {
   output: {
     path: path.resolve(__dirname, '../dist/vendors'),
@@ -14,9 +14,11 @@ export default {
       context: __dirname,
     })
   ],
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+  },
   entry: {
-    vendors: [
-      'mixin-decorator'
-    ]
+    vendors
   },
 }

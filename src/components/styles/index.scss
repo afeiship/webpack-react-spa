@@ -1,21 +1,19 @@
-@import "node_modules/webkit-sass-reset/dist/webkit-sass-reset.scss";
-@import "views/*";
-@import "components/*";
+//vendors:
+@import 'node_modules/webkit-sass-functions/dist/webkit-sass-functions.scss';
+@import 'node_modules/webkit-sass-mixins/dist/webkit-sass-mixins.scss';
+@import 'node_modules/webkit-sass-generators/dist/webkit-sass-generators.scss';
+@import 'node_modules/webkit-sass-reset/dist/webkit-sass-reset.scss';
+@import 'node_modules/webkit-sassui-short-name/dist/webkit-sassui-short-name.scss';
+@import 'node_modules/webkit-sassui-transform-center/dist/webkit-sassui-transform-center.scss';
 
-.app {
-  font-family: helvetica, arial, sans-serif;
-  padding: 2em;
 
-  .global-nav {
-    li {
-      display: inline-block;
-      padding: 10px;
-      background: #eee;
-      border-right: 1px solid #fff;
-      width: 50%;
-      .active {
-        color: #f00;
-      }
-    }
-  }
-}
+@import "./colors";
+@import "./extend";
+@import "./generators";
+@import "./mixins";
+@import "./icon";
+@import "./app";
+
+
+@import 'components/*';
+@import 'views/*';

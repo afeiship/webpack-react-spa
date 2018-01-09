@@ -1,25 +1,27 @@
-# webpack-react-spa
-> React single page app based on webpack.
+# webpack-react-ant
+> Webpack for ant design.
+
+## build dist:
+<img src='./docs/optimize_build.png' width="394" />
+
+## get-start:
+```bash
+git clone https://github.com/afeiship/webpack-react-ant.git
+npm install 
+npm run build
+npm run start
+```
 
 ## feature:
 + [x] spa 
 + [x] webpack 3.x
-+ [x] element-react
-+ [ ] next-redux-base
-+ [x] image comporess
++ [x] next-redux-base
++ [x] image compress
 + [x] fonts/images to folder
-+ [ ] react-router v4
++ [x] react-router v4
++ [x] HtmlWebpack -> webpack favico.ico
++ [x] ant-design optmize
++ [x] add spinkit for app
 
-## resource:
-+ https://github.com/vikpe/react-webpack-babel-starter
-+ http://www.php.cn/js-tutorial-376046.html
-
-
-## webpack bug:
-```bash
-
-# ERROR in main-7f12c4.bundle.js from UglifyJs
-# Unexpected token: name (urlParts)
-
-npm install webpack-dev-server@~2.7.0 --save-dev --registry=https://registry.npm.taobao.org
-```
+## resources:
++ https://s.61qt.cn/admin_login

@@ -19,13 +19,18 @@
         "alias": {
           "node_modules": "./node_modules",
           "images": "./src/assets/images",
+          "components": "./src/components",
           "styles": "./src/components/styles",
           "services": "./src/components/services",
           "scripts": "./src/components/scripts",
-          "mixins": "./src/components/mixins",
-          "components": "./src/components",
-          "views": "./src/views"
+          "mixins": "./src/components/mixins"
         }
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd"
       }
     ]
   ]

@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import merge from 'webpack-merge';
 import {resolve} from 'path';
 import commonConfig from './webpack.config.common.babel';
-
+import {dev, port} from '../config.json';
 
 export default merge(commonConfig, {
   plugins: [
@@ -16,11 +16,12 @@ export default merge(commonConfig, {
     contentBase: resolve(__dirname, '../dist'),
     hot: true,
     stats: 'errors-only',
+    port,
     compress: true,
     historyApiFallback: true,
     headers: {
       "Access-Control-Allow-Origin": "*",
-      "Power-by": "Fei-WEBPACK"
-    }
+    },
+    proxy: dev.proxy
   }
 });

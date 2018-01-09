@@ -4,15 +4,21 @@ import {resolve, join} from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
+import {argv} from 'yargs';
+import config from '../config.json';
+
+const argEnv = argv.env || 'dev';
+
 
 export default {
   entry: './index.js',
   output: {
-    filename: '[name]-[chunkhash:6].bundle.js',
+    filename: '[name]-[hash:6].bundle.js',
     path: resolve(__dirname, '../dist')
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.scss', '.css'],
+    extensions: ['.js', '.json', '.scss', '.css'],
   },
   context: resolve(__dirname, '../src'),
   module: {
@@ -62,21 +68,29 @@ export default {
   plugins: [
     new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ProvidePlugin({
+      React: 'react',
+      ReactDOM: 'react-dom',
       nx: 'next-js-core2',
-      autobind: 'autobind-decorator',
       mixin: 'mixin-decorator',
     }),
     new webpack.DllReferencePlugin({
+      context: __dirname,
       manifest: resolve(__dirname, '../dist/vendors/manifest.json')
     }),
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, '../public/index.html'),
-      title: 'Hot Module Replacement'
+      template: resolve(__dirname, '../src/index.ejs'),
+      favicon: resolve(__dirname, '../src/assets/images/favicon.ico'),
+      title: 'Hot Module Replacement',
+      libs: config[argEnv].libs
+    }),
+    new AddAssetHtmlPlugin({
+      includeSourcemap: false,
+      filepath: resolve(__dirname, '../dist/vendors/vendors.*.js')
     }),
     // build optimization plugins
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor-[hash:6].min.js',
+      name: 'common',
+      filename: 'common-[hash].min.js',
     }),
     new webpack.LoaderOptionsPlugin({
       options: {

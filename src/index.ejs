@@ -10,63 +10,7 @@
     <link href="//cdn.bootcss.com/spinkit/1.2.5/spinkit.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<main id="app">
-    <style>
-        .app-loading-tip {
-            position: absolute;
-            margin: auto;
-            margin-top: -100px;
-            top: 50%;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            text-align: center;
-            color: #999;
-            height: 150px;
-        }
-
-        .sk-wave {
-            width: 200px;
-        }
-
-        .sk-wave.app-loading-wave .app-loading-rect {
-            background-color: #68bf4a;
-            margin: 0 1px;
-        }
-
-        @keyframes browser-tip {
-            0% {
-                opacity: 0;
-                z-index: -1;
-            }
-            10% {
-                opacity: 0;
-                z-index: 999999;
-            }
-            50% {
-                opacity: 1;
-                z-index: 999999;
-            }
-            90% {
-                opacity: 1;
-                z-index: 999999;
-            }
-            100% {
-                opacity: 0;
-                z-index: -1;
-            }
-        }</style>
-    <div class="app-loading-tip" id="app-loading-tip">
-        <div class="sk-wave app-loading-wave">
-            <div class="app-loading-rect sk-rect sk-rect1"></div>
-            <div class="app-loading-rect sk-rect sk-rect2"></div>
-            <div class="app-loading-rect sk-rect sk-rect3"></div>
-            <div class="app-loading-rect sk-rect sk-rect4"></div>
-            <div class="app-loading-rect sk-rect sk-rect5"></div>
-        </div>
-        <div style="text-align: center">系统正在初始化，请稍等...</div>
-    </div>
-</main>
+<main id="app"> <!--APP_LOADER--> </main>
 
 <!-- Dependencies -->
 <script src="<%= htmlWebpackPlugin.options.libs['react'] %>"></script>

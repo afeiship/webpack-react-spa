@@ -5,9 +5,9 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
+import ScriptsInjectorPlugin from 'scripts-injector-webpack-plugin';
 import {argv} from 'yargs';
 import config from '../config.json';
-
 const argEnv = argv.env || 'dev';
 
 
@@ -66,6 +66,7 @@ export default {
     ],
   },
   plugins: [
+    new ScriptsInjectorPlugin({path: resolve(__dirname, '../src/components/others/app-loader.html')}),
     new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ProvidePlugin({
       React: 'react',

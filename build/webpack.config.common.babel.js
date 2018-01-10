@@ -66,7 +66,10 @@ export default {
     ],
   },
   plugins: [
-    new ScriptsInjectorPlugin({path: resolve(__dirname, '../src/components/others/app-loader.html')}),
+    new ScriptsInjectorPlugin({
+      replacer: '<!--APP_LOADER-->',
+      path: resolve(__dirname, '../src/components/others/app-loader.html')
+    }),
     new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ProvidePlugin({
       React: 'react',

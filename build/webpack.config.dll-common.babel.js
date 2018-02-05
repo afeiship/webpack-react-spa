@@ -4,7 +4,7 @@ import {vendors} from '../config.json';
 export default {
   output: {
     path: path.resolve(__dirname, '../dist/vendors'),
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
     library: '[name]_library'
   },
   plugins: [

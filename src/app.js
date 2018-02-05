@@ -32,7 +32,7 @@ export default class extends AppBase {
 
   render() {
     return (
-      <AppContainer>
+      <AppContainer warnings={false}>
         <Router ref="root">
           <section className="route-wrapper">
             <Route exact path="/" component={Login}/>

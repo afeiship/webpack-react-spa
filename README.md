@@ -22,6 +22,7 @@ npm run start
 + [x] HtmlWebpack -> webpack favico.ico
 + [x] ant-design optmize
 + [x] add spinkit for app
++ [x] react hmr
 
 ## resources:
 + https://s.61qt.cn/admin_login

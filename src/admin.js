@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 
 import UserIndex from './admin/users/index';
-import UserShow from './admin/users/show';
 import OrderIndex from './admin/orders/index';
 
 

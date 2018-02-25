@@ -36,7 +36,7 @@ export default class extends AppBase {
         <Router ref="root">
           <section className="route-wrapper">
             <Route exact path="/" component={Login}/>
-            <Route path="/admin" component={Admin}/>
+            <Route path="/modules" component={Admin}/>
           </section>
         </Router>
       </AppContainer>

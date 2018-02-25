@@ -23,6 +23,7 @@ npm run start
 + [x] ant-design optmize
 + [x] add spinkit for app
 + [x] react hmr
++ [ ] code spliting by modules
 
 ## resources:
 + https://s.61qt.cn/admin_login

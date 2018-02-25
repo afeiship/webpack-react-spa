@@ -5,8 +5,8 @@ import {
   Route,
 } from 'react-router-dom';
 
-import UserIndex from './admin/users/index';
-import OrderIndex from './admin/orders/index';
+import UserIndex from './modules/users/index';
+import OrderIndex from './modules/orders/index';
 
 
 export default class extends React.Component {
@@ -49,11 +49,11 @@ export default class extends React.Component {
           </div>
 
           <Menu theme="dark" mode="inline" defaultSelectedKeys={[this.state.activeRoute]} onClick={this._onMenuClick}>
-            <Menu.Item key="/admin/users/index">
+            <Menu.Item key="/modules/users/index">
               <Icon type="user"/>
               <span className="nav-text">用户管理</span>
             </Menu.Item>
-            <Menu.Item key="/admin/orders/index">
+            <Menu.Item key="/modules/orders/index">
               <Icon type="tag"/>
               <span className="nav-text">订单管理</span>
             </Menu.Item>
@@ -66,8 +66,8 @@ export default class extends React.Component {
             <a href="#">Logout</a>
           </Header>
           <Content style={{margin: '24px 16px 0'}}>
-            <Route path={`${match.url}/users/index`} component={UserIndex}/>
-            <Route path={`${match.url}/orders/index`} component={OrderIndex}/>
+            <Route path={`/modules/users/index`} component={UserIndex}/>
+            <Route path={`/modules/orders/index`} component={OrderIndex}/>
           </Content>
           <Footer style={{textAlign: 'center'}}>
             Admin @Power by Fei.

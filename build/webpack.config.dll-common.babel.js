@@ -1,10 +1,13 @@
-import { resolve } from 'path';
+import {resolve} from 'path';
 import webpack from 'webpack';
-import { vendors } from '../config.json';
+import {vendors} from '../config.json';
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
 export default {
   output: {
-    path: resolve(__dirname, '../dist/vendors'),
-    filename: '[name].[chunkhash].js',
+    path: resolve(__dirname, '../dist/'),
+    filename: 'assets/scripts/[name].[chunkhash].js',
     library: '[name]_library'
   },
   resolve: {
@@ -37,9 +40,8 @@ export default {
   },
   plugins: [
     new webpack.DllPlugin({
-      path: resolve(__dirname, '../dist/vendors/manifest.json'),
-      name: '[name]_library',
-      context: __dirname,
+      path: resolve(__dirname, '../dist/assets/scripts/manifest.json'),
+      name: 'assets/scripts/[name]_library'
     })
   ],
   externals: {

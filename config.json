@@ -8,66 +8,21 @@
     "react-router",
     "react-router-dom"
   ],
-  "uglify": {
-    "parallel": {
-      "cache": true,
-      "workers": 2
-    },
-    "compress": {
-      "negate_iife": false,
-      "unsafe_comps": true,
-      "properties": true,
-      "keep_fargs": false,
-      "pure_getters": true,
-      "collapse_vars": true,
-      "unsafe": true,
-      "warnings": false,
-      "screw_ie8": true,
-      "sequences": true,
-      "dead_code": true,
-      "drop_debugger": true,
-      "comparisons": true,
-      "conditionals": true,
-      "evaluate": true,
-      "booleans": true,
-      "loops": true,
-      "unused": true,
-      "hoist_funs": true,
-      "if_return": true,
-      "join_vars": true,
-      "cascade": true,
-      "drop_console": true,
-      "pure_funcs": [
-        "classCallCheck",
-        "invariant",
-        "warning"
-      ]
-    },
-    "output": {
-      "comments": false
-    }
-  },
   "dev": {
+    "publicPath": "./",
     "libs": {
       "react": "/react/umd/react.development.js",
       "react-dom": "/react-dom/umd/react-dom.development.js"
     },
     "proxy": {
-      "/api": {
-        "target": "http://120.27.13.225:80",
-        "changeOrigin": true,
-        "pathRewrite": {
-          "^/": "/",
-          "[0-9]+": ""
-        },
-        "secure": false
-      }
+      "/api": "http://120.27.13.225:80"
     }
   },
   "prd": {
+    "publicPath": "/",
     "libs": {
       "react": "//cdn.bootcss.com/react/16.4.0/umd/react.production.min.js",
-      "react-dom": "https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"
+      "react-dom": "//cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"
     }
   }
 }

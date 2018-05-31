@@ -2,7 +2,6 @@
 import webpack from 'webpack';
 import {resolve, join} from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import autoprefixer from 'autoprefixer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 // import ScriptsInjectorPlugin from 'scripts-injector-webpack-plugin';
@@ -15,7 +14,8 @@ const argEnv = argv.env || 'dev';
 export default {
   entry: './index.js',
   output: {
-    filename: '[name]-[hash:6].bundle.js',
+    publicPath: config[argEnv].publicPath,
+    filename: 'assets/scripts/[name]-[hash:6].bundle.js',
     path: resolve(__dirname, '../dist'),
   },
   resolve: {
@@ -49,7 +49,7 @@ export default {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader']
+          use: ['css-hot-loader', 'css-loader', 'postcss-loader']
         })
       },
       {
@@ -61,14 +61,21 @@ export default {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'sass-loader']
+          use: ['css-hot-loader', 'css-loader', 'postcss-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.(mp3|mp4)$/i,
+        loader: 'url-loader',
+        options: {
+          name: 'assets/medias/[name]-[hash:4].[ext]',
+        }
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'url-loader',
         options: {
-          name: 'images/[name]-[hash:4].[ext]',
+          name: 'assets/images/[name]-[hash:4].[ext]',
           limit: 8192
         }
       },
@@ -76,7 +83,7 @@ export default {
         test: /\.(woff|eot|ttf)\??.*$/,
         loader: 'url-loader',
         options: {
-          name: 'fonts/[name]-[hash:4].[ext]',
+          name: 'assets/fonts/[name]-[hash:4].[ext]',
           limit: 8192
         }
       }
@@ -87,16 +94,10 @@ export default {
     //   replacer: '<!--APP_LOADER-->',
     //   path: resolve(__dirname, '../src/components/others/app-loader.html')
     // }),
-    new ExtractTextPlugin('[name]-[hash].css'),
-    new webpack.ProvidePlugin({
-      React: 'react',
-      ReactDOM: 'react-dom',
-      nx: 'next-js-core2',
-      mixin: 'mixin-decorator',
-    }),
+    new ExtractTextPlugin('assets/styles/[name]-[hash].css'),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: resolve(__dirname, '../dist/vendors/manifest.json')
+      manifest: resolve(__dirname, '../dist/assets/scripts/manifest.json')
     }),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../src/index.ejs'),
@@ -104,10 +105,23 @@ export default {
       title: 'Hot Module Replacement',
       libs: config[argEnv].libs
     }),
-    new AddAssetHtmlPlugin({
-      includeSourcemap: false,
-      filepath: resolve(__dirname, '../dist/vendors/vendors.*.js')
+    new AddAssetHtmlPlugin([
+      {
+        includeSourcemap: false,
+        filepath: resolve(__dirname, '../dist/assets/scripts/vendors.*.js'),
+        outputPath: "assets/scripts",
+        publicPath: `${config[argEnv].publicPath}assets/scripts`
+      }
+    ]),
+
+    //ProvidePlugins:
+    new webpack.ProvidePlugin({
+      React: 'react',
+      ReactDOM: 'react-dom',
+      nx: 'next-js-core2',
+      mixin: 'mixin-decorator',
     }),
+
     // build optimization plugins
     new webpack.LoaderOptionsPlugin({
       options: {

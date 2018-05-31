@@ -64,7 +64,7 @@ export default Form.create()(class extends React.Component {
                 className="mr5"
                 htmlType="submit"
               >
-                登录
+                登录-LOGIN
               </Button>
               <Button size="large">取消</Button>
             </FormItem>

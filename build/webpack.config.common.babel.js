@@ -16,7 +16,7 @@ export default {
   entry: './index.js',
   output: {
     filename: '[name]-[hash:6].bundle.js',
-    path: resolve(__dirname, '../dist')
+    path: resolve(__dirname, '../dist'),
   },
   resolve: {
     alias: {

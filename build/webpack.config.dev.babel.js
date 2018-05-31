@@ -29,7 +29,10 @@ export default merge(commonConfig, {
   //devtools:
   devtool: 'source-map',
   devServer: {
-    contentBase: resolve(__dirname, '../dist'),
+    contentBase: [
+      resolve(__dirname, '../dist'),
+      resolve(__dirname, '../node_modules')
+    ],
     hot: true,
     stats: 'errors-only',
     port,

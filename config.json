@@ -49,8 +49,8 @@
   },
   "dev": {
     "libs": {
-      "react": "//cdn.bootcss.com/react/15.6.1/react.js",
-      "react-dom": "//cdn.bootcss.com/react/15.6.1/react-dom.js"
+      "react": "/react/umd/react.development.js",
+      "react-dom": "/react-dom/umd/react-dom.development.js"
     },
     "proxy": {
       "/api": {
@@ -66,8 +66,8 @@
   },
   "prd": {
     "libs": {
-      "react": "//cdn.bootcss.com/react/15.6.1/react.min.js",
-      "react-dom": "//cdn.bootcss.com/react/15.6.1/react-dom.min.js"
+      "react": "//cdn.bootcss.com/react/16.4.0/umd/react.production.min.js",
+      "react-dom": "https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"
     }
   }
 }

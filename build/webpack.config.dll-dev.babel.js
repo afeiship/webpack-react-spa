@@ -3,5 +3,5 @@ import dllCommonConfig from './webpack.config.dll-common.babel';
 
 
 export default merge(dllCommonConfig, {
-
+  mode: 'development',
 });

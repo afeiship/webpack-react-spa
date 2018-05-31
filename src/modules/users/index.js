@@ -1,4 +1,4 @@
-import AppBase, {$api, $date, $store} from 'components/scripts/index';
+import AppBase, {$api, $date, $store} from 'components';
 import {Table, Icon, Card, Button, Modal} from 'antd';
 import {
   HashRouter as Router,
@@ -6,9 +6,6 @@ import {
   Link
 } from 'react-router-dom';
 
-import Add from './add';
-import Edit from './edit';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 export default class extends React.Component {
 
@@ -108,13 +105,8 @@ export default class extends React.Component {
   render() {
     const {columns, current_page, total, data}  = this.state;
     return (
-      <Card title={`用户管理(${total})`} bordered={false}
-            extra={<Button type="primary" onClick={this._onAdd}>+ 添加新用户</Button>}>
-        <Table columns={columns} dataSource={data} rowKey="uid"
-               pagination={{total, current: current_page, onChange: this._onPageChange}}/>
-        <Add onComplete={this.load.bind(this)}/>
-        <ReactQuill value={this.state.text}
-                    onChange={this._handleChange} />
+      <Card title={`用户管理(${total})`} bordered={false}>
+        USER MANAGER!
       </Card>
     );
   }

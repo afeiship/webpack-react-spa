@@ -5,7 +5,8 @@ import webpack from 'webpack';
 import commonConfig from './webpack.config.common.babel';
 import { uglify } from '../config.json';
 module.exports = merge(commonConfig, {
+  mode: 'production',
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(uglify)
+    // new webpack.optimize.UglifyJsPlugin(uglify)
   ]
 });

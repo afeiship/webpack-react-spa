@@ -7,6 +7,7 @@ import commonConfig from './webpack.config.common.babel';
 import {dev, port} from '../config.json';
 
 export default merge(commonConfig, {
+  mode: 'development',
   entry: [
     'react-hot-loader/patch',
     // activate HMR for React

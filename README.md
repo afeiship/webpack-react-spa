@@ -14,16 +14,18 @@ npm run start
 
 ## feature:
 + [x] spa 
-+ [x] webpack 3.x
++ [x] react 16+
++ [x] webpack 4.x
 + [x] next-redux-base
 + [x] image compress
 + [x] fonts/images to folder
 + [x] react-router v4
 + [x] HtmlWebpack -> webpack favico.ico
 + [x] ant-design optmize
-+ [x] add spinkit for app
 + [x] react hmr
-+ [ ] code spliting by modules
++ [ ] webpack ScriptsInjectorPlugin
++ [ ] add spinkit for app
+
 
 ## resources:
 + https://s.61qt.cn/admin_login

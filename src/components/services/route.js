@@ -1,4 +1,4 @@
-import AppBase from 'components/scripts/index';
+import AppBase from 'components';
 
 export default class {
 

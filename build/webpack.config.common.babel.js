@@ -5,9 +5,10 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
-import ScriptsInjectorPlugin from 'scripts-injector-webpack-plugin';
+// import ScriptsInjectorPlugin from 'scripts-injector-webpack-plugin';
 import {argv} from 'yargs';
 import config from '../config.json';
+
 const argEnv = argv.env || 'dev';
 
 
@@ -18,15 +19,31 @@ export default {
     path: resolve(__dirname, '../dist')
   },
   resolve: {
+    alias: {
+      assets: resolve(__dirname, '../src/assets'),
+      images: resolve(__dirname, '../src/assets/images'),
+      styles: resolve(__dirname, '../src/assets/styles'),
+      components: resolve(__dirname, '../src/components'),
+      views: resolve(__dirname, '../src/components/views'),
+      interceptors: resolve(__dirname, '../src/components/interceptors'),
+      services: resolve(__dirname, '../src/components/services'),
+      scripts: resolve(__dirname, '../src/components/scripts'),
+      mixins: resolve(__dirname, '../src/components/mixins'),
+      modals: resolve(__dirname, '../src/components/modals'),
+    },
     extensions: ['.js', '.json', '.scss', '.css'],
   },
   context: resolve(__dirname, '../src'),
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         use: ['babel-loader'],
-        exclude: /node_modules/,
+        include: [
+          resolve(__dirname, "../src"),
+          resolve(__dirname, "../node_modules/mixin-decorator"),
+          resolve(__dirname, "../node_modules/react-dynamic-router")
+        ]
       },
       {
         test: /\.css$/,
@@ -66,10 +83,10 @@ export default {
     ],
   },
   plugins: [
-    new ScriptsInjectorPlugin({
-      replacer: '<!--APP_LOADER-->',
-      path: resolve(__dirname, '../src/components/others/app-loader.html')
-    }),
+    // new ScriptsInjectorPlugin({
+    //   replacer: '<!--APP_LOADER-->',
+    //   path: resolve(__dirname, '../src/components/others/app-loader.html')
+    // }),
     new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ProvidePlugin({
       React: 'react',
@@ -92,23 +109,8 @@ export default {
       filepath: resolve(__dirname, '../dist/vendors/vendors.*.js')
     }),
     // build optimization plugins
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'common-[hash].min.js',
-    }),
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: {
-          plugins: [
-            autoprefixer({
-              browsers: [
-                'last 2 version',
-                'Explorer >= 10',
-                'Android >= 4'
-              ]
-            })
-          ]
-        },
         img: {
           gifsicle: {
             interlaced: false
@@ -140,7 +142,19 @@ export default {
     'react': 'React',
     'react-dom': 'ReactDOM',
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          chunks: 'initial',
+          minChunks: 3,
+          name: 'commons',
+          enforce: true
+        }
+      }
+    }
+  },
   performance: {
-    hints: false,
+    hints: false
   },
 };

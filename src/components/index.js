@@ -1,5 +1,5 @@
 /*===default start===*/
-export default require('./app-base').default;
+export default require('views/app-base').default;
 /*===default start===*/
 
 
@@ -21,6 +21,6 @@ export const $date = require('next-date');
 
 
 /*===components start===*/
-export const TestComp = require('./test-comp').default;
+export const TestComp = require('views/test-comp').default;
 /*===components end===*/
 

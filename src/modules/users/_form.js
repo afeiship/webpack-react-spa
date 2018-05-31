@@ -1,4 +1,4 @@
-import AppBase, {$api, $store} from 'components/scripts/index';
+import AppBase, {$api, $store} from 'components';
 import {Form, Icon, Input, Button, Modal, Radio} from 'antd';
 const FormItem = Form.Item;
 

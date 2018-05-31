@@ -23,9 +23,7 @@ npm run start
 + [x] HtmlWebpack -> webpack favico.ico
 + [x] ant-design optmize
 + [x] react hmr
-+ [x] deploy dev/test/prd with docker
-+ [ ] webpack ScriptsInjectorPlugin
-+ [ ] add spinkit for app
++ [ ] deploy dev/test/prd with docker
 
 
 ## resources:

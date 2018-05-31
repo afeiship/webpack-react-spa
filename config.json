@@ -1,6 +1,10 @@
 {
   "port": "3000",
+  "proxy": {
+    "/api": "http://120.27.13.225:80"
+  },
   "vendors": [
+    "antd",
     "next-js-core2",
     "next-react-redux",
     "mixin-decorator",
@@ -8,17 +12,14 @@
     "react-router",
     "react-router-dom"
   ],
-  "dev": {
+  "development": {
     "publicPath": "./",
     "libs": {
-      "react": "/react/umd/react.development.js",
-      "react-dom": "/react-dom/umd/react-dom.development.js"
-    },
-    "proxy": {
-      "/api": "http://120.27.13.225:80"
+      "react": "/node_modules/react/umd/react.development.js",
+      "react-dom": "/node_modules/react-dom/umd/react-dom.development.js"
     }
   },
-  "prd": {
+  "production": {
     "publicPath": "/",
     "libs": {
       "react": "//cdn.bootcss.com/react/16.4.0/umd/react.production.min.js",

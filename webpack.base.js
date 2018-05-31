@@ -2,8 +2,14 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {resolve} = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const config = require('./config');
+const {argv} = require('yargs');
+const {libs, publicPath} = config[argv.env];
+
 
 module.exports = {
+  mode: config[argv.env],
   resolve: {
     alias: {
       assets: resolve(__dirname, 'src/assets'),
@@ -74,8 +80,12 @@ module.exports = {
       }
     ],
   },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+  },
   plugins: [
-    new ExtractTextPlugin('[name]/styles/[name]-[hash].css'),
+    new ExtractTextPlugin('assets/styles/[name]-[hash].css'),
     //ProvidePlugins:
     new webpack.ProvidePlugin({
       React: 'react',
@@ -83,12 +93,21 @@ module.exports = {
       nx: 'next-js-core2',
       mixin: 'mixin-decorator',
     }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: resolve(__dirname, 'dist/assets/vendors/manifest.json')
+    }),
     new HtmlWebpackPlugin({
-      libs: {
-        "react": "/react/umd/react.development.js",
-        "react-dom": "/react-dom/umd/react-dom.development.js"
-      },
+      libs,
       template: './src/index.ejs'
-    })
+    }),
+    new AddAssetHtmlPlugin([
+      {
+        includeSourcemap: false,
+        filepath: resolve(__dirname, 'dist/assets/vendors/vendors.*.js'),
+        outputPath: "assets/vendors",
+        publicPath: `${publicPath}assets/vendors`
+      }
+    ]),
   ]
 };

@@ -6,7 +6,6 @@ import {
 
 import Login from './login';
 import Admin from './admin';
-import {AppContainer} from 'react-hot-loader';
 
 export default class extends AppBase {
 
@@ -32,14 +31,12 @@ export default class extends AppBase {
 
   render() {
     return (
-      <AppContainer warnings={false}>
-        <Router ref="root">
-          <section className="route-wrapper">
-            <Route exact path="/" component={Login}/>
-            <Route path="/modules" component={Admin}/>
-          </section>
-        </Router>
-      </AppContainer>
+      <Router ref="root">
+        <section className="route-wrapper">
+          <Route exact path="/" component={Login}/>
+          <Route path="/modules" component={Admin}/>
+        </section>
+      </Router>
     );
   }
 }

@@ -10,6 +10,10 @@ const {libs, publicPath} = config[argv.env];
 
 module.exports = {
   mode: config[argv.env],
+  entry: "./src/index.js",
+  output: {
+    publicPath,
+  },
   resolve: {
     alias: {
       assets: resolve(__dirname, 'src/assets'),
@@ -84,6 +88,7 @@ module.exports = {
     'react': 'React',
     'react-dom': 'ReactDOM',
   },
+  performance: {hints: false},
   plugins: [
     new ExtractTextPlugin('assets/styles/[name]-[hash].css'),
     //ProvidePlugins:

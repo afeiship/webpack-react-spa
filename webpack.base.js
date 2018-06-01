@@ -11,9 +11,7 @@ const {libs, publicPath} = config[argv.env];
 module.exports = {
   mode: config[argv.env],
   entry: "./src/index.js",
-  output: {
-    publicPath,
-  },
+  output: {publicPath},
   resolve: {
     alias: {
       assets: resolve(__dirname, 'src/assets'),

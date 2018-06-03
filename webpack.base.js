@@ -125,5 +125,8 @@ module.exports = {
         publicPath: `${publicPath}assets/vendors`
       }
     ]),
+    new webpack.LoaderOptionsPlugin({
+      minimize: argv.env === 'production'
+    })
   ]
 };

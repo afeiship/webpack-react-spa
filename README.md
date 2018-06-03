@@ -25,6 +25,11 @@ npm run start
 + [x] react hmr
 + [ ] deploy dev/test/prd with docker
 
+## some package shell:[MAC USER: use gnu-tar but not bsd-tar]
+```shell
+tar zcf my-project-name.tgz dist/ --transform s/dist/my-project-name/
+```
+
 
 ## resources:
 + https://s.61qt.cn/admin_login

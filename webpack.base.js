@@ -6,6 +6,8 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const config = require('./config');
 const {argv} = require('yargs');
 const {libs, publicPath} = config[argv.env];
+const {shortHash} = require('git-info');
+const GIT_HASH = shortHash();
 
 
 module.exports = {
@@ -18,6 +20,7 @@ module.exports = {
       images: resolve(__dirname, 'src/assets/images'),
       styles: resolve(__dirname, 'src/assets/styles'),
       components: resolve(__dirname, 'src/components'),
+      environments: resolve(__dirname, 'src/environments'),
       views: resolve(__dirname, 'src/components/views'),
       interceptors: resolve(__dirname, 'src/components/interceptors'),
       services: resolve(__dirname, 'src/components/services'),
@@ -29,6 +32,16 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /config\.js$/,
+        loader: 'string-replace-loader',
+        options: {
+          multiple: [
+            {search: '__BUILD_HASH__', replace: GIT_HASH},
+            {search: '__BUILD_ENV__', replace: argv.env},
+          ]
+        }
+      },
       {
         test: /\.(js)$/,
         use: ['babel-loader'],

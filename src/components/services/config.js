@@ -1,6 +1,7 @@
 export default class {
 
-  static VERSION = '__BUILD_VERSION__';
+  static HASH = '__BUILD_HASH__';
+  static ENV = require(`environments/__BUILD_ENV__`).default;
   static APIS = {
     baseUrl: `//${location.host}/api/v1`,
     items: {

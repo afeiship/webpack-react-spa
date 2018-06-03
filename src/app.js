@@ -1,4 +1,4 @@
-import AppBase, {$api, $store} from 'components';
+import AppBase, {$api, $config, $store} from 'components';
 import {
   HashRouter as Router,
   Route,

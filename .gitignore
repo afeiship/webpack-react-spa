@@ -1,4 +1,10 @@
-.idea/
-coverage/
-node_modules/
+node_modules
+bower_components
+coverage
+npm-debug.log
+yarn.lock
+package-lock.json
+.DS_Store
+.idea
+.vscode
 dist

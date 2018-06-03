@@ -14,6 +14,8 @@ module.exports = {
     library: '[name]_library'
   },
   plugins: [
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DllPlugin({
       path: resolve(__dirname, 'dist/assets/vendors/manifest.json'),
       name: '[name]_library'

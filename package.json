@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "dll": "webpack --config webpack.dll.js",
-    "dev": "npm run clean && npm run dll && webpack-serve --config webpack.dev.js  --env=development",
-    "build": "npm run clean && npm run dll && webpack --config webpack.prod.js --env=production",
+    "analyzer": "webpack --config webpack.analyzer.js",
+    "predev": "npm run clean && webpack --config webpack.dll.js --env=development",
+    "prebuild": "npm run clean && webpack --config webpack.dll.js --env=production",
+    "dev": "webpack-serve --config webpack.dev.js  --env=development",
+    "build": "webpack --config webpack.prod.js --env=production",
     "start": "node express.js"
   },
   "repository": {
@@ -80,6 +82,7 @@
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "git-info": "github:afeiship/git-info",
     "html-webpack-plugin": "^3.0.6",
     "import-glob-loader": "^1.1.0",
     "install": "^0.11.0",
@@ -89,9 +92,11 @@
     "postcss-loader": "^2.1.5",
     "react-hot-loader": "^4.2.0",
     "sass-loader": "^7.0.1",
+    "string-replace-loader": "^2.1.1",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^2.0.10",
     "webpack-merge": "^4.1.2",
     "webpack-serve": "^0.2.0"

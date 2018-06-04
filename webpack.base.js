@@ -24,7 +24,6 @@ module.exports = {
       views: resolve(__dirname, 'src/components/views'),
       interceptors: resolve(__dirname, 'src/components/interceptors'),
       services: resolve(__dirname, 'src/components/services'),
-      scripts: resolve(__dirname, 'src/components/scripts'),
       mixins: resolve(__dirname, 'src/components/mixins'),
       modals: resolve(__dirname, 'src/components/modals'),
     },

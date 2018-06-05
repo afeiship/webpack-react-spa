@@ -100,6 +100,8 @@ module.exports = {
   },
   performance: {hints: false},
   plugins: [
+    //第一个来自 v2 的内置功能，但是 作用域提升（scope hoisting）需要在 v3 中使用 ModuleConcatenationPlugin 来启用
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin('assets/styles/[name]-[hash].css'),
     //ProvidePlugins:
     new webpack.ProvidePlugin({

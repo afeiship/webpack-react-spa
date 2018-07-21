@@ -6,7 +6,9 @@ import {
 
 import Login from './login';
 import Admin from './admin';
+import hotable from 'react-hmr-decorator';
 
+@hotable(module)
 export default class extends AppBase {
 
   static initialState() {

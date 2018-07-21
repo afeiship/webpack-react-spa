@@ -1,6 +1,11 @@
 {
   "presets": [
-    [ "env", { "modules": false } ],
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
     "react"
   ],
   "plugins": [
@@ -9,6 +14,13 @@
     "transform-es2015-spread",
     "transform-object-rest-spread",
     "transform-decorators-legacy",
-    "syntax-dynamic-import"
+    "syntax-dynamic-import",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "lib"
+      }
+    ]
   ]
 }

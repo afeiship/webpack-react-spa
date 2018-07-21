@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.base');
 const {resolve} = require('path');
@@ -8,6 +9,9 @@ module.exports = (env, options) => {
   return merge(base, {
     mode: 'development',
     devtool: 'source-map',
+    plugins:[
+      new webpack.HotModuleReplacementPlugin()
+    ],
     devServer: {
       port,
       proxy,

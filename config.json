@@ -1,7 +1,10 @@
 {
-  "port": "3003",
+  "port": "4040",
   "proxy": {
-    "/api": "http://120.27.13.225:80"
+    "/api": {
+      "target": "http://120.27.13.225:80",
+      "changeOrigin": true
+    }
   },
   "vendors": [
     "antd",

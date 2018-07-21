@@ -4,15 +4,6 @@ import AppBase from '#';
 
 const Http = nx.declare({
   extends: NxAxios,
-  statics: {
-    instance: null,
-    getInstance: function () {
-      if (!Http.instance) {
-        Http.instance = new Http();
-      }
-      return Http.instance;
-    }
-  },
   methods: {
     getBearerToken: function () {
       const {login} = AppBase.$.local;

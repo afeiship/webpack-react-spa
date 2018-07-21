@@ -4,7 +4,6 @@ const {resolve} = require('path');
 const config = require('./config');
 
 module.exports = (env, options) => {
-  console.log(env, options);
   const {port, proxy} = config;
   return merge(base, {
     mode: 'development',

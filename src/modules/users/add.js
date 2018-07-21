@@ -1,6 +1,6 @@
 import UserForm from './_form';
 import {Form, Icon, Input, Button, Modal} from 'antd';
-import AppBase, {$api, $store} from 'components';
+import AppBase, {$api, $store} from '#';
 
 export default Form.create()(
   class extends UserForm {

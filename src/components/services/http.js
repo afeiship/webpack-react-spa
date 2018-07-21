@@ -1,6 +1,6 @@
 import nx from 'next-js-core2';
 import NxAxios from 'next-axios';
-import AppBase from 'components';
+import AppBase from '#';
 
 const Http = nx.declare({
   extends: NxAxios,

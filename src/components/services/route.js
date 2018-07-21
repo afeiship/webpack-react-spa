@@ -1,4 +1,4 @@
-import AppBase from 'components';
+import AppBase from '#';
 
 export default class {
 

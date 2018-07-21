@@ -1,4 +1,4 @@
-import AppBase, {$api, $date, $store} from 'components';
+import AppBase, {$api, $date, $store} from '#';
 import {Table, Icon, Card, Button, Modal} from 'antd';
 import {
   HashRouter as Router,

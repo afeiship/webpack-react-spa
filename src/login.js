@@ -1,5 +1,5 @@
 import {Card, Form, Icon, Input, Button} from 'antd';
-import AppBase, {$api, $route} from 'components';
+import AppBase, {$api, $route} from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from 'images/bg.jpg';
 const FormItem = Form.Item;

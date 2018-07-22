@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 const {resolve} = require('path');
 const {vendors} = require('./config');
-const config = require('./config');
 const {argv} = require('yargs');
-
 
 module.exports = {
   mode: argv.env,

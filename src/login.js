@@ -40,7 +40,7 @@ export default class extends React.Component {
     return (
       <div className="login-wrapper">
         <ReactFullImage src={bgImg}/>
-        <Card title="CS.WORK Admin Panel" className="shadow-5 login-view">
+        <Card title="Admin Panel" className="shadow-5 login-view">
           <Form layout="vertical" onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}
             <Button size="large" type="primary" className="wp-10" htmlType="submit">登录</Button>

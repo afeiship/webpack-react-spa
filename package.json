@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "analyzer": "webpack --config webpack.analyzer.js",
-    "predev": "npm run clean && webpack --config webpack.dll.js --env=development",
+    "dll": "webpack -p --env.type=dll --env.mode=production",
+    "prepare": "npm run clean && npm run dll",
     "prebuild": "npm run clean && webpack --config webpack.dll.js --env=production",
-    "dev": "webpack-dev-server --config webpack.dev.js  --env=development",
+    "dev": "npm run prepare && webpack-dev-server  --env.type=local --env.mode=development",
     "build": "webpack --config webpack.prod.js --env=production",
     "start": "node express.js"
   },
@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "add-asset-html-webpack-plugin": "^3.0.0-0",
+    "app-root-path": "^2.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-dynamic-import-node": "^1.2.0",
@@ -96,9 +97,11 @@
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
+    "webpack-app-kits": "github:afeiship/webpack-app-kits",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "webpack-mpa-entries": "github:afeiship/webpack-mpa-entries"
   }
 }

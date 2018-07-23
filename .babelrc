@@ -1,14 +1,10 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "modules": false
-      }
-    ],
+    "env",
     "react"
   ],
   "plugins": [
+    "react-hot-loader/babel",
     "transform-array-from",
     "transform-class-properties",
     "transform-es2015-spread",

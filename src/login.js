@@ -1,77 +1,53 @@
 import {Card, Form, Icon, Input, Button} from 'antd';
-import AppBase, {$api, $route} from '#';
+import AppBase, {$api, $app, $route} from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from 'images/bg.jpg';
-const FormItem = Form.Item;
 
 
-export default Form.create()(class extends React.Component {
+@mixin(['on-change', 'form'])
+export default class extends React.Component {
 
-  signin(inValue) {
-    $api.login(inValue).then(login => {
-      AppBase.$.local = {login};
-      AppBase.notify('Success!');
-      $route.push('/admin/users/index');
-    }, (error) => {
-      AppBase.notify('Not Admin', 'error');
-    });
-  }
+  state = {
+    formData: {},
+    fields: [
+      {
+        label: '用户名',
+        field: 'username',
+        required: true,
+        props: {
+          placeholder: '登录用户名'
+        }
+      },
+      {
+        label: '密码',
+        field: 'password',
+        required: true,
+        props: {
+          placeholder: '登录密码'
+        }
+      }
+    ]
+  };
 
   _onSubmit = (e) => {
-    const {form} = this.props;
     e.preventDefault();
-    form.validateFields((err, values) => {
-      if (!err) {
-        $route.push('/admin/users/index');
-        // this.signin(values);
-      }
-    });
+    console.log(this.formData);
   };
 
   render() {
-    const {getFieldDecorator, getFieldsError, getFieldError, isFieldTouched} = this.props.form;
-    // Only show error after a field is touched.
-    const usernameError = isFieldTouched('username') && getFieldError('username');
-    const passwordError = isFieldTouched('password') && getFieldError('password');
-
+    const [formLayout, _] = $app.formLayout([6, 18]);
+    const {fields} = this.state;
     return (
       <div className="login-wrapper">
         <ReactFullImage src={bgImg}/>
-        <Card title="Admin login" className="login-view">
+        <Card title="CS.WORK Admin Panel" className="shadow-5 login-view">
           <Form layout="vertical" onSubmit={this._onSubmit}>
-            <FormItem
-              validateStatus={usernameError ? 'error' : ''}
-              help={usernameError || ''}>
-              {
-                getFieldDecorator('username', {
-                  rules: [{required: true, message: 'Please input your username!'}],
-                })(<Input prefix={<Icon type="user" style={{fontSize: 13}}/>} placeholder="Username"/>)
-              }
-            </FormItem>
-            <FormItem
-              validateStatus={passwordError ? 'error' : ''}
-              help={passwordError || ''}>
-              {
-                getFieldDecorator('password', {
-                  rules: [{required: true, message: 'Please input your Password!'}],
-                })(<Input prefix={<Icon type="lock" style={{fontSize: 13}}/>} type="password" placeholder="Password"/>)
-              }
-            </FormItem>
-            <FormItem className="tr mt10">
-              <Button
-                size="large"
-                type="primary"
-                className="mr5"
-                htmlType="submit"
-              >
-                登录
-              </Button>
-              <Button size="large">取消</Button>
-            </FormItem>
+            {this.generateForm(fields, formLayout)}
+            <Button size="large" type="primary" className="wp-10" htmlType="submit">登录</Button>
           </Form>
         </Card>
       </div>
     );
   }
 
-});
+};

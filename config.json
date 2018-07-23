@@ -1,5 +1,5 @@
 {
-  "port": "4040",
+  "port": "8098",
   "proxy": {
     "/api": {
       "target": "http://120.27.13.225:80",
@@ -7,7 +7,6 @@
     }
   },
   "vendors": [
-    "antd",
     "next-js-core2",
     "next-react-redux",
     "classnames",

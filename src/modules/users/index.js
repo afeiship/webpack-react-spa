@@ -6,7 +6,6 @@ import {
   Link
 } from 'react-router-dom';
 
-import 'react-quill/dist/quill.snow.css';
 export default class extends React.Component {
 
   state = {

@@ -26,6 +26,7 @@ npm run start
 + [ ] deploy dev/test/prd with docker
 + [ ] .gz file for webpack
 + [ ] sass + react-css-module
++ [ ] react hmr remove `/User/xx/index.js` info
 
 ## some package shell:[MAC USER: use gnu-tar but not bsd-tar]
 ```shell

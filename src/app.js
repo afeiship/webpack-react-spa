@@ -11,8 +11,8 @@ import hotable from 'react-hmr-decorator';
 @hotable(module)
 export default class extends AppBase {
 
-  static initialState() {
-    const {login} = $store.local;
+  static initialState(inStore) {
+    const {login} = inStore.local;
     return {
       local: {
         login: login || null

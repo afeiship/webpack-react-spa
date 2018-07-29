@@ -4,6 +4,6 @@ services:
       image: nginx
       volumes:
         - ./conf.d:/etc/nginx/conf.d
-        - ../../dist:/www/react-spa
+        - ../../dist:/www/
       ports:
         - "9080:80"

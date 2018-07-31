@@ -38,10 +38,10 @@ docker kill a359c42986c6
 + [x] HtmlWebpack -> webpack favico.ico
 + [x] ant-design optmize
 + [x] react hmr
-+ [ ] deploy dev/test/prd with docker
-+ [ ] .gz file for webpack
-+ [ ] sass + react-css-module
-+ [ ] react hmr remove `/User/xx/index.js` info
+
+## todos:
++ [x] deploy dev/test/prd with docker
++ [x] react hmr remove `/User/xx/index.js` info (NODE_ENV=development/production)
 
 ## some package shell:[MAC USER: use gnu-tar but not bsd-tar]
 ```shell

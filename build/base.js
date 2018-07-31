@@ -33,6 +33,7 @@ export default (inEnv) => {
     performance: configs.performance(),
     plugins: nx.flatten(
       [
+        plugins.define({ mode }),
         plugins.moduleConcatenation(),
         plugins.singleHtml({libs}),
         plugins.extractText(),

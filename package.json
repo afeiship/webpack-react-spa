@@ -1,5 +1,5 @@
 {
-  "name": "webpack-react-ant",
+  "name": "webpack-react-spa",
   "version": "1.0.0",
   "description": "Webpack for ant design.",
   "main": "index.js",
@@ -7,14 +7,16 @@
     "clean": "rimraf dist",
     "dll": "webpack -p --env.type=dll --env.mode=production",
     "predev": "npm run clean && npm run dll",
+    "prebuild-development": "npm run clean && npm run dll",
+    "prebuild-production": "npm run clean && npm run dll",
     "dev": "webpack-dev-server  --env.type=local --env.mode=development",
-    "build-development": "npm run predev && webpack --env.mode=development",
-    "build-production": "npm run predev && webpack --env.mode=production",
+    "build-development": "webpack -p --env.mode=development",
+    "build-production": "webpack -p --env.mode=production",
     "start": "node express.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afeiship/webpack-react-ant.git"
+    "url": "git+https://github.com/afeiship/webpack-react-spa.git"
   },
   "keywords": [
     "webpack",
@@ -28,9 +30,9 @@
   "author": "afei",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/afeiship/webpack-react-ant/issues"
+    "url": "https://github.com/afeiship/webpack-react-spa/issues"
   },
-  "homepage": "https://github.com/afeiship/webpack-react-ant#readme",
+  "homepage": "https://github.com/afeiship/webpack-react-spa#readme",
   "dependencies": {
     "antd": "^3.7.0",
     "array-from": "^2.1.1",
@@ -61,7 +63,7 @@
   "devDependencies": {
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "webpack": "^4.6.0",
-    "webpack-app-kits": "afeiship/webpack-app-kits",
+    "webpack-app-kits": "github:afeiship/webpack-app-kits",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2"

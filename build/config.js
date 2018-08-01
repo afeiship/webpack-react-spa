@@ -21,7 +21,7 @@ module.exports = {
     }
   },
   development: {
-    "publicPath": "/",
+    "publicPath": "/app/",
     "libs": {
       "react": "//cdn.bootcss.com/react/16.4.0/umd/react.production.min.js",
       "react-dom": "//cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"

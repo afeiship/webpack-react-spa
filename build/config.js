@@ -7,6 +7,7 @@ module.exports = {
     }
   },
   vendors: [
+    "antd",
     "next-js-core2",
     "next-react-redux",
     "classnames",

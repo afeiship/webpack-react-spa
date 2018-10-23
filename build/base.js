@@ -4,11 +4,9 @@ import 'next-flatten';
 
 
 export default (inEnv) => {
-  const {NODE_ENV, type} = inEnv;
-  const mode = NODE_ENV;
+  const mode = process.env.NODE_ENV;
+  const type = inEnv ? inEnv.type : null;
   const {libs, publicPath} = config[type || mode];
-
-  console.log(mode,NODE_ENV, type);
 
   return {
     mode,

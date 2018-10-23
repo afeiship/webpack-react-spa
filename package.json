@@ -1,17 +1,17 @@
 {
   "name": "webpack-react-spa",
-  "version": "undefined",
+  "version": "1.0.0",
   "description": "Webpack for ant design.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "dll": "webpack -p --env.type=dll --env.NODE_ENV=production",
+    "dll": "cross-env NODE_ENV=production webpack -p --env.type=dll",
     "predev": "npm run clean && npm run dll",
     "prebuild-development": "npm run clean && npm run dll",
     "prebuild-production": "npm run clean && npm run dll",
-    "dev": "webpack-dev-server  --env.type=local --env.NODE_ENV=development",
-    "build-development": "webpack -p --env.NODE_ENV=development",
-    "build-production": "webpack -p --env.NODE_ENV=production",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build-test": "cross-env NODE_ENV=test webpack -p",
+    "build-production": "cross-env NODE_ENV=production webpack -p",
     "start": "node express.js"
   },
   "repository": {
@@ -61,6 +61,7 @@
     "webkit-sassui-transform-center": "github:afeiship/webkit-sassui-transform-center"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "webpack": "^4.6.0",
     "webpack-app-kits": "github:afeiship/webpack-app-kits",

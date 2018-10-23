@@ -1,17 +1,17 @@
 {
   "name": "webpack-react-spa",
-  "version": "1.0.0",
+  "version": "undefined",
   "description": "Webpack for ant design.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "dll": "webpack -p --env.type=dll --env.mode=production",
+    "dll": "webpack -p --env.type=dll --env.NODE_ENV=production",
     "predev": "npm run clean && npm run dll",
     "prebuild-development": "npm run clean && npm run dll",
     "prebuild-production": "npm run clean && npm run dll",
-    "dev": "webpack-dev-server  --env.type=local --env.mode=development",
-    "build-development": "webpack -p --env.mode=development",
-    "build-production": "webpack -p --env.mode=production",
+    "dev": "webpack-dev-server  --env.type=local --env.NODE_ENV=development",
+    "build-development": "webpack -p --env.NODE_ENV=development",
+    "build-production": "webpack -p --env.NODE_ENV=production",
     "start": "node express.js"
   },
   "repository": {

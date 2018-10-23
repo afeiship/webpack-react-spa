@@ -4,8 +4,11 @@ import 'next-flatten';
 
 
 export default (inEnv) => {
-  const {mode, type} = inEnv;
+  const {NODE_ENV, type} = inEnv;
+  const mode = NODE_ENV;
   const {libs, publicPath} = config[type || mode];
+
+  console.log(mode,NODE_ENV, type);
 
   return {
     mode,
@@ -33,8 +36,8 @@ export default (inEnv) => {
     performance: configs.performance(),
     plugins: nx.flatten(
       [
-        plugins.semver({ mode }),
-        plugins.define({ mode }),
+        plugins.semver({mode}),
+        plugins.define({mode}),
         plugins.moduleConcatenation(),
         plugins.singleHtml({libs}),
         plugins.extractText(),

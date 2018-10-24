@@ -66,7 +66,7 @@
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "webpack": "^4.6.0",
     "webpack-app-kits": "github:afeiship/webpack-app-kits",
-    "webpack-cli": "^2.0.10",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2"
   }

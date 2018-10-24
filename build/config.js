@@ -14,14 +14,14 @@ module.exports = {
     "react-router",
     "react-router-dom"
   ],
-  local: {
+  development: {
     "publicPath": "/",
     "libs": {
       "react": "/react/umd/react.development.js",
       "react-dom": "/react-dom/umd/react-dom.development.js"
     }
   },
-  development: {
+  test: {
     "publicPath": "/app/",
     "libs": {
       "react": "//cdn.bootcss.com/react/16.4.0/umd/react.production.min.js",

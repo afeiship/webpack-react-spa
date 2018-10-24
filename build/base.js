@@ -1,6 +1,10 @@
 import config from './config';
 import {loaders, plugins, configs, inputs, outputs, utils} from 'webpack-app-kits';
+
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 import 'next-flatten';
+
+
 
 
 export default (inEnv) => {
@@ -34,6 +38,7 @@ export default (inEnv) => {
     performance: configs.performance(),
     plugins: nx.flatten(
       [
+        // new CleanWebpackPlugin('dist'),
         plugins.semver({mode}),
         plugins.define({mode}),
         plugins.moduleConcatenation(),

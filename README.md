@@ -1,5 +1,5 @@
-# webpack-react-ant
-> Webpack for ant design.
+# webpack-react-spa
+> Webpack for spa project.
 
 ## build dist:
 <img src='./docs/optimize_build.png' width="394" />

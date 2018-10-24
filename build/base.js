@@ -6,9 +6,8 @@ import 'next-flatten';
 
 
 export default (inEnv) => {
-  const mode = process.env.NODE_ENV;
   const type = inEnv ? inEnv.type : null;
-  const {libs, publicPath} = config[type || mode];
+  const {libs, publicPath} = config[type || process.env.NODE_ENV];
 
   return {
     mode,
@@ -22,7 +21,7 @@ export default (inEnv) => {
       rules: nx.flatten(
         [
           loaders.babel(),
-          loaders.environment({mode}),
+          loaders.environment(),
           loaders.css(),
           loaders.sass(),
           loaders.mp34(),
@@ -36,13 +35,12 @@ export default (inEnv) => {
     performance: configs.performance(),
     plugins: nx.flatten(
       [
-        plugins.semver({mode}),
-        plugins.define({mode}),
+        plugins.semver(),
         plugins.moduleConcatenation(),
         plugins.singleHtml({libs}),
         plugins.extractText(),
         plugins.dllRefrence({publicPath}),
-        plugins.loaderOptions({mode}),
+        plugins.loaderOptions(),
         plugins.provide()
       ]
     )

@@ -1,4 +1,4 @@
-import {Card, Form, Icon, Input, Button} from 'antd';
+import {Card, Form, Icon, Input, Button, message} from 'antd';
 import AppBase, {$api, $app, $route} from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from 'images/bg.jpg';
@@ -31,6 +31,7 @@ export default class extends React.Component {
 
   _onSubmit = (e) => {
     e.preventDefault();
+    message.info('to dashboard.');
     console.log(this.formData);
   };
 
@@ -43,7 +44,7 @@ export default class extends React.Component {
         <Card title="Admin Panel" className="shadow-5 login-view">
           <Form layout="vertical" onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}
-            <Button size="large" type="primary" className="wp-10" htmlType="submit">登录</Button>
+            <Button htmlType={'summit'} size="large" type="primary" className="wp-10" htmlType="submit">登录</Button>
           </Form>
         </Card>
       </div>

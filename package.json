@@ -61,7 +61,6 @@
     "webkit-sassui-transform-center": "github:afeiship/webkit-sassui-transform-center"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "webpack": "^4.6.0",

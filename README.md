@@ -1,12 +1,9 @@
 # webpack-react-spa
 > Webpack for spa project.
 
-## build dist:
-<img src='./docs/optimize_build.png' width="394" />
-
 ## get-start:
 ```bash
-git clone https://github.com/afeiship/webpack-react-ant.git
+git clone https://github.com/afeiship/webpack-react-spa.git
 npm install 
 npm run build
 npm run start

@@ -3,11 +3,10 @@ import {loaders, plugins, configs, inputs, outputs, utils} from 'webpack-app-kit
 import 'next-flatten';
 
 
-
-
 export default (inEnv) => {
   const type = inEnv ? inEnv.type : null;
-  const {libs, publicPath} = config[type || process.env.NODE_ENV];
+  const mode = process.env.NODE_ENV;
+  const {libs, publicPath} = config[type || mode];
 
   return {
     mode,

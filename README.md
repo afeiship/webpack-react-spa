@@ -35,7 +35,7 @@ docker kill a359c42986c6
 + [x] HtmlWebpack -> webpack favico.ico
 + [x] ant-design optmize
 + [x] react hmr
-+ [ ] add `serviceworker` for app cache
++ [x] add `serviceworker` for app cache
 
 ## todos:
 + [x] deploy dev/test/prd with docker

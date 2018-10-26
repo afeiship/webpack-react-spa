@@ -1,5 +1,5 @@
 import {Card, Form, Icon, Input, Button, message} from 'antd';
-import AppBase, {$api, $app, $route} from '#';
+import AppBase, {$api, $form, $route} from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from 'images/bg.jpg';
 
@@ -36,7 +36,7 @@ export default class extends React.Component {
   };
 
   render() {
-    const [formLayout, _] = $app.formLayout([6, 18]);
+    const [formLayout, _] = $form.formLayout([6, 18]);
     const {fields} = this.state;
     return (
       <div className="login-wrapper">

@@ -36,6 +36,7 @@ docker kill a359c42986c6
 + [x] ant-design optmize
 + [x] react hmr
 + [x] add `serviceworker` for app cache
++ [ ] remove build warings
 
 ## todos:
 + [x] deploy dev/test/prd with docker

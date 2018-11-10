@@ -26,7 +26,10 @@ export default class extends AppBase {
     AppBase.$.memory = {
       history: this.root.history
     };
-    this.registerSw();
+
+    if(process.env.NODE_ENV === 'production'){
+      this.registerSw();
+    }
   }
 
   registerSw() {

@@ -7,27 +7,30 @@ import bgImg from 'images/bg.jpg';
 @mixin(['on-change', 'form'])
 export default class extends React.Component {
 
-  state = {
-    formData: {},
-    fields: [
-      {
-        label: '用户名',
-        field: 'username',
-        required: true,
-        props: {
-          placeholder: '登录用户名'
+  constructor(inProps) {
+    super(inProps);
+    this.state = {
+      formData: {},
+      fields: [
+        {
+          label: '用户名',
+          field: 'username',
+          required: true,
+          props: {
+            placeholder: '登录用户名'
+          }
+        },
+        {
+          label: '密码',
+          field: 'password',
+          required: true,
+          props: {
+            placeholder: '登录密码'
+          }
         }
-      },
-      {
-        label: '密码',
-        field: 'password',
-        required: true,
-        props: {
-          placeholder: '登录密码'
-        }
-      }
-    ]
-  };
+      ]
+    };
+  }
 
   _onSubmit = (e) => {
     e.preventDefault();

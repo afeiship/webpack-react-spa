@@ -37,8 +37,8 @@ module.exports = {
     libs: {
       antdCss: '//cdn.bootcss.com/antd/3.10.1/antd.min.css',
       spinkit: '//cdn.bootcss.com/spinkit/1.2.5/spinkit.min.css',
-      react: '/react/umd/react.development.js',
-      reactDom: '/react-dom/umd/react-dom.development.js'
+      react: '//cdn.bootcss.com/react/16.4.0/umd/react.production.min.js',
+      reactDom: '//cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js'
     }
   }
 };

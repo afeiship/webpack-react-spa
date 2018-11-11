@@ -35,8 +35,7 @@ export default (inEnv) => {
       plugins.extractText(),
       plugins.dllRefrence({ publicPath }),
       plugins.loaderOptions(),
-      plugins.provide(),
-      plugins.serviceWorker()
+      plugins.provide()
     ])
   };
 };

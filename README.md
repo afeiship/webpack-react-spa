@@ -40,6 +40,8 @@ docker kill a359c42986c6
 ## todos:
 + [x] deploy dev/test/prd with docker
 + [x] react hmr remove `/User/xx/index.js` info (NODE_ENV=development/production)
++ [ ] http when error
++ [ ] token/without token interface
 
 ## some package shell:[MAC USER: use gnu-tar but not bsd-tar]
 ```shell

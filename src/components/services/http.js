@@ -5,30 +5,27 @@ import AppBase from '#';
 const Http = nx.declare({
   extends: NxAxios,
   methods: {
-    getBearerToken: function () {
-      const {login} = AppBase.$.local;
+    getToken: function() {
+      const { login } = AppBase.$.local;
       if (login) {
         return `Bearer ${login.token}`;
       }
       return null;
     },
-    setRequestInterceptor: function () {
+    setTokenInterceptor: function() {
       this.axios.interceptors.request.use((config) => {
-        const bearerToken = this.getBearerToken();
-        bearerToken && nx.mix(config.headers.common, {Authorization: bearerToken});
+        const token = this.getToken();
+        token && nx.mix(config.headers.common, { Authorization: token });
         return config;
       });
     },
-    contentType: function () {
-      return 'application/json; charset=utf-8';
+    setRequestInterceptor: function() {
+      this.setTokenInterceptor();
     },
-    transformParam: function (inData) {
-      return JSON.stringify(inData);
-    },
-    toData: function (inResponse) {
+    toData: function(inResponse) {
       return inResponse.data;
     },
-    error: function (inError) {
+    error: function(inError) {
       console.log('error!');
       console.log(inError);
     }

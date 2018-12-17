@@ -7,11 +7,11 @@
     "clean": "rimraf dist",
     "dll": "cross-env NODE_ENV=production webpack -p --env.type=dll",
     "predev": "npm run clean && npm run dll",
-    "prebuild-development": "npm run clean && npm run dll",
-    "prebuild-production": "npm run clean && npm run dll",
+    "prebuild:development": "npm run clean && npm run dll",
+    "prebuild:production": "npm run clean && npm run dll",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
-    "build-test": "cross-env NODE_ENV=test webpack -p",
-    "build-production": "cross-env NODE_ENV=production webpack -p",
+    "build:test": "cross-env NODE_ENV=test webpack -p",
+    "build:production": "cross-env NODE_ENV=production webpack -p",
     "start": "node express.js"
   },
   "repository": {

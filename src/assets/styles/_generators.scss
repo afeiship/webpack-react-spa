@@ -1,5 +1,20 @@
 //generator basic items:
-@import "colors";
+$colors: (
+  f: #fff,
+  e: #eee,
+  0: #000,
+  3: #333,
+  6: #666,
+  8: #888,
+  9: #999,
+  f3: #f3f3f3,
+  e4: #e4e4e4,
+  be: #bebebe,
+  7d: #7d7d7d,
+  blue: #38a0f5,
+  orange: #ea5506,
+  gray: #7d7d7d
+);
 
 $margin-list: (2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 40, 50);
 $padding-list: (3, 5, 6, 8, 10, 14, 16, 20, 30, 50);
@@ -25,7 +40,7 @@ $width-list: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 @include generator-width-wp($width-list);
 @include generator-width-w1($width-list);
-@include generator-font-size($font-size-list, '.f');
+@include generator-font-size($font-size-list, ".f");
 @include generator-blank($blank-list);
 @include generator-border-radius($border-radius-list);
 @include generator-line-clamp($line-clamp-list);

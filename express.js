@@ -5,13 +5,13 @@ const sourceDir = 'dist';
 const compression = require('compression');
 const proxy = require('http-proxy-middleware');
 
-
 //OPEN GZIP
-app.use(compression({ level: 9 }));
+app.use(compression({ level: 6 }));
 app.use(express.static(sourceDir));
 
 app.use(
-  '/api', proxy({
+  '/api',
+  proxy({
     target: 'http://test.demo.com',
     changeOrigin: true
   })

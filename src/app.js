@@ -4,6 +4,11 @@ import { renderRoutes } from 'react-router-config';
 import hotable from 'react-hmr-decorator';
 import routes from './routes';
 
+/**
+ *
+ * new idea:
+ * @reduxBoot('root',{ prefix: 'spa-project '})
+ */
 @hotable(module)
 export default class extends AppBase {
   static initialState(inStore) {

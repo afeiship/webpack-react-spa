@@ -12,21 +12,14 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build:test": "cross-env NODE_ENV=test webpack -p",
     "build:production": "cross-env NODE_ENV=production webpack -p",
-    "start": "node express.js"
+    "start": "node express.js",
+    "lintfix": "node_modules/.bin/eslint --fix . --ext .js src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-spa.git"
   },
-  "keywords": [
-    "webpack",
-    "react",
-    "pc",
-    "antd",
-    "ant-design",
-    "site",
-    "website"
-  ],
+  "keywords": ["webpack", "react", "pc", "antd", "ant-design", "site", "website"],
   "author": "afei",
   "license": "MIT",
   "bugs": {

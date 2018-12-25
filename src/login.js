@@ -33,7 +33,6 @@ export default class extends React.Component {
   _onSubmit = (e) => {
     e.preventDefault();
     message.info('to dashboard.');
-    console.log(this.formData);
   };
 
   render() {

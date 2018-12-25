@@ -15,4 +15,5 @@ export const $date = require('next-date');
 
 /* ===components start=== */
 export const TestComp = require('views/test-comp').default;
+export const Loading = require('views/loading').default;
 /* ===components end=== */

@@ -26,7 +26,6 @@ export default class extends AppBase {
   }
 
   render() {
-    console.log(routes);
     return (
       <Router ref={(root) => (this.root = root)}>
         <Switch>{renderRoutes(routes)}</Switch>

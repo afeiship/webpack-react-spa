@@ -13,7 +13,7 @@ export default class extends React.Component {
     data: {}
   };
 
-  _onSubmit = (e) => {
+  _onSubmit = (e, b) => {
     e.preventDefault();
     const { onComplete } = this.props;
     this.props.form.validateFields((err, values) => {

@@ -22,7 +22,14 @@
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
     "react/display-name": 0,
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^[$_]" }]
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^[$_]",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^[$_]"
+      }
+    ]
   },
   "settings": {
     "react": { "version": "16.4.1" }

@@ -1,6 +1,6 @@
 import UserForm from './_form';
-import {Form, Icon, Input, Button, Modal} from 'antd';
-import AppBase, {$api, $store} from '#';
+import { Form, Icon, Input, Button, Modal } from 'antd';
+import AppBase, { $api, $store } from '#';
 
 export default Form.create()(
   class extends UserForm {
@@ -9,7 +9,7 @@ export default Form.create()(
 
     onSubmit(inValue) {
       return new Promise((resolve, reject) => {
-        $api.user_create(inValue).then(resp => {
+        $api.user_create(inValue).then((resp) => {
           AppBase.command('modal.user', false);
           resolve(resp);
         });

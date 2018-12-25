@@ -1,15 +1,10 @@
-import AppBase, {$api, $date, $store} from '#';
-import {Table, Icon, Card, Button, Modal} from 'antd';
-import {
-  HashRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import AppBase, { $api, $date, $store } from '#';
+import { Table, Icon, Card, Button, Modal } from 'antd';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 export default class extends React.Component {
-
   state = {
-    text:'my etst',
+    text: 'my etst',
     columns: [
       {
         title: '手机号码',
@@ -32,7 +27,7 @@ export default class extends React.Component {
         dataIndex: 'date_joined',
         key: 'date_joined',
         render: (text, record) => {
-          return <span>{this._toDefaultDateTime(record.date_joined)}</span>
+          return <span>{this._toDefaultDateTime(record.date_joined)}</span>;
         }
       },
       {
@@ -40,7 +35,7 @@ export default class extends React.Component {
         dataIndex: 'last_login',
         key: 'last_login',
         render: (text, record) => {
-          return <span>{this._toDefaultDateTime(record.last_login)}</span>
+          return <span>{this._toDefaultDateTime(record.last_login)}</span>;
         }
       },
       {
@@ -53,14 +48,17 @@ export default class extends React.Component {
         dataIndex: 'consumptionLastTime',
         key: 'consumptionLastTime',
         render: (text, record) => {
-          return <span>{this._toDefaultDateTime(record.consumptionLastTime)}</span>
+          return <span>{this._toDefaultDateTime(record.consumptionLastTime)}</span>;
         }
       },
       {
         title: 'Action',
         key: 'action',
-        render: (text, record) => <Link to={`/admin/users/show/${record.uid}`}
-                                        onClick={this._toDetail.bind(this, record)}>查看</Link>,
+        render: (text, record) => (
+          <Link to={`/admin/users/show/${record.uid}`} onClick={this._toDetail.bind(this, record)}>
+            查看
+          </Link>
+        )
       }
     ],
     data: [],
@@ -69,8 +67,8 @@ export default class extends React.Component {
   };
 
   load(inData) {
-    $api.user_index(inData).then(({data, filter, total}) => {
-      this.setState({data, total});
+    $api.user_index(inData).then(({ data, filter, total }) => {
+      this.setState({ data, total });
     });
   }
 
@@ -79,7 +77,7 @@ export default class extends React.Component {
   }
 
   _toDefaultDateTime(inValue) {
-    return inValue ? $date.format( new Date(inValue) ) : '-';
+    return inValue ? $date.format(new Date(inValue)) : '-';
   }
 
   _onAdd = (inEvent) => {
@@ -87,22 +85,22 @@ export default class extends React.Component {
   };
 
   _onPageChange = (current_page) => {
-    this.setState({current_page}, () => {
-      this.load({current_page});
+    this.setState({ current_page }, () => {
+      this.load({ current_page });
     });
   };
 
   _toDetail = (inEvent) => {
     console.log(inEvent);
-    AppBase.$.session = {user: inEvent};
+    AppBase.$.session = { user: inEvent };
   };
 
-  _handleChange = e =>{
+  _handleChange = (e) => {
     console.log(e);
   };
 
   render() {
-    const {columns, current_page, total, data}  = this.state;
+    const { columns, current_page, total, data } = this.state;
     return (
       <Card title={`用户管理(${total})`} bordered={false}>
         USER MANAGER!

@@ -4,7 +4,7 @@ import httpCurdConfig from 'http-rest-config';
 
 export default nx.declare({
   statics: {
-    init () {
+    init() {
       httpCurdConfig(this, Http, Config.APIS);
     }
   }

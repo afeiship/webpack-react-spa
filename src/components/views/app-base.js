@@ -1,4 +1,3 @@
-import {ReduxAppBase} from 'next-react-redux';
+import { ReduxAppBase } from 'next-react-redux';
 
-export default class extends ReduxAppBase {
-}
+export default class extends ReduxAppBase {}

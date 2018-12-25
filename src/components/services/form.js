@@ -1,4 +1,4 @@
-import { $config, $route } from "#";
+import { $config, $route } from '#';
 
 export default class {
   static formLayout(inArray) {

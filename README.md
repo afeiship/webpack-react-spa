@@ -36,6 +36,9 @@ docker kill a359c42986c6
 + [x] react hmr
 + [x] add `serviceworker` for app cache
 + [ ] remove build warings
++ [ ] use eslint
++ [ ] use router config
++ [ ] add dynamic import
 
 ## todos:
 + [x] deploy dev/test/prd with docker
@@ -55,3 +58,6 @@ tar zcf my-project-name.tgz dist/ --transform s/dist/my-project-name/
 + https://github.com/gajus/react-css-modules 
 + https://github.com/ant-design/ant-design/issues/5320 
 + https://www.npmjs.com/package/serviceworker-webpack-plugin
++ https://egoist.moe/2017/12/11/write-better-code-with-eslint-and-prettier/
++ https://juejin.im/post/58ff0de18d6d810058a69a26
+

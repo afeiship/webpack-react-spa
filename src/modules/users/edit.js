@@ -1,6 +1,6 @@
 import UserForm from './_form';
-import {Form, Icon, Input, Button, Modal} from 'antd';
-import AppBase, {$api, $config, $http, $store} from '#';
+import { Form, Icon, Input, Button, Modal } from 'antd';
+import AppBase, { $api, $config, $http, $store } from '#';
 
 export default Form.create()(
   class extends UserForm {
@@ -13,7 +13,7 @@ export default Form.create()(
         const id = data.id;
         delete data.id;
         delete data.password;
-        $http.post(`${$config.APIS.baseUrl}/auth/admin/user/${id}`, data).then(resp => {
+        $http.post(`${$config.APIS.baseUrl}/auth/admin/user/${id}`, data).then((resp) => {
           AppBase.command('modal.user', false);
           resolve(resp);
         });

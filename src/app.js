@@ -1,5 +1,5 @@
 import AppBase, { $api, $config, $store } from '#';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import hotable from 'react-hmr-decorator';
 import routes from './routes';
@@ -27,10 +27,9 @@ export default class extends AppBase {
 
   render() {
     console.log(routes);
-
     return (
       <Router ref={(root) => (this.root = root)}>
-        <section className="route-wrapper">{renderRoutes(routes)}</section>
+        <Switch>{renderRoutes(routes)}</Switch>
       </Router>
     );
   }

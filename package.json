@@ -61,7 +61,10 @@
     "webkit-sassui-transform-center": "github:afeiship/webkit-sassui-transform-center"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
+    "eslint": "^5.11.0",
+    "eslint-plugin-react": "^7.11.1",
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "webpack": "^4.6.0",
     "webpack-app-kits": "github:afeiship/webpack-app-kits",

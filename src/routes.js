@@ -1,20 +1,13 @@
-import Loadable from 'react-loadable';
-import { Loading } from '#';
+import { $loadable } from '#';
 
 export default [
   {
     path: '/',
     exact: true,
-    component: Loadable({
-      loader: () => import('./login'),
-      loading: Loading
-    })
+    component: $loadable.load(() => import('./login'))
   },
   {
     path: '/admin',
-    component: Loadable({
-      loader: () => import('./admin'),
-      loading: Loading
-    })
+    component: $loadable.load(() => import('./admin'))
   }
 ];

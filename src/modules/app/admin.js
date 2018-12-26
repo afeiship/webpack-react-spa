@@ -1,8 +1,8 @@
 import { Layout, Menu, Icon } from 'antd';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-import UserIndex from './modules/users/index';
-import OrderIndex from './modules/orders/index';
+import UserIndex from '@/modules/users/index';
+import OrderIndex from '@/modules/orders/index';
 const { Header, Content, Footer, Sider } = Layout;
 
 export default class extends React.Component {

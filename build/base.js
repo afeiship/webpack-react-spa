@@ -13,7 +13,10 @@ export default (inEnv) => {
     output: outputs.spa({
       publicPath
     }),
-    resolve: { alias: configs.alias(), extensions: configs.extensions() },
+    resolve: {
+      alias: configs.alias(),
+      extensions: configs.extensions()
+    },
     module: {
       rules: nx.flatten([
         loaders.babel(),

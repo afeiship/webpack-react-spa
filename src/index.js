@@ -6,7 +6,7 @@ import hotable from 'react-hmr-decorator';
 import routes from './routes';
 import 'assets/styles/index.scss';
 
-@appRender('root', { prefix: 'react-spax' })
+@appRender('root', { loadable: true, prefix: 'react-spa' })
 @hotable(module)
 export default class extends AppBase {
   static initialState(inStore) {

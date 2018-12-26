@@ -1,7 +1,7 @@
 import { Card, Form, Icon, Input, Button, message } from 'antd';
 import AppBase, { $api, $form, $route } from '#';
 import ReactFullImage from 'react-full-image';
-import bgImg from 'images/bg.jpg';
+import bgImg from '@/assets/images/bg.jpg';
 
 @mixin(['on-change', 'form'])
 export default class extends React.Component {

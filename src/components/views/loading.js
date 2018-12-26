@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export default class extends Component {
   render() {
     const { isLoading, error } = this.props;
-    // console.log(this.props);
+    console.log(this.props);
     if (isLoading) {
       return <div className="f20 webkit-sassui-transform-center-xy">Loading...</div>;
     } else if (error) {

@@ -33,13 +33,12 @@ export default class extends React.Component {
   _onSubmit = (e) => {
     e.preventDefault();
     message.info('to dashboard.');
+    AppBase.emit('app:login', { auth: true });
   };
 
   componentDidMount() {
-    console.log('attach!!!!');
-    global.ab = AppBase;
-    AppBase.on('app:test', (inData) => {
-      console.log('show me you datas:', inData);
+    AppBase.on('test-comp:test', (inData) => {
+      console.log('show me you data:', inData);
     });
   }
 

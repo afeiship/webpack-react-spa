@@ -4,7 +4,7 @@ import AppBase from '#';
 
 export default class extends Component {
   _click1 = (_) => {
-    AppBase.emit('app:test', {
+    AppBase.emit('test-comp:test', {
       data1: 1234322
     });
   };

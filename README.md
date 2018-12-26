@@ -3,12 +3,14 @@
 > Webpack for spa project.
 
 ## get-started:
-
+1. install & run
 ```bash
 git clone https://github.com/afeiship/webpack-react-spa.git
 npm install
 npm run dev
 ```
+2. BUG(Attention IN DEV MODE)
+> You must change the code trigger loadable/hmr work.:(
 
 ## deploy:
 
@@ -65,9 +67,3 @@ tar zcf my-project-name.tgz dist/ --transform s/dist/my-project-name/
 - https://www.npmjs.com/package/serviceworker-webpack-plugin
 - https://egoist.moe/2017/12/11/write-better-code-with-eslint-and-prettier/
 - https://juejin.im/post/58ff0de18d6d810058a69a26
-
-## eslint test fix:
-
-```bash
-./node_modules/.bin/eslint --fix src/login.js
-```

@@ -10,7 +10,10 @@ npm install
 npm run dev
 ```
 2. BUG(Attention IN DEV MODE)
-> You must change the code trigger loadable/hmr work.:(
+  - You must change the code,
+  - then refresh main page 
+  - ok, loadable + hmr work.
+  - :(
 
 ## deploy:
 

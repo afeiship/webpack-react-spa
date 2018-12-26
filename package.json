@@ -43,7 +43,7 @@
     "mixin-decorator": "github:afeiship/mixin-decorator",
     "next-axios": "github:afeiship/next-axios",
     "next-date": "github:afeiship/next-date",
-    "next-js-core2": "github:afeiship/next-js-core2#v1.3.13",
+    "next-js-core2": "github:afeiship/next-js-core2",
     "next-react-redux": "github:afeiship/next-react-redux",
     "next-store": "github:afeiship/next-store",
     "react": "^16.4.1",

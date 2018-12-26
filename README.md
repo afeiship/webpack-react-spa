@@ -3,17 +3,11 @@
 > Webpack for spa project.
 
 ## get-started:
-1. install & run
 ```bash
 git clone https://github.com/afeiship/webpack-react-spa.git
 npm install
 npm run dev
 ```
-2. BUG(Attention IN DEV MODE)
-  - You must change the code,
-  - then refresh main page 
-  - ok, loadable + hmr work.
-  - :(
 
 ## deploy:
 
@@ -45,7 +39,7 @@ docker kill a359c42986c6
 - [x] add `serviceworker` for app cache
 - [x] use eslint + prettier
 - [x] use router config
-- [x] add dynamic import + react-loadable
+- [x] add dynamic import + react-imported-component
 
 ## todos:
 

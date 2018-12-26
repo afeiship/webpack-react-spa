@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
+import Button from 'antd/es/button/button';
+import AppBase from '#';
 
 export default class extends Component {
+  _click1 = (_) => {
+    AppBase.emit('app:test', {
+      data1: 1234322
+    });
+  };
+
   render() {
-    return <section className="test-comp">{this.props.children}</section>;
+    const { children } = this.props;
+    return (
+      <section className="test-comp">
+        <Button onClick={this._click1}>Test EventBus</Button>
+        {children}
+      </section>
+    );
   }
 }

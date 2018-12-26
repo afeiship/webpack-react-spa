@@ -1,5 +1,5 @@
 import { Card, Form, Icon, Input, Button, message } from 'antd';
-import AppBase, { $api, $form, $route } from '#';
+import AppBase, { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 
@@ -35,21 +35,26 @@ export default class extends React.Component {
     message.info('to dashboard.');
   };
 
+  componentDidMount() {
+    console.log('attach!!!!');
+    global.ab = AppBase;
+    AppBase.on('app:test', (inData) => {
+      console.log('show me you datas:', inData);
+    });
+  }
+
   render() {
     const [formLayout, _] = $form.formLayout([6, 18]);
     const { fields } = this.state;
     return (
       <div className="login-wrapper">
+        <TestComp />
         <ReactFullImage src={bgImg} />
+        <TestComp />
         <Card title="Admin Panel" className="shadow-5 login-view">
           <Form layout="vertical" onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}
-            <Button
-              htmlType={'summit'}
-              size="large"
-              type="primary"
-              className="wp-10"
-              htmlType="submit">
+            <Button size="large" type="primary" className="wp-10" htmlType="submit">
               登录_FEI
             </Button>
           </Form>

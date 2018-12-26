@@ -29,7 +29,7 @@ export default class extends AppBase {
   }
 
   eventBus(inName, inData) {
-    console.log('*, I am --- global event bus center:->', inName, inData);
+    console.log('*, I am - global event bus center:->', inName, inData);
   }
 
   render() {

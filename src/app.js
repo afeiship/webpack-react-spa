@@ -1,11 +1,9 @@
 import AppBase, { $api, $config, $store } from '#';
 import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-// import { appRender } from 'next-react-redux';
 import hotable from 'react-hmr-decorator';
 import routes from './routes';
 
-// @appRender('root', { prefix: 'react-spa' })
 @hotable(module)
 export default class extends AppBase {
   static initialState(inStore) {

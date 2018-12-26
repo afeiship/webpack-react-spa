@@ -17,6 +17,8 @@ react-hot-loader.development.js:285 React-hot-loader: Detected AppContainer unmo
 Did you use "hot(AppBase.0.03292455545521844)" and "ReactDOM.render()" in the same file?
 "hot(AppBase.0.03292455545521844)" shall only be used as export.
 Please refer to "Getting Started" (https://github.com/gaearon/react-hot-loader/).
+
+https://stackoverflow.com/questions/42351104/webpack-disable-hmr-for-single-file
 */
 
 @appRender('root', { prefix: 'fei-test1' })

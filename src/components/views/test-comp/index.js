@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'antd/es/button/button';
+import './index.scss';
 import AppBase from '#';
 
 export default class extends Component {
@@ -14,6 +15,7 @@ export default class extends Component {
     return (
       <section className="test-comp">
         <Button onClick={this._click1}>Test EventBus</Button>
+        <span>test tex1t</span>
         {children}
       </section>
     );

@@ -23,6 +23,7 @@
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
     "react/display-name": 0,
+    "react/prop-types": "warn",
     "no-unused-vars": [
       "error",
       {

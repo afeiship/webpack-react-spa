@@ -1,3 +1,1 @@
-import AppBase from '#';
-
-export default require('react-mixin-on-change').default(AppBase);
+export default require('react-mixin-on-change').default(nx.$app);

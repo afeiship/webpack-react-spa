@@ -1,4 +1,4 @@
-import AppBase, { $api, $date, $store } from '#';
+import { $api, $date, $store } from '#';
 import { Table, Icon, Card, Button, Modal } from 'antd';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -81,7 +81,6 @@ export default class extends React.Component {
   }
 
   _onAdd = (inEvent) => {
-    AppBase.command('modal.user', true);
   };
 
   _onPageChange = (current_page) => {
@@ -92,7 +91,7 @@ export default class extends React.Component {
 
   _toDetail = (inEvent) => {
     console.log(inEvent);
-    AppBase.$.session = { user: inEvent };
+    nx.$session = { user: inEvent };
   };
 
   _handleChange = (e) => {

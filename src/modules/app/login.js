@@ -1,5 +1,5 @@
 import { Card, Form, Icon, Input, Button, message } from 'antd';
-import AppBase, { $api, $form, $route, TestComp } from '#';
+import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 
@@ -33,11 +33,11 @@ export default class extends React.Component {
   _onSubmit = (e) => {
     e.preventDefault();
     message.info('to dashboard.');
-    AppBase.emit('app:login', { auth: true });
+    nx.$app.emit('app:login', { auth: true });
   };
 
   componentDidMount() {
-    AppBase.on('test-comp:test', (inData) => {
+    nx.$app.on('test-comp:test', (inData) => {
       console.log('show me you data:', inData);
     });
   }

@@ -1,4 +1,4 @@
-import AppBase, { $api, $store } from '#';
+import { $api, $store } from '#';
 import { Form, Icon, Input, Button, Modal, Radio } from 'antd';
 const FormItem = Form.Item;
 
@@ -26,7 +26,6 @@ export default class extends React.Component {
   };
 
   _onCancel = (inEvent) => {
-    AppBase.command('modal.user', false);
   };
 
   componentDidMount() {
@@ -37,7 +36,7 @@ export default class extends React.Component {
   render() {
     const { data } = this.props;
     const { getFieldDecorator, setFields } = this.props.form;
-    const { modalUser } = AppBase.$.memory;
+    const { modalUser } = nx.$memory;
 
     return (
       <Modal footer={null} title={this.title} onCancel={this._onCancel} visible={modalUser}>

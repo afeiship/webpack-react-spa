@@ -1,12 +1,11 @@
 import nx from 'next-js-core2';
 import NxAxios from 'next-axios';
-import AppBase from '#';
 
 const Http = nx.declare({
   extends: NxAxios,
   methods: {
     getToken: function() {
-      const { login } = AppBase.$.local;
+      const { login } = nx.$local;
       if (login) {
         return `Bearer ${login.token}`;
       }

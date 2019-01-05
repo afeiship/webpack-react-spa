@@ -1,8 +1,6 @@
-import AppBase from '#';
-
 export default class {
   static push(inUrl, inData) {
-    const { history } = AppBase.$.memory;
+    const { history } = nx.$memory;
     history &&
       history.push({
         pathname: inUrl,
@@ -11,7 +9,7 @@ export default class {
   }
 
   static replace(inUrl, inData) {
-    const { history } = AppBase.$.memory;
+    const { history } = nx.$memory;
     history &&
       history.replace({
         pathname: inUrl,
@@ -20,7 +18,7 @@ export default class {
   }
 
   static back() {
-    const { history } = AppBase.$.memory;
+    const { history } = nx.$memory;
     history && history.goBack();
   }
 }

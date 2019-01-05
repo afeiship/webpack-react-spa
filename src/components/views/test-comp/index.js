@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Button from 'antd/es/button/button';
 import './index.scss';
-import AppBase from '#';
 
 export default class extends Component {
   _click1 = (_) => {
-    AppBase.emit('test-comp:test', {
+    nx.$app.emit('test-comp:test', {
       data1: 1234322
     });
   };

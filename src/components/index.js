@@ -1,7 +1,3 @@
-/* ===default start=== */
-export default require('views/app-base').default;
-/* ===default start=== */
-
 /* ===services start=== */
 export const $api = require('services/api').default;
 export const $config = require('services/config').default;

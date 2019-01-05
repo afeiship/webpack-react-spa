@@ -54,7 +54,7 @@ export default class extends React.Component {
           <Form layout="vertical" onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}
             <Button size="large" type="primary" className="wp-10" htmlType="submit">
-              登录231
+              登录
             </Button>
           </Form>
         </Card>

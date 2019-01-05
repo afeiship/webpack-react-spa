@@ -1,4 +1,4 @@
-import AppBase, { $api, $config, $store, $api } from '#';
+import AppBase, { $api, $config, $store } from '#';
 import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import hotable from 'react-hmr-decorator';

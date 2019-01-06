@@ -39,8 +39,13 @@ export default class extends React.Component {
 
   _onClick1 = () => {
     nx.$memory = {
-      'users.test1.test0.item1': Math.random()
+      'users.test1.test.item1': Math.random()
     };
+    const { users } = nx.$memory;
+    console.log(
+      'paths: users.test1.test.item1, value is:',
+      users.test1.test.item1
+    );
   };
 
   _onClick2 = () => {
@@ -68,8 +73,12 @@ export default class extends React.Component {
         <Card title="Admin Panel" className="shadow-5 login-view">
           <Form layout="vertical" onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}
-            <Button size="large" type="primary" className="wp-10" htmlType="submit">
-              登录
+            <Button
+              size="large"
+              type="primary"
+              className="wp-10"
+              htmlType="submit">
+              登录1
             </Button>
           </Form>
         </Card>

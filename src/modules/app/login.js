@@ -32,7 +32,7 @@ export default class extends React.Component {
 
   _onSubmit = (e) => {
     e.preventDefault();
-    message.info('to dashboard.');
+    message.info('to sdashboard.');
     console.log(this.state.formData);
     nx.$app.emit('app:login', { auth: true });
   };

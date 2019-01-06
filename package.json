@@ -4,6 +4,7 @@
   "description": "Webpack for ant design.",
   "main": "index.js",
   "scripts": {
+    "upgrade": "./deploy/upgrade.sh",
     "clean": "rimraf dist",
     "dll": "cross-env NODE_ENV=production webpack -p --env.type=dll",
     "predev": "npm run clean && npm run dll",

@@ -33,7 +33,20 @@ export default class extends React.Component {
   _onSubmit = (e) => {
     e.preventDefault();
     message.info('to dashboard.');
+    console.log(this.state.formData);
     nx.$app.emit('app:login', { auth: true });
+  };
+
+  _onClick1 = () => {
+    nx.$memory = {
+      'users.test1.test0.item1': Math.random()
+    };
+  };
+
+  _onClick2 = () => {
+    nx.$local = {
+      'users.test2': Math.random()
+    };
   };
 
   componentDidMount() {
@@ -50,6 +63,8 @@ export default class extends React.Component {
         <TestComp />
         <ReactFullImage src={bgImg} />
         <TestComp />
+        <Button onClick={this._onClick1}>Set by path(Memory)</Button>
+        <Button onClick={this._onClick2}>Set by path(Local)</Button>
         <Card title="Admin Panel" className="shadow-5 login-view">
           <Form layout="vertical" onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}

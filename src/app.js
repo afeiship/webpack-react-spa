@@ -13,10 +13,14 @@ export default class extends ReduxAppBase {
       local: {
         login: login || null
       },
+      session: {
+        testSs: 'fei'
+      },
       memory: {
         modalUser: false,
         modalUserQuery: false,
-        orders: {}
+        orders: {},
+        users: {}
       }
     };
   }
@@ -28,7 +32,7 @@ export default class extends ReduxAppBase {
   }
 
   eventBus(inName, inData) {
-    console.log('*, I asm - global event bus center:->', inName, inData);
+    console.log('*, I am - global event bus center:->', inName, inData);
   }
 
   render() {

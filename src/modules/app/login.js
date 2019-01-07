@@ -55,8 +55,10 @@ export default class extends React.Component {
   };
 
   componentDidMount() {
+    const { loading } = nx.$session;
+    console.log(loading);
     nx.$app.on('test-comp:test', (inData) => {
-      console.log('show me you data:', inData);
+      console.log('show 1 me you data:', inData);
     });
   }
 
@@ -78,7 +80,7 @@ export default class extends React.Component {
               type="primary"
               className="wp-10"
               htmlType="submit">
-              登录1
+              登录
             </Button>
           </Form>
         </Card>

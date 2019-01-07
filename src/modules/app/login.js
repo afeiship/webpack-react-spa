@@ -32,9 +32,10 @@ export default class extends React.Component {
 
   _onSubmit = (e) => {
     e.preventDefault();
-    message.info('to sdashboard.');
+    message.info('to users index.');
     console.log(this.state.formData);
     nx.$app.emit('app:login', { auth: true });
+    $route.replace('/admin/users/index');
   };
 
   _onClick1 = () => {

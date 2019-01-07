@@ -48,14 +48,18 @@ export default class extends React.Component {
         dataIndex: 'consumptionLastTime',
         key: 'consumptionLastTime',
         render: (text, record) => {
-          return <span>{this._toDefaultDateTime(record.consumptionLastTime)}</span>;
+          return (
+            <span>{this._toDefaultDateTime(record.consumptionLastTime)}</span>
+          );
         }
       },
       {
         title: 'Action',
         key: 'action',
         render: (text, record) => (
-          <Link to={`/admin/users/show/${record.uid}`} onClick={this._toDetail.bind(this, record)}>
+          <Link
+            to={`/admin/users/show/${record.uid}`}
+            onClick={this._toDetail.bind(this, record)}>
             查看
           </Link>
         )
@@ -80,8 +84,7 @@ export default class extends React.Component {
     return inValue ? $date.format(new Date(inValue)) : '-';
   }
 
-  _onAdd = (inEvent) => {
-  };
+  _onAdd = (inEvent) => {};
 
   _onPageChange = (current_page) => {
     this.setState({ current_page }, () => {
@@ -100,6 +103,7 @@ export default class extends React.Component {
 
   render() {
     const { columns, current_page, total, data } = this.state;
+    console.log('user index loaded');
     return (
       <Card title={`用户管理(${total})`} bordered={false}>
         USER MANAGER!

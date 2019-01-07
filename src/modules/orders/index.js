@@ -1,5 +1,16 @@
 import { $api, $store, $app, $config } from '#';
-import { Table, Icon, Input, Card, Row, Col, Button, Menu, Dropdown, Select } from 'antd';
+import {
+  Table,
+  Icon,
+  Input,
+  Card,
+  Row,
+  Col,
+  Button,
+  Menu,
+  Dropdown,
+  Select
+} from 'antd';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 const Option = Select.Option;
@@ -16,9 +27,11 @@ export default class extends React.Component {
 
   load(inData) {
     const { filters } = this.state;
-    $api.order_index(nx.mix({ pageSize: this.state.pageSize }, filters, inData)).then((resp) => {
-      this.setState(resp);
-    });
+    $api
+      .order_index(nx.mix({ pageSize: this.state.pageSize }, filters, inData))
+      .then((resp) => {
+        this.setState(resp);
+      });
   }
 
   componentDidMount() {
@@ -168,6 +181,7 @@ export default class extends React.Component {
       }
     ];
 
+    console.log('orders index loaded');
     return (
       <Card title={`订单（${total}）`} bordered={false}>
         <Table

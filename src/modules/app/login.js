@@ -2,30 +2,15 @@ import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 
-@mixin(['on-change', 'form'])
+@mixin(['on-change'])
 export default class extends React.Component {
   constructor(inProps) {
     super(inProps);
     this.state = {
-      formData: {},
-      fields: [
-        {
-          label: '用户名',
-          field: 'username',
-          required: true,
-          props: {
-            placeholder: '登录用户名'
-          }
-        },
-        {
-          label: '密码',
-          field: 'password',
-          required: true,
-          props: {
-            placeholder: '登录密码'
-          }
-        }
-      ]
+      formData: {
+        username: '',
+        password: ''
+      }
     };
   }
 
@@ -33,7 +18,7 @@ export default class extends React.Component {
     e.preventDefault();
     console.info('to users index.', this.state.formData);
     nx.$app.emit('app:login', { auth: true });
-    $route.replace('/admin/orders/index');
+    $route.push('/admin/orders/index');
   };
 
   _onClick1 = () => {
@@ -62,8 +47,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const [formLayout, _] = $form.formLayout([6, 18]);
-    const { fields } = this.state;
+    const { formData } = this.state;
     return (
       <div className="login-wrapper">
         <TestComp />
@@ -71,9 +55,24 @@ export default class extends React.Component {
         <TestComp />
         <button onClick={this._onClick1}>Set by path(Memory)</button>
         <button onClick={this._onClick2}>Set by path(Local)</button>
-        <div className="shadow-5 login-view">
+        <div className="p20 bg-f shadow-5 login-view">
           <form onSubmit={this._onSubmit}>
-            {this.generateForm(fields, formLayout)}
+            <label className="db p10">
+              <strong>用户名</strong>
+              <input
+                type="text"
+                value={formData.username}
+                onChange={this.onChangeToState.bind(this, 'formData.username')}
+              />
+            </label>
+            <label className="db p10">
+              <strong>密码</strong>
+              <input
+                type="text"
+                value={formData.password}
+                onChange={this.onChangeToState.bind(this, 'formData.password')}
+              />
+            </label>
             <button className="wp-10" type="submit">
               登录
             </button>

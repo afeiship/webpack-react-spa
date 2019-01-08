@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'antd/es/button/button';
 import './index.scss';
 
 export default class extends Component {
@@ -13,7 +12,7 @@ export default class extends Component {
     const { children } = this.props;
     return (
       <section className="test-comp">
-        <Button onClick={this._click1}>Test EventBus</Button>
+        <button onClick={this._click1}>Test EventBus</button>
         <span>test tex1t</span>
         {children}
       </section>

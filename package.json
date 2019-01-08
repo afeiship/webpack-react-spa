@@ -71,7 +71,6 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "next-flatten": "github:afeiship/next-flatten",
     "prettier": "^1.15.3",
     "react-hmr-decorator": "afeiship/react-hmr-decorator",

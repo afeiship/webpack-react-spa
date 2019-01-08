@@ -1,4 +1,3 @@
-import { Card, Form, Icon, Input, Button, message } from 'antd';
 import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
@@ -32,10 +31,9 @@ export default class extends React.Component {
 
   _onSubmit = (e) => {
     e.preventDefault();
-    message.info('to users index.');
-    console.log(this.state.formData);
+    console.info('to users index.', this.state.formData);
     nx.$app.emit('app:login', { auth: true });
-    $route.replace('/admin/users/index');
+    $route.replace('/admin/orders/index');
   };
 
   _onClick1 = () => {
@@ -71,20 +69,16 @@ export default class extends React.Component {
         <TestComp />
         <ReactFullImage src={bgImg} />
         <TestComp />
-        <Button onClick={this._onClick1}>Set by path(Memory)</Button>
-        <Button onClick={this._onClick2}>Set by path(Local)</Button>
-        <Card title="Admin Panel" className="shadow-5 login-view">
-          <Form layout="vertical" onSubmit={this._onSubmit}>
+        <button onClick={this._onClick1}>Set by path(Memory)</button>
+        <button onClick={this._onClick2}>Set by path(Local)</button>
+        <div className="shadow-5 login-view">
+          <form onSubmit={this._onSubmit}>
             {this.generateForm(fields, formLayout)}
-            <Button
-              size="large"
-              type="primary"
-              className="wp-10"
-              htmlType="submit">
+            <button className="wp-10" type="submit">
               登录
-            </Button>
-          </Form>
-        </Card>
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

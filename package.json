@@ -25,7 +25,6 @@
     "webpack",
     "react",
     "pc",
-    "antd",
     "ant-design",
     "site",
     "website"
@@ -37,7 +36,6 @@
   },
   "homepage": "https://github.com/afeiship/webpack-react-spa#readme",
   "dependencies": {
-    "antd": "^3.7.0",
     "array-from": "^2.1.1",
     "classnames": "^2.2.5",
     "http-rest-config": "github:afeiship/http-rest-config",

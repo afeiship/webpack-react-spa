@@ -18,7 +18,9 @@ export default class extends React.Component {
     e.preventDefault();
     console.info('to users index.', this.state.formData);
     nx.$app.emit('app:login', { auth: true });
-    $route.push('/admin/orders/index');
+    $route.push('/admin/orders/index', {
+      par: 1
+    });
   };
 
   _onClick1 = () => {

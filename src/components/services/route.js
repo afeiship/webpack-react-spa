@@ -17,6 +17,10 @@ export default class {
       });
   }
 
+  static to(inKey, inData) {
+    this.push(`/modules/${inKey}`, inData);
+  }
+
   static back() {
     const { history } = nx.$memory;
     history && history.goBack();

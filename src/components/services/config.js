@@ -23,8 +23,6 @@ export default class {
 
           order_index: ['get', '/trades/orders/site/goods/search'],
           permissions_create: ['post', '/account/permissions'],
-          query_permission: ['get', '/account/permissionPageable?permissionType=1'],
-          download_permission: ['get', '/account/permissionPageable?permissionType=2'],
 
           query_permission_delete: ['delete', '/account/permission/{id}'],
           query_permission_create: ['post', '/account/permission'],

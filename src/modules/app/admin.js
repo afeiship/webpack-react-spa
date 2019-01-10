@@ -12,12 +12,6 @@ export default class extends React.Component {
     };
   }
 
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
-
   _onMenuClick = (e) => {
     const { history } = this.props;
     this.setState({ activeRoute: e.key }, () => {

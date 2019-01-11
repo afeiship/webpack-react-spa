@@ -6,7 +6,6 @@ export const $route = require('services/route').default;
 export const $form = require('services/form').default;
 export const $loadable = require('services/loadable').default;
 export const $store = require('next-store');
-export const $date = require('next-date');
 
 /* ===services end=== */
 

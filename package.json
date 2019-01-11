@@ -21,14 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-spa.git"
   },
-  "keywords": [
-    "webpack",
-    "react",
-    "pc",
-    "ant-design",
-    "site",
-    "website"
-  ],
+  "keywords": ["webpack", "react", "pc", "ant-design", "site", "website"],
   "author": "afei",
   "license": "MIT",
   "bugs": {
@@ -41,14 +34,9 @@
     "http-rest-config": "github:afeiship/http-rest-config",
     "mixin-decorator": "github:afeiship/mixin-decorator",
     "next-axios": "github:afeiship/next-axios",
-    "next-date": "github:afeiship/next-date",
     "next-js-core2": "github:afeiship/next-js-core2",
     "next-react-redux": "github:afeiship/next-react-redux",
     "next-store": "github:afeiship/next-store",
-    "react": "^16.4.1",
-    "react-ant-form-mixin": "github:afeiship/react-ant-form-mixin",
-    "react-dom": "^16.4.1",
-    "react-dynamic-router": "github:afeiship/react-dynamic-router",
     "react-full-image": "github:afeiship/react-full-image",
     "react-imported-component": "^5.2.4",
     "react-mixin-on-change": "github:afeiship/react-mixin-on-change",

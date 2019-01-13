@@ -1,6 +1,7 @@
 import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
+import 'test-privite';
 
 @mixin(['on-change'])
 export default class extends React.Component {
@@ -40,6 +41,11 @@ export default class extends React.Component {
     };
   };
 
+  _onClick3 = () => {
+    console.log('click3');
+    nx.testPrivate();
+  };
+
   componentDidMount() {
     const { loading } = nx.$session;
     console.log(loading);
@@ -75,6 +81,7 @@ export default class extends React.Component {
                 onChange={this.onChangeToState.bind(this, 'formData.password')}
               />
             </label>
+            <button type={'button'} onClick={this._onClick3}>SetPrivate Package</button>
             <button className="wp-10" type="submit">
               登录
             </button>

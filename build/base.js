@@ -13,10 +13,7 @@ export default (inEnv) => {
     output: outputs.spa({
       publicPath
     }),
-    resolve: {
-      alias: configs.alias(),
-      extensions: configs.extensions()
-    },
+    resolve: { alias: configs.alias(), extensions: configs.extensions() },
     module: {
       rules: nx.flatten([
         loaders.babel(),
@@ -24,7 +21,7 @@ export default (inEnv) => {
         loaders.css(),
         loaders.sass(),
         loaders.mp34(),
-        loaders.image(),
+        loaders.image({ limit: 10 }),
         loaders.font()
       ])
     },
@@ -33,9 +30,8 @@ export default (inEnv) => {
     performance: configs.performance(),
     plugins: nx.flatten([
       plugins.imagemin({
-        mozJpeg:{
-          quality: 10
-        }
+        mozJpeg: { quality: 75 },
+        pngquant: { quality: '70-80' }
       }),
       plugins.banner(),
       plugins.semver(),

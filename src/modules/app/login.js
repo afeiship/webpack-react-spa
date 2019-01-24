@@ -64,6 +64,13 @@ export default class extends React.Component {
         <button onClick={this._onClick1}>Set by path(Memory)</button>
         <button onClick={this._onClick2}>Set by path(Local)</button>
         <div className="p20 bg-f shadow-5 login-view">
+          <p className="tc">
+            <img className="wp-5" src={require('images/banner.png')} alt="" />
+            <img
+              className="wp-5"
+              src={require('images/error_exception_mini.png')}
+            />
+          </p>
           <form onSubmit={this._onSubmit}>
             <label className="db p10">
               <strong>用户名</strong>
@@ -81,7 +88,9 @@ export default class extends React.Component {
                 onChange={this.onChangeToState.bind(this, 'formData.password')}
               />
             </label>
-            <button type={'button'} onClick={this._onClick3}>SetPrivate Package</button>
+            <button type={'button'} onClick={this._onClick3}>
+              SetPrivate Package
+            </button>
             <button className="wp-10" type="submit">
               登录
             </button>

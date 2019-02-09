@@ -14,20 +14,6 @@ npm run dev
 - nx.\$local
 - nx.\$session
 
-## deploy:
-```bash
-## start
-cd webpack-react-spa
-git pull
-./deploy/production/start.sh
-
-## check status:
-docker ps
-
-## kill
-docker kill a359c42986c6
-```
-
 ## feature:
 - [x] spa
 - [x] react 16+

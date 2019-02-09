@@ -39,7 +39,8 @@ docker kill a359c42986c6
 - [x] HtmlWebpack -> webpack favico.ico
 - [x] ant-design optmize
 - [x] react hmr
-- [x] add `serviceworker` for app cache
 - [x] use eslint + prettier
 - [x] use router config
 - [x] add dynamic import + react-imported-component
+- [ ] add `serviceworker` for app cache
+- [ ] add nodemon for webpack hot reload

@@ -1,8 +1,9 @@
+const ENV = require(`environments/__BUILD_ENV__`).default;
+
 export default class {
   static HASH = '__BUILD_HASH__';
-  static ENV = require(`environments/__BUILD_ENV__`).default;
   static APIS = {
-    host:'http://localhost:3000',
+    host: ENV.BASE_URL,
     request: ['/api/vi', 'json'],
     items: [
       {

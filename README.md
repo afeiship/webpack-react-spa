@@ -15,7 +15,6 @@ npm run dev
 - nx.\$session
 
 ## feature:
-- [x] spa
 - [x] react 16+
 - [x] webpack 4.x
 - [x] next-redux-base

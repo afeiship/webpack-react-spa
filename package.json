@@ -71,6 +71,7 @@
     "eslint-plugin-react": "^7.11.1",
     "next-flatten": "github:afeiship/next-flatten",
     "prettier": "^1.15.3",
+    "rake-git": "github:afeiship/rake-git",
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "standard": "^12.0.1",
     "webpack": "^4.28.2",

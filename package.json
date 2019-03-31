@@ -52,7 +52,6 @@
     "react-router": "^5.0.0",
     "react-router-config": "^5.0.0",
     "react-router-dom": "^5.0.0",
-    "test-privite": "git+ssh://git@gitee.com:finxos/test-privite.git",
     "webkit-sass-functions": "github:afeiship/webkit-sass-functions",
     "webkit-sass-generators": "github:afeiship/webkit-sass-generators",
     "webkit-sass-mixins": "github:afeiship/webkit-sass-mixins",

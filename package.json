@@ -61,7 +61,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.11.0",
     "eslint-config-prettier": "^3.3.0",
@@ -73,10 +72,10 @@
     "rake-git": "github:afeiship/rake-git",
     "react-hmr-decorator": "afeiship/react-hmr-decorator",
     "standard": "^12.0.1",
-    "webpack": "^4.28.2",
+    "webpack": "^4.29.6",
     "webpack-app-kits": "github:afeiship/webpack-app-kits",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.1.2"
   }
 }

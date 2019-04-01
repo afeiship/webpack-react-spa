@@ -1,7 +1,7 @@
 import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
-import 'test-privite';
+// import 'test-privite';
 
 @mixin(['on-change'])
 export default class extends React.Component {
@@ -43,12 +43,12 @@ export default class extends React.Component {
 
   _onClick3 = () => {
     console.log('click3');
-    nx.testPrivate();
+    // nx.testPrivate();
   };
 
   componentDidMount() {
     const { loading } = nx.$session;
-    console.log(loading);
+    // console.log(loading);
     nx.$app.on('test-comp:test', (inData) => {
       console.log('show 1 me you data:', inData);
     });

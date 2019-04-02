@@ -1,9 +1,10 @@
 import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
+import React, { Component } from 'react';
 
 @mixin(['on-change'])
-export default class extends React.Component {
+export default class extends Component {
   constructor(inProps) {
     super(inProps);
     this.state = {

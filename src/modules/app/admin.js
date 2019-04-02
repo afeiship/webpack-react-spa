@@ -1,8 +1,9 @@
 import UserIndex from '@/modules/users/index';
 import OrderIndex from '@/modules/orders/index';
 import { Route } from 'react-router-dom';
+import React, { Component } from 'react';
 
-export default class extends React.Component {
+export default class extends Component {
   constructor(props) {
     super(props);
     const { location } = props;

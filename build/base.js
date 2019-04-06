@@ -25,7 +25,6 @@ export default (inEnv) => {
         loaders.font()
       ])
     },
-    externals: configs.externals.react(),
     optimization: configs.optimization(),
     performance: configs.performance(),
     plugins: nx.flatten([

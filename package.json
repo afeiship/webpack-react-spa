@@ -13,9 +13,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build:test": "cross-env NODE_ENV=test webpack -p",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "start": "node express.js",
-    "lint": "node_modules/.bin/eslint --ext .js src",
-    "lintfix": "node_modules/.bin/eslint --fix . --ext .js src"
+    "start": "node ./server.js"
   },
   "repository": {
     "type": "git",

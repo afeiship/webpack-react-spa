@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+const server = require('express');
+const app = server();
 const portNumber = 3000;
 const sourceDir = 'dist';
 const compression = require('compression');
@@ -7,7 +7,7 @@ const proxy = require('http-proxy-middleware');
 
 //OPEN GZIP
 app.use(compression({ level: 6 }));
-app.use(express.static(sourceDir));
+app.use(server.static(sourceDir));
 
 app.use(
   '/api',

@@ -7,7 +7,7 @@ export default (inEnv) => {
     mode: NODE_ENV,
     entry: inputs.dll({ vendors }),
     output: outputs.dll(),
-    plugins: [plugins.dll()],
+    plugins: [plugins.dll(), plugins.banner(), plugins.semver()],
     externals: configs.externals.react()
   };
 };

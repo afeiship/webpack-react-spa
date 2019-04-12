@@ -32,10 +32,9 @@ export default (inEnv) => {
         mozJpeg: { quality: 75 },
         pngquant: { quality: '70-80' }
       }),
-      plugins.banner(),
-      plugins.semver(),
       plugins.moduleConcatenation(),
       plugins.singleHtml({ libs }),
+      plugins.htmlBanner(),
       plugins.extractText(),
       plugins.dllRefrence({ publicPath }),
       plugins.loaderOptions(),

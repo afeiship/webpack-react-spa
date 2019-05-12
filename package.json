@@ -1,6 +1,6 @@
 {
   "name": "webpack-react-spa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webpack for ant design.",
   "main": "index.js",
   "scripts": {

@@ -4,6 +4,9 @@ import { plugins } from 'webpack-app-kits';
 
 export default (inEnv) => {
   return merge(base(inEnv), {
-    plugins: [plugins.archiver()]
+    plugins: [
+      plugins.archiver(),
+      plugins.offline()
+    ]
   });
 };

@@ -40,6 +40,7 @@
     "mixin-decorator": "github:afeiship/mixin-decorator",
     "next-axios": "github:afeiship/next-axios",
     "next-js-core2": "github:afeiship/next-js-core2",
+    "next-offline-sw": "github:afeiship/next-offline-sw",
     "next-react-redux": "github:afeiship/next-react-redux",
     "next-store": "github:afeiship/next-store",
     "react": "^16.8.5",

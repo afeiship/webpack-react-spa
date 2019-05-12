@@ -4,6 +4,8 @@ import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import hotable from 'react-hmr-decorator';
 import routes from './routes';
+import NxOfflineSw from 'next-offline-sw';
+
 
 @hotable(module)
 export default class extends ReduxAppBase {
@@ -27,7 +29,7 @@ export default class extends ReduxAppBase {
 
   componentDidMount() {
     console.log(require('assets/config/config1.json'));
-
+    NxOfflineSw.install();
     nx.$memory = {
       history: this.root.history
     };

@@ -27,5 +27,4 @@ npm run dev
 - [x] use eslint + prettier
 - [x] use router config
 - [x] add dynamic import + react-imported-component
-- [ ] add `serviceworker` for app cache
-- [ ] add nodemon for webpack hot reload
+- [x] add `serviceworker` for app cache

@@ -28,7 +28,6 @@ export default class extends ReduxAppBase {
   }
 
   componentDidMount() {
-    console.log(require('assets/config/config1.json'));
     NxOfflineSw.install();
     nx.$memory = {
       history: this.root.history

@@ -1,6 +1,6 @@
 const server = require('express');
 const app = server();
-const portNumber = 3000;
+const portNumber = 3012;
 const sourceDir = 'dist';
 const compression = require('compression');
 const proxy = require('http-proxy-middleware');

@@ -65,7 +65,11 @@ export default class extends Component {
         <button onClick={this._onClick2}>Set by path(Local)</button>
         <div className="p20 bg-f shadow-5 login-view">
           <p className="tc">
-            <img className="wp-5" src={require('images/banner.png')} alt="" />
+            <img
+              className="wp-5"
+              src={require('images/banner.png')}
+              alt=""
+            />
             <img
               className="wp-5"
               src={require('images/error_exception_mini.png')}
@@ -77,7 +81,10 @@ export default class extends Component {
               <input
                 type="text"
                 value={formData.username}
-                onChange={this.onChangeToState.bind(this, 'formData.username')}
+                onChange={this.onChangeToState.bind(
+                  this,
+                  'formData.username'
+                )}
               />
             </label>
             <label className="db p10">
@@ -85,14 +92,17 @@ export default class extends Component {
               <input
                 type="text"
                 value={formData.password}
-                onChange={this.onChangeToState.bind(this, 'formData.password')}
+                onChange={this.onChangeToState.bind(
+                  this,
+                  'formData.password'
+                )}
               />
             </label>
             <button type={'button'} onClick={this._onClick3}>
               SetPrivate Package
             </button>
             <button className="wp-10" type="submit">
-              登录
+              (登录)
             </button>
           </form>
         </div>

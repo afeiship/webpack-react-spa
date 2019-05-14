@@ -43,6 +43,7 @@
     "next-offline-sw": "github:afeiship/next-offline-sw",
     "next-react-redux": "github:afeiship/next-react-redux",
     "next-store": "github:afeiship/next-store",
+    "next-values": "github:afeiship/next-values",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-full-image": "github:afeiship/react-full-image",

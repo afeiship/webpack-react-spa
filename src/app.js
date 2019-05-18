@@ -6,7 +6,6 @@ import hotable from 'react-hmr-decorator';
 import routes from './routes';
 import NxOfflineSw from 'next-offline-sw';
 
-
 @hotable(module)
 export default class extends ReduxAppBase {
   static initialState(inStore) {
@@ -22,7 +21,11 @@ export default class extends ReduxAppBase {
         modalUser: false,
         modalUserQuery: false,
         orders: {},
-        users: {}
+        users: {},
+        login: {
+          username: 'afei',
+          password: '123123'
+        }
       }
     };
   }

@@ -56,6 +56,7 @@ export default class extends Component {
 
   render() {
     const { formData } = this.state;
+    const { login } = nx.$memory;
     return (
       <div className="login-wrapper">
         <TestComp />
@@ -65,37 +66,24 @@ export default class extends Component {
         <button onClick={this._onClick2}>Set by path(Local)</button>
         <div className="p20 bg-f shadow-5 login-view">
           <p className="tc">
-            <img
-              className="wp-5"
-              src={require('images/banner.png')}
-              alt=""
-            />
-            <img
-              className="wp-5"
-              src={require('images/error_exception_mini.png')}
-            />
+            <img className="wp-5" src={require('images/banner.png')} alt="" />
+            <img className="wp-5" src={require('images/error_exception_mini.png')} />
           </p>
           <form onSubmit={this._onSubmit}>
             <label className="db p10">
               <strong>用户名</strong>
               <input
                 type="text"
-                value={formData.username}
-                onChange={this.onChangeToState.bind(
-                  this,
-                  'formData.username'
-                )}
+                value={login.username}
+                onChange={this.onChangeToState.bind(this, 'formData.username')}
               />
             </label>
             <label className="db p10">
               <strong>密码</strong>
               <input
-                type="text"
-                value={formData.password}
-                onChange={this.onChangeToState.bind(
-                  this,
-                  'formData.password'
-                )}
+                type="password"
+                value={login.password}
+                onChange={this.onChangeToState.bind(this, 'formData.password')}
               />
             </label>
             <button type={'button'} onClick={this._onClick3}>

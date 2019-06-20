@@ -9,9 +9,9 @@ export default class extends React.Component {
   render() {
     console.log('orders index loaded', this.params);
     return (
-      <div>
+      <div className="p20">
         {this.headerView}
-        Orders Index View
+        <p className="f48">Orders Index View</p>
       </div>
     );
   }

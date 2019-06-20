@@ -5,6 +5,10 @@ import { renderRoutes } from 'react-router-config';
 import hotable from 'react-hmr-decorator';
 import routes from './routes';
 import NxOfflineSw from 'next-offline-sw';
+import { Fragment } from 'react';
+import SwUpdateTips from '#/views/sw-update-tips.js';
+
+var runtime = require('offline-plugin/runtime');
 
 @hotable(module)
 export default class extends ReduxAppBase {
@@ -18,6 +22,7 @@ export default class extends ReduxAppBase {
         testSs: 'fei'
       },
       memory: {
+        hasUpdate: false,
         modalUser: false,
         modalUserQuery: false,
         orders: {},
@@ -31,7 +36,13 @@ export default class extends ReduxAppBase {
   }
 
   componentDidMount() {
-    NxOfflineSw.install();
+    window.sss = this;
+    NxOfflineSw.install({
+      onUpdateReady: function() {
+        nx.$memory = { hasUpdate: true };
+        console.log('SW Event HAHAH:', 'onUpdateReady');
+      }
+    });
     nx.$memory = {
       history: this.root.history
     };
@@ -41,11 +52,23 @@ export default class extends ReduxAppBase {
     console.log('*, I am - global event bus center:->', inName, inData);
   }
 
+  onUpdate() {
+    runtime.applyUpdate();
+    nx.$memory = { hasUpdate: true };
+    // refresh
+    Promise.resolve().then(() => {
+      window.location.reload();
+    });
+  }
+
   render() {
     return (
-      <Router ref={(root) => (this.root = root)}>
-        <Switch>{renderRoutes(routes)}</Switch>
-      </Router>
+      <Fragment>
+        <Router ref={(root) => (this.root = root)}>
+          <Switch>{renderRoutes(routes)}</Switch>
+        </Router>
+        <SwUpdateTips />
+      </Fragment>
     );
   }
 }

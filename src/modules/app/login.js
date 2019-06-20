@@ -90,7 +90,7 @@ export default class extends Component {
               SetPrivate Package
             </button>
             <button className="wp-10" type="submit">
-              (--登录--v2.0.4)
+              (--登录--v2.0.6)
             </button>
           </form>
         </div>

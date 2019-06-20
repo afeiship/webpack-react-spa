@@ -4,11 +4,7 @@ import NxOfflineSw from 'next-offline-sw';
 
 export default class extends Component {
   _onClick = (e) => {
-    NxOfflineSw.applyUpdate(() => {
-      setTimeout(() => {
-        NxOfflineSw.refresh();
-      }, 1000);
-    });
+    NxOfflineSw.update();
   };
 
   render() {

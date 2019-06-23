@@ -34,15 +34,14 @@ export default class extends ReduxAppBase {
   }
 
   componentDidMount() {
+    const { history } = this.root;
     NxOfflineSw.install({
       onUpdateReady: function() {
         nx.$memory = { hasUpdate: true };
         console.log('SW Event:', 'onUpdateReady');
       }
     });
-    nx.$memory = {
-      history: this.root.history
-    };
+    nx.$memory = { history };
   }
 
   eventBus(inName, inData) {

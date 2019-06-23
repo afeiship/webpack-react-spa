@@ -22,7 +22,8 @@
         var fbScript = document.createElement('script');
         fbScript.type = 'text/javascript';
         fbScript.async = true;
-        fbScript.src = '/fallback.js?v=' + Date.now();
+        // this url MUST NOT BE mgt by sw.js
+        fbScript.src = 'http://0.0.0.0:3012/fallback.js?v=' + Date.now();
         fbScript.onload = function() {
           if (navigator && navigator.serviceWorker) {
             if (window.__SW_DISABLED__) {

@@ -16,8 +16,24 @@
     <script src="<%= htmlWebpackPlugin.options.libs['react'] %>"></script>
     <script src="<%= htmlWebpackPlugin.options.libs['reactDom'] %>"></script>
 
-    <!--DO NOT DELETE THIS FILE-->
-    <script src="https://cdn.jsdelivr.net/gh/afeiship/fallback.js/index.js"></script>
-    <!--DO NOT DELETE THIS FILE-->
+    <script>
+      window.onload = function() {
+        var head = document.getElementsByTagName('head')[0];
+        var fbScript = document.createElement('script');
+        fbScript.type = 'text/javascript';
+        fbScript.async = true;
+        fbScript.src = '/fallback.js?v=' + Date.now();
+        fbScript.onload = function() {
+          if (navigator && navigator.serviceWorker) {
+            if (window.__SW_DISABLED__) {
+              navigator.serviceWorker.getRegistration('/').then(function(reg) {
+                reg && reg.unregister();
+              });
+            }
+          }
+        };
+        head.appendChild(fbScript);
+      };
+    </script>
   </body>
 </html>

@@ -6,9 +6,7 @@ import hotable from 'react-hmr-decorator';
 import routes from './routes';
 import NxOfflineSw from 'next-offline-sw';
 import { Fragment } from 'react';
-import SwUpdateTips from '#/views/sw-update-tips.js';
-
-var runtime = require('offline-plugin/runtime');
+import SwUpdateTips from '#/views/sw-update-tips';
 
 @hotable(module)
 export default class extends ReduxAppBase {
@@ -40,7 +38,7 @@ export default class extends ReduxAppBase {
     NxOfflineSw.install({
       onUpdateReady: function() {
         nx.$memory = { hasUpdate: true };
-        console.log('SW Event HAHAH:', 'onUpdateReady');
+        console.log('SW Event:', 'onUpdateReady');
       }
     });
     nx.$memory = {
@@ -50,15 +48,6 @@ export default class extends ReduxAppBase {
 
   eventBus(inName, inData) {
     console.log('*, I am - global event bus center:->', inName, inData);
-  }
-
-  onUpdate() {
-    runtime.applyUpdate();
-    nx.$memory = { hasUpdate: true };
-    // refresh
-    Promise.resolve().then(() => {
-      window.location.reload();
-    });
   }
 
   render() {

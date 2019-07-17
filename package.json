@@ -60,6 +60,7 @@
     "webkit-sassui-transform-center": "github:afeiship/webkit-sassui-transform-center"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^5.2.0",

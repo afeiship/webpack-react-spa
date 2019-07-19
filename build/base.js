@@ -33,14 +33,10 @@ export default (inEnv) => {
     optimization: configs.optimization(),
     performance: configs.performance(),
     plugins: nx.flatten([
-      plugins.imagemin({
-        mozJpeg: { quality: 75 },
-        pngquant: { quality: '70-80' }
-      }),
+      plugins.minCssExtract(),
       plugins.moduleConcatenation(),
       plugins.singleHtml({ libs }),
       plugins.htmlBanner(),
-      plugins.extractText(),
       plugins.dllRefrence({ publicPath }),
       plugins.loaderOptions(),
       plugins.fallback(),

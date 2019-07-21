@@ -1,4 +1,5 @@
 import config from './config';
+import { resolve } from 'path';
 import { loaders, plugins, configs, inputs, outputs } from 'webpack-app-kits';
 import 'next-flatten';
 
@@ -15,13 +16,23 @@ export default (inEnv) => {
     }),
     resolve: {
       alias: configs.alias({
-        'react-dom': '@hot-loader/react-dom'
+        'react-dom': '@hot-loader/react-dom',
+        services: resolve(__dirname, 'node_modules/service-decorator')
       }),
       extensions: configs.extensions()
     },
     module: {
       rules: nx.flatten([
-        loaders.babel(),
+        {
+          test: /\.(js)$/,
+          use: ['babel-loader'],
+          include: [
+            resolve(__dirname, 'src'),
+            resolve(__dirname, 'node_modules/mixin-decorator'),
+            resolve(__dirname, 'node_modules/service-decorator'),
+            resolve(__dirname, 'node_modules/react-dynamic-router')
+          ]
+        },
         loaders.environment(),
         loaders.css(),
         loaders.sass(),
@@ -40,7 +51,12 @@ export default (inEnv) => {
       plugins.dllRefrence({ publicPath }),
       plugins.loaderOptions(),
       plugins.fallback(),
-      plugins.provide()
+      plugins.provide({
+        service: 'service-decorator',
+        IfElse: ['react-if-else', 'default'],
+        RCM: ['react-condition-manager', 'default'],
+        cx: 'classnames'
+      })
     ])
   };
 };

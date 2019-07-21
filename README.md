@@ -10,6 +10,7 @@ npm run dev
 
 ## simple interface:
 - nx.\$app
+- nx.\$global
 - nx.\$memory
 - nx.\$local
 - nx.\$session

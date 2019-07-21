@@ -3,6 +3,7 @@ import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 import React, { Component } from 'react';
 
+@service(['route'])
 @mixin(['on-change'])
 export default class extends Component {
   constructor(inProps) {
@@ -17,9 +18,10 @@ export default class extends Component {
 
   _onSubmit = (e) => {
     e.preventDefault();
-    console.info('to users index.', this.state.formData);
+    // console.info('to users index.', this.state.formData);
+    console.log('user @service to route',this.$route);
     nx.$app.emit('app:login', { auth: true });
-    $route.push('/admin/orders/index', {
+    this.$route.push('/admin/orders/index', {
       par: 1
     });
   };
@@ -29,10 +31,7 @@ export default class extends Component {
       'users.test1.test.item1': Math.random()
     };
     const { users } = nx.$memory;
-    console.log(
-      'paths: users.test1.test.item1, value is:',
-      users.test1.test.item1
-    );
+    console.log('paths: users.test1.test.item1, value is:', users.test1.test.item1);
   };
 
   _onClick2 = () => {

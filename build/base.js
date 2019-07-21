@@ -16,23 +16,19 @@ export default (inEnv) => {
     }),
     resolve: {
       alias: configs.alias({
-        'react-dom': '@hot-loader/react-dom',
-        services: resolve(__dirname, 'node_modules/service-decorator')
+        'react-dom': '@hot-loader/react-dom'
       }),
       extensions: configs.extensions()
     },
     module: {
       rules: nx.flatten([
-        {
-          test: /\.(js)$/,
-          use: ['babel-loader'],
+        loaders.babel({
           include: [
-            resolve(__dirname, 'src'),
-            resolve(__dirname, 'node_modules/mixin-decorator'),
-            resolve(__dirname, 'node_modules/service-decorator'),
-            resolve(__dirname, 'node_modules/react-dynamic-router')
+            resolve(__dirname, '../src'),
+            resolve(__dirname, '../node_modules/mixin-decorator'),
+            resolve(__dirname, '../node_modules/service-decorator')
           ]
-        },
+        }),
         loaders.environment(),
         loaders.css(),
         loaders.sass(),

@@ -8,6 +8,13 @@ export default class extends Component {
     });
   };
 
+  componentWillMount() {
+    console.log('child will mount!');
+  }
+
+  componentDidMount() {
+    console.log('child did mount');
+  }
   render() {
     const { children } = this.props;
     return (

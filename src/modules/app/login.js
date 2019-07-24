@@ -2,6 +2,7 @@ import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 import React, { Component } from 'react';
+import ParentCmp from '#/views/parent-comp';
 
 @service(['route'])
 @mixin(['on-change'])
@@ -19,7 +20,7 @@ export default class extends Component {
   _onSubmit = (e) => {
     e.preventDefault();
     // console.info('to users index.', this.state.formData);
-    console.log('user @service to route',this.$route);
+    console.log('user @service to route', this.$route);
     nx.$app.emit('app:login', { auth: true });
     this.$route.push('/admin/orders/index', {
       par: 1
@@ -58,12 +59,11 @@ export default class extends Component {
     const { login } = nx.$memory;
     return (
       <div className="login-wrapper">
-        <TestComp />
         <ReactFullImage src={bgImg} />
-        <TestComp />
         <button onClick={this._onClick1}>Set by path(Memory)</button>
         <button onClick={this._onClick2}>Set by path(Local)</button>
         <div className="p20 bg-f shadow-5 login-view">
+          <ParentCmp />
           <p className="tc">
             <img className="wp-5" src={require('images/banner.png')} alt="" />
             <img className="wp-5" src={require('images/error_exception_mini.png')} />

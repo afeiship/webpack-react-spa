@@ -21,6 +21,14 @@ export default class extends Component {
       <section className="test-comp">
         <button onClick={this._click1}>Test EventBus</button>
         <span>test tex1t</span>
+        <button
+          onClick={() => {
+            nx.$memory = {
+              current: 123123
+            };
+          }}>
+          Test BUtton
+        </button>
         {children}
       </section>
     );

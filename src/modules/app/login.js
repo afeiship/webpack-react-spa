@@ -57,6 +57,7 @@ export default class extends Component {
   render() {
     const { formData } = this.state;
     const { login } = nx.$memory;
+    console.log('render?');
     return (
       <div className="login-wrapper">
         <ReactFullImage src={bgImg} />

@@ -10,6 +10,7 @@ export default class extends React.Component {
     console.log('parent did mount');
   }
   render() {
+    console.log('parent renderer');
     const { className, ...props } = this.props;
     return (
       <div className={cx('parent-cmp', className)}>

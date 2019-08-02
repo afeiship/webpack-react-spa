@@ -51,6 +51,7 @@ export default (inEnv) => {
         service: 'service-decorator',
         IfElse: ['react-if-else', 'default'],
         RCM: ['react-condition-manager', 'default'],
+        RSM: ['react-status-manager', 'default'],
         cx: 'classnames'
       })
     ])

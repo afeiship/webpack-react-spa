@@ -1,21 +1,21 @@
 # webpack-react-spa
 > Webpack for spa project.
 
-## get-started:
+## get-started
 ```bash
 git clone https://github.com/afeiship/webpack-react-spa.git
 npm install
 npm run dev
 ```
 
-## simple interface:
+## simple interface
 - nx.\$app
 - nx.\$global
 - nx.\$memory
 - nx.\$local
 - nx.\$session
 
-## feature:
+## feature
 - [x] react 16+
 - [x] webpack 4.x
 - [x] next-redux-base
@@ -29,3 +29,4 @@ npm run dev
 - [x] use router config
 - [x] add dynamic import + react-imported-component
 - [x] add `serviceworker` for app cache
+- [x] add react-app generator

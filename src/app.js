@@ -7,6 +7,8 @@ import routes from './routes';
 import NxOfflineSw from 'next-offline-sw';
 import { Fragment } from 'react';
 import SwUpdateTips from '#/views/sw-update-tips';
+import LogicComp1 from '#/views/logic-component';
+import LogicComp2 from '#/views/logic-component2';
 
 @hotable(module)
 export default class extends ReduxAppBase {
@@ -55,6 +57,8 @@ export default class extends ReduxAppBase {
           <Switch>{renderRoutes(routes)}</Switch>
         </Router>
         <SwUpdateTips />
+        <LogicComp1 />
+        <LogicComp2 />
       </Fragment>
     );
   }

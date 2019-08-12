@@ -49,6 +49,7 @@ export default (inEnv) => {
       plugins.fallback(),
       plugins.provide({
         service: 'service-decorator',
+        renderNull: 'render-null-decorator',
         IfElse: ['react-if-else', 'default'],
         RCM: ['react-condition-manager', 'default'],
         RSM: ['react-status-manager', 'default'],

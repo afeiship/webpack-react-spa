@@ -24,11 +24,14 @@ npm run dev
 - [x] react-router v4
 - [x] HtmlWebpack -> webpack favico.ico
 - [x] ant-design optmize
-- [x] react hmr
+- [x] react hmr (@hotable)
 - [x] use eslint + prettier
 - [x] use router config
 - [x] add dynamic import + react-imported-component
 - [x] add `serviceworker` for app cache
 - [x] add react-app generator
-- [x] add `renderNull` decorator
-- [x] add `bomb` decorator
+- [x] add IfElse/RCM/RSM global component
+- [x] add `@mixin` decorator
+- [x] add `@service` decorator
+- [x] add `@renderNull` decorator
+- [x] add `@bomb` decorator

@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import ParentCmp from '#/views/parent-comp';
 
 @service(['route'])
-@mixin(['on-change'])
+@mixin(['on-change', 'bomb-demo'])
 export default class extends Component {
   constructor(inProps) {
     super(inProps);
@@ -54,6 +54,14 @@ export default class extends Component {
     });
   }
 
+  _bombClick = (e) => {
+    console.log('bomb', this);
+    this.say();
+    this.walk();
+    this.jump();
+    this.fly();
+  };
+
   render() {
     const { formData } = this.state;
     const { login } = nx.$memory;
@@ -65,6 +73,7 @@ export default class extends Component {
         <button onClick={this._onClick2}>Set by path(Local)</button>
         <div className="p20 bg-f shadow-5 login-view">
           <ParentCmp />
+          <button onClick={this._bombClick}>Test BombMethod</button>
           <p className="tc">
             <img className="wp-5" src={require('images/banner.png')} alt="" />
             <img className="wp-5" src={require('images/error_exception_mini.png')} />

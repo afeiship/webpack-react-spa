@@ -35,6 +35,7 @@
   "homepage": "https://github.com/afeiship/webpack-react-spa#readme",
   "dependencies": {
     "array-from": "^2.1.1",
+    "bomb-decorator": "github:afeiship/bomb-decorator",
     "classnames": "^2.2.5",
     "http-rest-config": "github:afeiship/http-rest-config",
     "mixin-decorator": "github:afeiship/mixin-decorator",

@@ -50,6 +50,7 @@ export default (inEnv) => {
       plugins.provide({
         service: 'service-decorator',
         renderNull: 'render-null-decorator',
+        bomb: 'bomb-decorator',
         IfElse: ['react-if-else', 'default'],
         RCM: ['react-condition-manager', 'default'],
         RSM: ['react-status-manager', 'default'],

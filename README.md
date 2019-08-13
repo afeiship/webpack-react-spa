@@ -30,4 +30,5 @@ npm run dev
 - [x] add dynamic import + react-imported-component
 - [x] add `serviceworker` for app cache
 - [x] add react-app generator
-- [x] add renderNull decorator
+- [x] add `renderNull` decorator
+- [x] add `bomb` decorator

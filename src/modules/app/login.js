@@ -3,6 +3,7 @@ import ReactFullImage from 'react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 import React, { Component } from 'react';
 import ParentCmp from '#/views/parent-comp';
+import reactLogoSvg from 'images/react_logo.svg';
 
 @service(['route'])
 @mixin(['on-change', 'bomb-demo'])
@@ -77,6 +78,7 @@ export default class extends Component {
           <p className="tc">
             <img className="wp-5" src={require('images/banner.png')} alt="" />
             <img className="wp-5" src={require('images/error_exception_mini.png')} />
+            <img width="200" src={reactLogoSvg} />
           </p>
           <form onSubmit={this._onSubmit}>
             <label className="db p10">

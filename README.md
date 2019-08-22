@@ -35,3 +35,5 @@ npm run dev
 - [x] add `@service` decorator
 - [x] add `@renderNull` decorator
 - [x] add `@bomb` decorator
+- [ ] bussiness global component(nx.components.Icon)
+- [ ] dispatch(ns.actions)

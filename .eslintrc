@@ -47,6 +47,7 @@
     "window": true,
     "nx": true,
     "mixin": true,
+    "service": true,
     "React": true
   }
 }

@@ -37,3 +37,4 @@ npm run dev
 - [x] add `@bomb` decorator
 - [ ] bussiness global component(nx.components.Icon)
 - [ ] dispatch(ns.actions)
+- [ ] `nx.$.TuIcon` global components support.

@@ -11,6 +11,8 @@ export default class extends Component {
   constructor(inProps) {
     super(inProps);
     this.state = {
+      viewData1: 111,
+      viewData2: 222,
       formData: {
         username: '',
         password: ''
@@ -66,7 +68,7 @@ export default class extends Component {
   render() {
     const { formData } = this.state;
     const { login } = nx.$memory;
-    console.log('render?');
+    console.log('render!!?');
     return (
       <div className="login-wrapper">
         <ReactFullImage src={bgImg} />
@@ -80,6 +82,23 @@ export default class extends Component {
             <img className="wp-5" src={require('images/error_exception_mini.png')} />
             <img width="200" src={reactLogoSvg} />
           </p>
+          <button
+            onClick={() => {
+              this.setState({
+                viewData1: Math.random()
+              });
+            }}>
+            Btn1-{this.state.viewData1}
+          </button>
+
+          <button
+            onClick={() => {
+              this.setState({
+                viewData2: Math.random()
+              });
+            }}>
+            Btn2
+          </button>
           <form onSubmit={this._onSubmit}>
             <label className="db p10">
               <strong>用户名</strong>

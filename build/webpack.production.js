@@ -1,5 +1,5 @@
 import merge from 'webpack-merge';
-import base from './base';
+import base from './webpack.base';
 import config from './config';
 import { plugins } from 'webpack-app-kits';
 

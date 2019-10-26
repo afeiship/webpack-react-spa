@@ -1,6 +1,6 @@
 import merge from 'webpack-merge';
 import config from './config';
-import base from './base';
+import base from './webpack.base';
 import { plugins, configs } from 'webpack-app-kits';
 
 export default (inEnv) => {

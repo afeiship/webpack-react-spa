@@ -1,7 +1,8 @@
 import config from './config';
 import { resolve } from 'path';
-import { loaders, plugins, configs, inputs, outputs } from 'webpack-app-kits';
-import 'next-flatten';
+import nx from '@feizheng/next-js-core2';
+import { loaders, plugins, configs, inputs, outputs } from '@feizheng/webpack-app-kits';
+import '@feizheng/next-flatten';
 
 export default (inEnv) => {
   const type = inEnv ? inEnv.type : null;
@@ -15,9 +16,7 @@ export default (inEnv) => {
       publicPath
     }),
     resolve: {
-      alias: configs.alias({
-        'react-dom': '@hot-loader/react-dom'
-      }),
+      alias: configs.alias(),
       extensions: configs.extensions()
     },
     module: {

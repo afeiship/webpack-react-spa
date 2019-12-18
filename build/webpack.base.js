@@ -47,12 +47,12 @@ export default (inEnv) => {
       plugins.loaderOptions(),
       plugins.fallback(),
       plugins.provide({
-        service: 'service-decorator',
-        renderNull: 'render-null-decorator',
-        bomb: 'bomb-decorator',
-        IfElse: ['react-if-else', 'default'],
-        RCM: ['react-condition-manager', 'default'],
-        RSM: ['react-status-manager', 'default'],
+        service: '@feizheng/service-decorator',
+        renderNull: '@feizheng/render-null-decorator',
+        bomb: '@feizheng/bomb-decorator',
+        IfElse: ['r@feizheng/eact-if-else', 'default'],
+        RCM: ['@feizheng/react-condition-manager', 'default'],
+        RSM: ['@feizheng/react-status-manager', 'default'],
         cx: 'classnames'
       })
     ])

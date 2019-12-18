@@ -1,6 +1,6 @@
 {
   "name": "webpack-react-spa",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Webpack for ant design.",
   "main": "index.js",
   "scripts": {
@@ -50,6 +50,12 @@
     "@feizheng/react-mixin-on-change": "^1.0.0",
     "@feizheng/render-null-decorator": "^1.0.0",
     "@feizheng/service-decorator": "^1.0.0",
+    "@feizheng/webkit-sass-functions": "^1.0.0",
+    "@feizheng/webkit-sass-generators": "^1.0.0",
+    "@feizheng/webkit-sass-mixins": "^1.0.0",
+    "@feizheng/webkit-sass-reset": "^1.0.0",
+    "@feizheng/webkit-sassui-short-name": "^1.1.0",
+    "@feizheng/webkit-sassui-transform-center": "^1.0.0",
     "array-from": "^2.1.1",
     "classnames": "^2.2.5",
     "react": "^16.8.5",
@@ -57,13 +63,7 @@
     "react-imported-component": "^5.2.4",
     "react-router": "^5.0.0",
     "react-router-config": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "webkit-sass-functions": "github:afeiship/webkit-sass-functions",
-    "webkit-sass-generators": "github:afeiship/webkit-sass-generators",
-    "webkit-sass-mixins": "github:afeiship/webkit-sass-mixins",
-    "webkit-sass-reset": "github:afeiship/webkit-sass-reset",
-    "webkit-sassui-short-name": "github:afeiship/webkit-sassui-short-name",
-    "webkit-sassui-transform-center": "github:afeiship/webkit-sassui-transform-center"
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@feizheng/next-flatten": "^1.0.0",

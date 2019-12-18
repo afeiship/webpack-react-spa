@@ -1,10 +1,10 @@
 //vendors:
-@import 'node_modules/webkit-sass-functions/dist/webkit-sass-functions.scss';
-@import 'node_modules/webkit-sass-mixins/dist/webkit-sass-mixins.scss';
-@import 'node_modules/webkit-sass-generators/dist/webkit-sass-generators.scss';
-@import 'node_modules/webkit-sass-reset/dist/webkit-sass-reset.scss';
-@import 'node_modules/webkit-sassui-short-name/dist/webkit-sassui-short-name.scss';
-@import 'node_modules/webkit-sassui-transform-center/dist/webkit-sassui-transform-center.scss';
+@import '~@feizheng/webkit-sass-functions/dist/webkit-sass-functions.scss';
+@import '~@feizheng/webkit-sass-mixins/dist/webkit-sass-mixins.scss';
+@import '~@feizheng/webkit-sass-generators/dist/webkit-sass-generators.scss';
+@import '~@feizheng/webkit-sass-reset/dist/webkit-sass-reset.scss';
+@import '~@feizheng/webkit-sassui-short-name/dist/webkit-sassui-short-name.scss';
+@import '~@feizheng/webkit-sassui-transform-center/dist/webkit-sassui-transform-center.scss';
 
 @import "generators";
 @import "app";

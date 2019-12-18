@@ -1,5 +1,5 @@
 import { $api, $form, $route, TestComp } from '#';
-import ReactFullImage from 'react-full-image';
+import ReactFullImage from '@feizheng/react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 import React, { Component } from 'react';
 import ParentCmp from '#/views/parent-comp';

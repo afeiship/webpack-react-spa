@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import NxOfflineSw from 'next-offline-sw';
+import NxOfflineSw from '@feizheng/next-offline-sw';
 
 export default class extends Component {
   _onClick = (e) => {

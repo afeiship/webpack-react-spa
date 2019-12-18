@@ -1,5 +1,5 @@
-import nx from 'next-js-core2';
-import NxAxios from 'next-axios';
+import nx from '@feizheng/next-js-core2';
+import NxAxios from '@feizheng/next-axios';
 
 const Http = nx.declare({
   extends: NxAxios,

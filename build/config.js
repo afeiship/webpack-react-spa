@@ -1,5 +1,5 @@
-const nx = require('next-js-core2');
-const nxValues = require('next-values');
+const nx = require('@feizheng/next-js-core2');
+const nxValues = require('@feizheng/next-values');
 const libs = {
   spinKit: '//cdnjs.cloudflare.com/ajax/libs/spinkit/1.2.5/spinkit.min.css',
   antdCss: '//cdnjs.cloudflare.com/ajax/libs/antd/3.12.1/antd.min.css',

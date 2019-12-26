@@ -6,13 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Hello SPA</title>
-    <link href="<%= htmlWebpackPlugin.options.libs['spinKit'] %>" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.options.libs['loadingScreen'] %>" />
   </head>
   <body>
     <!-- Main -->
-    <main id="root"><!--APP_LOADER--></main>
+    <main id="root">
+      <section class="loading-screen">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+        <span>应用加载中</span>
+      </section>
+    </main>
 
     <!-- Dependencies -->
+    <script src="<%= htmlWebpackPlugin.options.libs['nextJsCore2'] %>"></script>
     <script src="<%= htmlWebpackPlugin.options.libs['react'] %>"></script>
     <script src="<%= htmlWebpackPlugin.options.libs['reactDom'] %>"></script>
 

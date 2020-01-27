@@ -1,7 +1,5 @@
-const nx = require('@feizheng/next-js-core2');
-const nxValues = require('@feizheng/next-values');
 const libs = {
-  nextJsCore2: '//unpkg.com/@feizheng/next-js-core2@2.0.5/dist/next-js-core2.min.js',
+  nextJsCore2: 'https://unpkg.com/@feizheng/next-js-core2@2.3.4/dist/next-js-core2.min.js',
   loadingScreen: '//unpkg.com/@feizheng/loading-screen@1.0.2/dist/style.css',
   antdCss: '//cdnjs.cloudflare.com/ajax/libs/antd/3.12.1/antd.min.css',
   react: '//cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js',
@@ -16,11 +14,15 @@ module.exports = {
       changeOrigin: true
     }
   },
-  vendors: ['classnames', 'react-router', 'react-router-dom'],
+  vendors: [
+    'classnames',
+    'react-router',
+    'react-router-dom'
+  ],
   offline: {
-    externals: nxValues(libs)
+    externals: nx.values(libs)
   },
-  development: {
+  local: {
     publicPath: '/',
     libs: nx.mix(null, libs, {
       antdCss: '/antd/dist/antd.css',

@@ -1,16 +1,14 @@
 import config from './config';
 import { resolve } from 'path';
-import nx from '@feizheng/next-js-core2';
 import { loaders, plugins, configs, inputs, outputs } from '@feizheng/webpack-app-kits';
-import '@feizheng/next-flatten';
 
 export default (inEnv) => {
-  const type = inEnv ? inEnv.type : null;
   const mode = process.env.NODE_ENV;
-  const { libs, publicPath } = config[type || mode];
+  const { libs, publicPath } = config[mode || 'production'];
 
   return {
     mode,
+    stats: 'errors-only',
     entry: inputs.spa(),
     output: outputs.spa({
       publicPath
@@ -39,6 +37,7 @@ export default (inEnv) => {
     optimization: configs.optimization(),
     performance: configs.performance(),
     plugins: nx.flatten([
+      plugins.progressBar(),
       plugins.minCssExtract(),
       plugins.moduleConcatenation(),
       plugins.singleHtml({ libs }),
@@ -50,7 +49,7 @@ export default (inEnv) => {
         service: '@feizheng/service-decorator',
         renderNull: '@feizheng/render-null-decorator',
         bomb: '@feizheng/bomb-decorator',
-        IfElse: ['r@feizheng/eact-if-else', 'default'],
+        IfElse: ['@feizheng/react-if-else', 'default'],
         RCM: ['@feizheng/react-condition-manager', 'default'],
         RSM: ['@feizheng/react-status-manager', 'default'],
         cx: 'classnames'

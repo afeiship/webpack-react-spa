@@ -1,13 +1,18 @@
 import { vendors } from './config';
-import { loaders, plugins, configs, inputs, outputs } from '@feizheng/webpack-app-kits';
+import { plugins, configs, inputs, outputs } from '@feizheng/webpack-app-kits';
 
 export default (inEnv) => {
-  const NODE_ENV = process.env.NODE_ENV;
   return {
-    mode: NODE_ENV,
+    mode: 'production',
     entry: inputs.dll({ vendors }),
     output: outputs.dll(),
-    plugins: [plugins.dll(), plugins.banner(), plugins.semver()],
+    plugins: [
+      plugins.progressBar(),
+      plugins.clean(),
+      plugins.dll(),
+      plugins.banner(),
+      plugins.semver()
+    ],
     externals: configs.externals.react()
   };
 };

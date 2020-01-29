@@ -7,6 +7,7 @@ import NxOfflineSw from '@feizheng/next-offline-sw';
 import { Fragment } from 'react';
 import SwUpdateTips from '#/views/sw-update-tips';
 import LogicComp from '#/views/logic-component';
+import TestComp from '#/views/test-comp';
 
 export default class extends ReduxAppBase {
   static initialState(inStore) {
@@ -55,6 +56,7 @@ export default class extends ReduxAppBase {
         </Router>
         <SwUpdateTips />
         <LogicComp />
+        <TestComp />
       </Fragment>
     );
   }

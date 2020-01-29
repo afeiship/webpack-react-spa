@@ -63,7 +63,7 @@
   "devDependencies": {
     "@feizheng/next-flatten": "^1.0.0",
     "@feizheng/rake-git": "^1.2.1",
-    "@feizheng/webpack-app-kits": "^3.0.5",
+    "@feizheng/webpack-app-kits": "^3.3.1",
     "@hot-loader/react-dom": "^16.8.6",
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",

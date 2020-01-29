@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './index.scss';
+import styles from './style.module.scss';
+
+console.log('css in js:', styles);
 
 export default class extends Component {
   _click1 = (_) => {
@@ -18,7 +20,8 @@ export default class extends Component {
   render() {
     const { children } = this.props;
     return (
-      <section className="test-comp">
+      <section className={styles.main}>
+        <h5 className={styles.title}>Title</h5>
         <button onClick={this._click1}>Test EventBus</button>
         <span>test tex1t</span>
         <button

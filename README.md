@@ -35,6 +35,8 @@ npm run dev
 - [x] add `@service` decorator
 - [x] add `@renderNull` decorator
 - [x] add `@bomb` decorator
+- [x] css in js(styles.main/styles.title)
+- [ ] css composes from file(~/styles/index.scss)
 - [ ] bussiness global component(nx.components.Icon)
 - [ ] dispatch(ns.actions)
 - [ ] `nx.$.TuIcon` global components support.

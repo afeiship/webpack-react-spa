@@ -1,9 +1,9 @@
 import AppBase, { $api, $config, $store } from '#';
 import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import hotable from 'react-hmr-decorator';
+import hotable from '@feizheng/react-hmr-decorator';
 import routes from './routes';
-import { ReduxBoot } from 'next-react-redux';
+import { ReduxBoot } from '@feizheng/next-react-redux';
 import 'assets/styles/index.scss';
 
 function appRender(inId, inOptions) {

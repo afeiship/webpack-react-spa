@@ -1,4 +1,4 @@
-import { $loadable } from '#';
+import $loadable from '@/services/loadable';
 
 export default [
   {

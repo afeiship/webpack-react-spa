@@ -1,8 +1,6 @@
-import { $api, $form, $route, TestComp } from '#';
 import ReactFullImage from '@feizheng/react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 import React, { Component } from 'react';
-import ParentCmp from '#/views/parent-comp';
 import reactLogoSvg from 'images/react_logo.svg';
 
 @service(['route'])
@@ -68,14 +66,13 @@ export default class extends Component {
   render() {
     const { formData } = this.state;
     const { login } = nx.$memory;
-    console.log('render!!?');
+
     return (
       <div className="login-wrapper">
         <ReactFullImage src={bgImg} />
         <button onClick={this._onClick1}>Set by path(Memory)</button>
         <button onClick={this._onClick2}>Set by path(Local)</button>
         <div className="p20 bg-f shadow-5 login-view">
-          <ParentCmp />
           <button onClick={this._bombClick}>Test BombMethod</button>
           <p className="tc">
             <img className="wp-5" src={require('images/banner.png')} alt="" />

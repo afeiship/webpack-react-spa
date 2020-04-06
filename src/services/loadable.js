@@ -1,11 +1,11 @@
-import importedComponent from 'react-imported-component';
+import Loadable from 'react-loadable';
 import Loading from '@/components/shared/loading';
 
-// https://github.com/gaearon/react-hot-loader/issues/678
 export default class {
   static load(inCallback) {
-    return importedComponent(inCallback, {
-      LoadingComponent: Loading
+    return Loadable({
+      loader: inCallback,
+      loading: Loading
     });
   }
 }

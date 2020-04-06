@@ -3,20 +3,12 @@
 @import '~@feizheng/webkit-sass-mixins';
 @import '~@feizheng/webkit-sass-generators';
 @import '~@feizheng/webkit-sass-reset';
-@import '~@feizheng/webkit-sassui-short-name';
-@import '~@feizheng/webkit-sassui-transform-center';
+@import '~@feizheng/webkit-sassui-transform-center/dist/webkit-sassui-transform-center.scss';
 
 @import "generators";
 @import "app";
 
+@import '~@feizheng/react-full-image/dist/style.scss';
 
-@import 'components/*';
-@import 'views/*';
-
-
-.tc{
-  text-align: center;
-}
-.f20{
-  font-size: 20px;
-}
+// override styles
+@import '~@feizheng/webkit-sassui-short-name';

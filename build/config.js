@@ -1,5 +1,5 @@
 const libs = {
-  nextJsCore2: 'https://unpkg.com/@feizheng/next-js-core2@2.3.4/dist/next-js-core2.min.js',
+  nextJsCore2: 'https://unpkg.com/@feizheng/next-js-core2@2.4.4/dist/next-js-core2.min.js',
   loadingScreen: '//unpkg.com/@feizheng/loading-screen@1.0.2/dist/style.css',
   antdCss: '//cdnjs.cloudflare.com/ajax/libs/antd/3.12.1/antd.min.css',
   react: '//cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js',

@@ -1,7 +1,60 @@
-import 'assets/styles/index.scss';
-import { ReduxBoot } from '@feizheng/next-react-redux';
-import App from './app';
+import { ReduxAppBase, ReduxBoot, reduxRender } from '@feizheng/next-react-redux';
+import { HashRouter as Router, Switch } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import routes from './routes';
+import Loadable from 'react-loadable';
+import NxOfflineSw from '@feizheng/next-offline-sw';
+import { Fragment } from 'react';
 
-ReduxBoot.run(App, 'root', {
-  prefix: 'react-spa'
-});
+import '@/assets/styles/index.scss';
+
+@reduxRender('root', { prefix: 'react-spa', loadable: Loadable })
+export default class extends ReduxAppBase {
+  static initialState(inStore) {
+    const { login } = inStore.local;
+    return {
+      local: {
+        login: login || null
+      },
+      session: {
+        testSs: 'fei'
+      },
+      memory: {
+        hasUpdate: false,
+        modalUser: false,
+        modalUserQuery: false,
+        orders: {},
+        users: {},
+        login: {
+          username: 'afei',
+          password: '123123'
+        }
+      }
+    };
+  }
+
+  componentDidMount() {
+    const { history } = this.root;
+    NxOfflineSw.install({
+      onUpdateReady: function () {
+        nx.$memory = { hasUpdate: true };
+        console.log('SW Event:', 'onUpdateReady');
+      }
+    });
+    nx.$memory = { history };
+  }
+
+  eventBus(inName, inData) {
+    console.log('*, I am - global event bus center:->', inName, inData);
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <Router ref={(root) => (this.root = root)}>
+          <Switch>{renderRoutes(routes)}</Switch>
+        </Router>
+      </Fragment>
+    );
+  }
+}

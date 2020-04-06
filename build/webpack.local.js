@@ -8,10 +8,12 @@ export default (inEnv) => {
   return merge(base(inEnv), {
     mode: 'development',
     devtool: configs.devtool(),
-    plugins: [plugins.hotModuleReplacement()],
+    // plugins: [plugins.hotModuleReplacement()],
     devServer: configs.devServer({
       port,
-      proxy
+      proxy,
+      hot: false,
+      hotOnly: false
     })
   });
 };

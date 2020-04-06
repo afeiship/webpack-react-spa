@@ -1,4 +1,5 @@
-import { ReduxAppBase, ReduxBoot, reduxRender } from '@feizheng/next-react-redux';
+import './global';
+import { ReduxAppBase, reduxRender } from '@feizheng/next-react-redux';
 import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import routes from './routes';

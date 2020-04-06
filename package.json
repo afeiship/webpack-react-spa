@@ -52,6 +52,7 @@
     "@feizheng/webkit-sass-reset": "^1.0.0",
     "@feizheng/webkit-sassui-short-name": "^1.2.2",
     "@feizheng/webkit-sassui-transform-center": "^1.0.0",
+    "antd": "^3.26.15",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

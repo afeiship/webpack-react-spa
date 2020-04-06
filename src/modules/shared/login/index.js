@@ -76,8 +76,8 @@ export default class extends Component {
         <div className="p20 bg-f shadow-5 abs webkit-sassui-transform-center-xy login-view">
           <button onClick={this._bombClick}>Test BombMethod</button>
           <p className="tc">
-            <img className="wp-5" src={require('images/banner.png')} alt="" />
-            <img className="wp-5" src={require('images/error_exception_mini.png')} />
+            <img className="wp-5" src={require('images/banner.png').default} alt="" />
+            <img className="wp-5" src={require('images/error_exception_mini.png').default} />
             <img width="200" src={reactLogoSvg} />
           </p>
           <button
@@ -118,7 +118,7 @@ export default class extends Component {
               SetPrivate Package
             </button>
             <button className="wp-10" type="submit">
-              (--登录--v2.0.61)
+              (--登录--v2.1.3)
             </button>
           </form>
         </div>

@@ -18,18 +18,13 @@ export default class extends ReduxAppBase {
         login: login || null
       },
       session: {
-        testSs: 'fei'
+        collapsed: false
       },
       memory: {
         hasUpdate: false,
-        modalUser: false,
-        modalUserQuery: false,
         orders: {},
         users: {},
-        login: {
-          username: 'afei',
-          password: '123123'
-        }
+        login: { username: 'afei', password: '123123' }
       }
     };
   }

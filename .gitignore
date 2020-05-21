@@ -12,3 +12,7 @@ dist
 *.tar.gz
 *.zip
 Gemfile.lock
+
+
+# vscode localhistory
+.history

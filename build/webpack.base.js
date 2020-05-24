@@ -41,7 +41,7 @@ export default (inEnv) => {
       plugins.minCssExtract(),
       plugins.moduleConcatenation(),
       plugins.singleHtml({ libs }),
-      plugins.htmlBanner(),
+      // plugins.htmlBanner(),
       plugins.dllRefrence({ publicPath }),
       plugins.loaderOptions(),
       plugins.fallback(),

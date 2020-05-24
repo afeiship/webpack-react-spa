@@ -8,13 +8,6 @@ export default [
   },
   {
     path: '/admin',
-    component: require('./modules/layout/index').default
-  }
-];
-
-export const staticRoutes = [
-  {
-    path: '/admin/news/index', component: require('@/modules/news').default,
-    path: '/admin/orders/index', component: require('@/modules/orders').default
+    component: require('./modules/shared/admin').default
   }
 ];

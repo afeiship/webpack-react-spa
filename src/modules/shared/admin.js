@@ -1,57 +1,82 @@
-import UserIndex from '@/modules/users/index';
-import OrderIndex from '@/modules/news/orders/index';
+import { Layout, Menu, Breadcrumb } from 'antd';
+import React from 'react';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams
+} from "react-router-dom";
+import { staticRoutes } from '@/routes';
+import { renderRoutes } from 'react-router-config';
 
-import { Route } from 'react-router-dom';
-import React, { Component } from 'react';
+import NewsIndex from '@/modules/news/index';
+import OrdersIndex from '@/modules/orders/index';
 
-export default class extends Component {
-  constructor(props) {
-    super(props);
-    const { location } = props;
-    this.state = {
-      collapsed: false,
-      activeRoute: location.pathname
-    };
-  }
+const { Header, Content, Footer, Sider } = Layout;
+const { SubMenu } = Menu;
 
-  _onMenuClick = (e) => {
-    const { history } = this.props;
-    this.setState({ activeRoute: e.key }, () => {
-      history.push(e.key);
-    });
+
+@service(['route'])
+export default class extends React.Component {
+  state = {
+    collapsed: false,
+  };
+
+  onCollapse = collapsed => {
+    console.log(collapsed);
+    this.setState({ collapsed });
+  };
+
+  handleClick = event => {
+    this.$route.push(event.key);
   };
 
   render() {
-    return (
-      <div className="main-view">
-        <div>
-          <div className="p10 logo mb30">
-            <h1 className="c-f">tradewow</h1>
-            <h3 className="c-e">后台管理</h3>
-          </div>
+    const menus = [
+      { key: '/admin/news/index', label: 'News', icon: <MailOutlined /> },
+      { key: '/admin/orders/index', label: 'Orders', icon: <AppstoreOutlined /> },
+    ];
 
-          <ul>
-            onClick={this._onMenuClick}>
-            <li key="/modules/users/index">
-              <span className="nav-text">用户管理</span>
-            </li>
-            <li key="/modules/orders/index">
-              <span className="nav-text">订单管理</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <header className="tr bg-f">
-            <span className="mr10">Hello Admin</span>
-            <a href="#">Logout</a>
-          </header>
-          <div style={{ margin: '24px 16px 0' }}>
-            <Route path={`/modules/users/index`} component={UserIndex} />
-            <Route path={`/modules/orders/index`} component={OrderIndex} />
-          </div>
-          <footer style={{ textAlign: 'center' }}>Admin @Power by Fei.</footer>
-        </div>
-      </div>
+    return (
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+          <h1 className="c-f">Admin</h1>
+          <Menu theme="dark" onClick={this.handleClick}>
+            {
+              menus.map((item, index) => {
+                if (item.children && item.children.length > 0) {
+                  return (
+                    <SubMenu key={index} title={item.label}>
+                      {item.children.map(sub => {
+                        return <Menu.Item key={sub.key}>{sub.label}</Menu.Item>
+                      })}
+                    </SubMenu>
+                  )
+                } else {
+                  return (
+                    <Menu.Item icon={item.icon} key={item.key}>{item.label}</Menu.Item>
+                  )
+                }
+              })
+            }
+          </Menu>
+        </Sider>
+        <Layout>
+          <Header style={{ padding: 0 }} />
+          <Content style={{ margin: '0 16px' }}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>User</Breadcrumb.Item>
+              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+              <Route path={`/admin/news/index`} component={NewsIndex} />
+              <Route path={`/admin/orders/index`} component={OrdersIndex} />
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        </Layout>
+      </Layout >
     );
   }
 }

@@ -3,11 +3,13 @@ const ENV = require(`environments/__BUILD_ENV__`).default;
 export default class {
   static HASH = '__BUILD_HASH__';
   static APIS = {
-    host: ENV.BASE_URL,
-    request: ['/api/vi', 'json'],
+    // host: ENV.BASE_URL,
+    host: 'https://api.github.com',
+    request: ['', 'json'],
     items: [
       {
         items: {
+          profile: ['get', '/users/afeiship'],
           upload: ['post', '/system/upload'],
           login: ['post', '/auth/admin/signin'],
           banner_index: ['get', '/system/banners'],

@@ -4,27 +4,30 @@ import NxAxios from '@feizheng/next-axios';
 const Http = nx.declare({
   extends: NxAxios,
   methods: {
-    getToken: function() {
-      const { login } = nx.$local;
-      if (login) {
+    getToken: function () {
+      const { token } = nx.$local;
+      if (token) {
         return `Bearer ${login.token}`;
       }
       return null;
     },
-    setTokenInterceptor: function() {
+    setTokenInterceptor: function () {
       this.axios.interceptors.request.use((config) => {
         const token = this.getToken();
         token && nx.mix(config.headers.common, { Authorization: token });
         return config;
       });
     },
-    setRequestInterceptor: function() {
+    setRequestInterceptor: function () {
       this.setTokenInterceptor();
     },
-    toData: function(inResponse) {
+    isSuccess: function (inResponse) {
+      return true;
+    },
+    data: function (inResponse) {
       return inResponse.data;
     },
-    error: function(inError) {
+    error: function (inError) {
       console.log('error!');
       console.log(inError);
     }

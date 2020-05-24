@@ -1,5 +1,5 @@
 import UserIndex from '@/modules/users/index';
-import OrderIndex from '@/modules/orders/index';
+import OrderIndex from '@/modules/news/orders/index';
 
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';

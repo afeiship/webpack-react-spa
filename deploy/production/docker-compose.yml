@@ -1,9 +1,0 @@
-version: "3"
-services:
-    react-spa:
-      image: nginx
-      volumes:
-        - ./conf.d:/etc/nginx/conf.d
-        - ../../dist:/www/
-      ports:
-        - "9081:80"

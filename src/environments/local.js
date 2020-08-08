@@ -1,4 +1,4 @@
 export default {
   WX_DEBUG: true,
-  BASE_URL: 'http://testimg.demo.cn'
+  BASE_URL: 'https://api.github.com',
 };

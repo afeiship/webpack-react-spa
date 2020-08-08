@@ -3,7 +3,6 @@ import { ReduxAppBase, reduxRender } from '@feizheng/next-react-redux';
 import { HashRouter as Router, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import routes from './routes';
-import Loadable from 'react-loadable';
 import NxOfflineSw from '@feizheng/next-offline-sw';
 import { Fragment } from 'react';
 
@@ -15,17 +14,17 @@ export default class extends ReduxAppBase {
     const { login } = inStore.local;
     return {
       local: {
-        login: login || null
+        login: login || null,
       },
       session: {
-        collapsed: false
+        collapsed: false,
       },
       memory: {
         hasUpdate: false,
         orders: {},
         users: {},
-        login: { username: 'afei', password: '123123' }
-      }
+        login: { username: 'afei', password: '123123' },
+      },
     };
   }
 
@@ -34,8 +33,8 @@ export default class extends ReduxAppBase {
     NxOfflineSw.install({
       onUpdateReady: function () {
         nx.$memory = { hasUpdate: true };
-        console.log('SW Event:', 'onUpdateReady');
-      }
+        // console.log('SW Event::', 'onUpdateReady');
+      },
     });
     nx.$memory = { history };
   }

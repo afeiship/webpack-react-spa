@@ -4,7 +4,7 @@ export default class {
     history &&
       history.push({
         pathname: inUrl,
-        state: inData
+        state: inData,
       });
   }
 
@@ -13,7 +13,7 @@ export default class {
     history &&
       history.replace({
         pathname: inUrl,
-        state: inData
+        state: inData,
       });
   }
 

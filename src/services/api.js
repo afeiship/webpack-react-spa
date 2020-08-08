@@ -6,6 +6,6 @@ export default nx.declare({
   statics: {
     init() {
       httpRestConfig(this, Http, Config.APIS);
-    }
-  }
+    },
+  },
 });

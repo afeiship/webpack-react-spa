@@ -7,7 +7,7 @@ const Http = nx.declare({
     getToken: function () {
       const { token } = nx.$local;
       if (token) {
-        return `Bearer ${login.token}`;
+        return `Bearer ${token}`;
       }
       return null;
     },
@@ -21,17 +21,17 @@ const Http = nx.declare({
     setRequestInterceptor: function () {
       this.setTokenInterceptor();
     },
-    isSuccess: function (inResponse) {
+    isSuccess: function (_) {
       return true;
     },
     data: function (inResponse) {
       return inResponse.data;
     },
-    error: function (inError) {
-      console.log('error!');
-      console.log(inError);
-    }
-  }
+    error: function (_) {
+      // console.log('error!');
+      // console.log(inError);
+    },
+  },
 });
 
 export default Http.getInstance();

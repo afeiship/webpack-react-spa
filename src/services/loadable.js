@@ -5,7 +5,7 @@ export default class {
   static load(inCallback) {
     return Loadable({
       loader: inCallback,
-      loading: Loading
+      loading: Loading,
     });
   }
 }

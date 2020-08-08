@@ -6,8 +6,8 @@
   "scripts": {
     "upgrade": "./bin/upgrade.rb",
     "dll": "cross-env NODE_ENV=dll webpack -p",
-    "dev": "npm run dll && cross-env NODE_ENV=local webpack-dev-server --watch-poll",
-    "build:test": "npm run dll && cross-env NODE_ENV=test NODE_OPTIONS=--max_old_space_size=4096 webpack -p",
+    "local": "npm run dll && cross-env NODE_ENV=local webpack-dev-server --watch-poll",
+    "build:beta": "npm run dll && cross-env NODE_ENV=beta NODE_OPTIONS=--max_old_space_size=4096 webpack -p",
     "build:production": "npm run dll && cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=4096 webpack -p",
     "start": "node ./build/server.js"
   },

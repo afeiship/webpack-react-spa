@@ -9,7 +9,7 @@ import { Fragment } from 'react';
 
 import '@/assets/styles/index.scss';
 
-@reduxRender('root', { prefix: 'react-spa', loadable: Loadable })
+@reduxRender('root', { prefix: 'react-spa' })
 export default class extends ReduxAppBase {
   static initialState(inStore) {
     const { login } = inStore.local;
@@ -38,10 +38,6 @@ export default class extends ReduxAppBase {
       }
     });
     nx.$memory = { history };
-  }
-
-  eventBus(inName, inData) {
-    console.log('*, I am - global event bus center:->', inName, inData);
   }
 
   render() {

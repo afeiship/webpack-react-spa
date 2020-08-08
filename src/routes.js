@@ -4,10 +4,10 @@ export default [
   {
     path: '/',
     exact: true,
-    component: $loadable.load(() => import('@/modules/shared/login'))
+    component: require('./modules/shared/login').default,
   },
   {
     path: '/admin',
-    component: require('./modules/shared/admin').default
-  }
+    component: $loadable.load(() => import('@/modules/shared/admin')),
+  },
 ];

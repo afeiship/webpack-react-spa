@@ -14,23 +14,22 @@ const tailLayout = {
 };
 
 @service(['route', 'api'])
-@mixin(['on-change', 'bomb-demo'])
+@mixin(['on-change'])
 export default class extends Component {
   callApi() {
-    // ApiServie.profile()
-    this.$api.profile().then(res => {
+    this.$api.profile().then((res) => {
       nx.$local = {
-        'shared.profile': res
-      }
-    })
+        'shared.profile': res,
+      };
+    });
   }
 
   componentDidMount() {
-    this.callApi()
+    this.callApi();
   }
 
   onFinish = (event) => {
-      this.$route.push(`/admin/orders/index`);
+    this.$route.push(`/admin/orders/index`);
   };
 
   render() {
@@ -67,7 +66,7 @@ export default class extends Component {
             <Form.Item {...tailLayout}>
               <Button type="primary" htmlType="submit">
                 Submit
-        </Button>
+              </Button>
             </Form.Item>
           </Form>
         </div>

@@ -1,7 +1,7 @@
 module.exports = {
   'src/**/*.{ts,tsx,js,jsx}': [
-    'eslint --fix --max-warnings 0',
     'prettier --write',
+    'eslint --fix --max-warnings 0'
   ],
   '*.css': ['stylelint --fix'],
 };

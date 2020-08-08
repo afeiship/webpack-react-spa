@@ -2,7 +2,6 @@ import ReactFullImage from '@feizheng/react-full-image';
 import bgImg from '@/assets/images/bg.jpg';
 import React, { Component } from 'react';
 import ApiServie from '@/services/api';
-import reactLogoSvg from 'images/react_logo.svg';
 import { Form, Input, Button, Checkbox } from 'antd';
 import './style.scss';
 

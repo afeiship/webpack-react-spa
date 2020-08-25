@@ -1,6 +1,7 @@
 {
   "name": "webpack-react-spa",
   "version": "3.0.0",
+  "private": true,
   "description": "Webpack for ant design.",
   "main": "index.js",
   "scripts": {

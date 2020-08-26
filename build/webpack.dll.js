@@ -1,5 +1,5 @@
+import { configs, inputs, outputs, plugins } from '@feizheng/webpack-app-kits';
 import { vendors } from './config';
-import { plugins, configs, inputs, outputs } from '@feizheng/webpack-app-kits';
 
 export default (inEnv) => {
   return {
@@ -11,8 +11,8 @@ export default (inEnv) => {
       plugins.clean(),
       plugins.dll(),
       plugins.banner(),
-      plugins.semver()
+      plugins.semver(),
     ],
-    externals: configs.externals.react()
+    externals: configs.externals.react(),
   };
 };

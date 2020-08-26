@@ -1,12 +1,12 @@
-import './global';
-import { ReduxAppBase, reduxRender } from '@feizheng/next-react-redux';
-import { HashRouter as Router, Switch } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import routes from './routes';
-import NxOfflineSw from '@feizheng/next-offline-sw';
-import { Fragment } from 'react';
-
 import '@/assets/styles/index.scss';
+import NxOfflineSw from '@feizheng/next-offline-sw';
+import { ReduxAppBase, reduxRender } from '@feizheng/next-react-redux';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/es/locale/zh_CN';
+import { renderRoutes } from 'react-router-config';
+import { HashRouter as Router, Switch } from 'react-router-dom';
+import './global';
+import routes from './routes';
 
 @reduxRender('root', { prefix: 'react-spa' })
 export default class extends ReduxAppBase {
@@ -41,11 +41,11 @@ export default class extends ReduxAppBase {
 
   render() {
     return (
-      <Fragment>
+      <ConfigProvider locale={zhCN}>
         <Router ref={(root) => (this.root = root)}>
           <Switch>{renderRoutes(routes)}</Switch>
         </Router>
-      </Fragment>
+      </ConfigProvider>
     );
   }
 }

@@ -1,5 +1,5 @@
 module.exports = {
-  'src/**/*.{ts,tsx,js,jsx}': [
+  'src/**/*.{js}': [
     'npm run pretty',
     'eslint --fix --max-warnings 0',
   ],

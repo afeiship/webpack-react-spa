@@ -13,7 +13,7 @@ app.use(
   '/api',
   proxy({
     target: 'http://test.demo.com',
-    changeOrigin: true
+    changeOrigin: true,
   })
 );
 

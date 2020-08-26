@@ -1,6 +1,6 @@
-import config from './config';
+import { configs, inputs, loaders, outputs, plugins } from '@feizheng/webpack-app-kits';
 import { resolve } from 'path';
-import { loaders, plugins, configs, inputs, outputs } from '@feizheng/webpack-app-kits';
+import config from './config';
 
 export default (inEnv) => {
   const mode = process.env.NODE_ENV;
@@ -11,11 +11,11 @@ export default (inEnv) => {
     stats: 'errors-only',
     entry: inputs.spa(),
     output: outputs.spa({
-      publicPath
+      publicPath,
     }),
     resolve: {
       alias: configs.alias(),
-      extensions: configs.extensions()
+      extensions: configs.extensions(),
     },
     module: {
       rules: nx.flatten([
@@ -23,16 +23,16 @@ export default (inEnv) => {
           include: [
             resolve(__dirname, '../src'),
             resolve(__dirname, '../node_modules/mixin-decorator'),
-            resolve(__dirname, '../node_modules/service-decorator')
-          ]
+            resolve(__dirname, '../node_modules/service-decorator'),
+          ],
         }),
         loaders.environment(),
         loaders.css(),
         loaders.sass(),
         loaders.mp34(),
         loaders.image({ limit: 10 }),
-        loaders.font()
-      ])
+        loaders.font(),
+      ]),
     },
     optimization: configs.optimization(),
     performance: configs.performance(),
@@ -52,8 +52,8 @@ export default (inEnv) => {
         IfElse: ['@feizheng/react-if-else', 'default'],
         RCM: ['@feizheng/react-condition-manager', 'default'],
         RSM: ['@feizheng/react-status-manager', 'default'],
-        cx: 'classnames'
-      })
-    ])
+        cx: 'classnames',
+      }),
+    ]),
   };
 };

@@ -2,14 +2,14 @@ import { Button, Form } from 'antd';
 import FormBuilder from 'antd-form-builder';
 import React from 'react';
 
-export default ({ form }) => {
-  const meta = {
-    fields: [
-      { key: 'username', label: 'User Name' },
-      { key: 'password', label: 'Password', widget: 'password' },
-    ],
-  };
+const meta = {
+  fields: [
+    { key: 'username', label: 'User Name' },
+    { key: 'password', label: 'Password', widget: 'password' },
+  ],
+};
 
+export default () => {
   const handleFinish = React.useCallback((values) => {
     console.log('Submit: ', values);
   }, []);

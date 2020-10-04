@@ -1,21 +1,13 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-import React from 'react';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams
-} from "react-router-dom";
-import { staticRoutes } from '@/routes';
-import { renderRoutes } from 'react-router-config';
-
 import NewsIndex from '@/modules/news/index';
 import OrdersIndex from '@/modules/orders/index';
+import { AppstoreOutlined, MailOutlined } from '@ant-design/icons';
+import { Breadcrumb, Layout, Menu } from 'antd';
+import React from 'react';
+import { Route } from 'react-router-dom';
+
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-
 
 @service(['route'])
 export default class extends React.Component {
@@ -23,12 +15,12 @@ export default class extends React.Component {
     collapsed: false,
   };
 
-  onCollapse = collapsed => {
+  onCollapse = (collapsed) => {
     console.log(collapsed);
     this.setState({ collapsed });
   };
 
-  handleClick = event => {
+  handleClick = (event) => {
     this.$route.push(event.key);
   };
 
@@ -43,23 +35,23 @@ export default class extends React.Component {
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <h1 className="c-f">Admin</h1>
           <Menu theme="dark" onClick={this.handleClick}>
-            {
-              menus.map((item, index) => {
-                if (item.children && item.children.length > 0) {
-                  return (
-                    <SubMenu key={index} title={item.label}>
-                      {item.children.map(sub => {
-                        return <Menu.Item key={sub.key}>{sub.label}</Menu.Item>
-                      })}
-                    </SubMenu>
-                  )
-                } else {
-                  return (
-                    <Menu.Item icon={item.icon} key={item.key}>{item.label}</Menu.Item>
-                  )
-                }
-              })
-            }
+            {menus.map((item, index) => {
+              if (item.children && item.children.length > 0) {
+                return (
+                  <SubMenu key={index} title={item.label}>
+                    {item.children.map((sub) => {
+                      return <Menu.Item key={sub.key}>{sub.label}</Menu.Item>;
+                    })}
+                  </SubMenu>
+                );
+              } else {
+                return (
+                  <Menu.Item icon={item.icon} key={item.key}>
+                    {item.label}
+                  </Menu.Item>
+                );
+              }
+            })}
           </Menu>
         </Sider>
         <Layout>
@@ -76,7 +68,7 @@ export default class extends React.Component {
           </Content>
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
-      </Layout >
+      </Layout>
     );
   }
 }

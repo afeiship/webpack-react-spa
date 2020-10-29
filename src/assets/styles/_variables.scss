@@ -12,7 +12,7 @@ $colors: (
   success: #28a745,
   info: #17a2b8,
   danger: #dc3545,
-  warning: #212529
+  warning: #212529,
 ) !default;
 
 @function color($inKey) {

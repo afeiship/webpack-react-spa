@@ -1,5 +1,5 @@
 //generator basic items:
-@import "variables";
+@import 'variables';
 
 $margin-list: (2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 40, 50);
 $padding-list: (3, 5, 6, 8, 10, 14, 16, 20, 30, 50);
@@ -25,7 +25,7 @@ $width-list: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 @include generator-width-wp($width-list);
 @include generator-width-w1($width-list);
-@include generator-font-size($font-size-list, ".f");
+@include generator-font-size($font-size-list, '.f');
 @include generator-blank($blank-list);
 @include generator-border-radius($border-radius-list);
 @include generator-line-clamp($line-clamp-list);

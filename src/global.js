@@ -6,3 +6,8 @@ import '@feizheng/next-offline-sw';
 import '@feizheng/next-react-redux';
 import '@feizheng/next-store';
 import '@feizheng/next-values';
+
+
+import ReactLayoutTrbla from '@feizheng/react-layout-trbla';
+
+nx.$Layout = ReactLayoutTrbla;

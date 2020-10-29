@@ -5,10 +5,11 @@
 @import '~@feizheng/webkit-sass-reset';
 @import '~@feizheng/webkit-sassui-transform-center';
 
-@import "generators";
-@import "app";
+@import 'generators';
+@import 'app';
 
 @import '~@feizheng/react-full-image/dist/style.scss';
+@import '~@feizheng/react-layout-trbla/dist/style.scss';
 
 // override styles
 @import '~@feizheng/webkit-sassui-short-name';

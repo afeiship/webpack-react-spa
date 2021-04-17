@@ -20,4 +20,4 @@ import $loadable from '@/services/loadable';
 
 // inject - layout|service
 nx.$rc = { layout, ife, rcm, rsm };
-nx.sets(nx, { $api, $http, $loadable });
+nx.sets({ $api, $http, $loadable });

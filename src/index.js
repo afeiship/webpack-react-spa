@@ -28,8 +28,9 @@ export default class extends ReduxAppBase {
   }
 
   initAppService() {
-    nx.set(nx, '$app', this);
-    nx.set(nx, '$route', ServiceReactRoute.getInstance({ context: this.root, module: 'admin' }));
+    const $app = this;
+    const $route = ServiceReactRoute.getInstance({ context: this.root, module: 'admin' });
+    nx.sets({ $app, $route });
   }
 
   componentDidMount() {

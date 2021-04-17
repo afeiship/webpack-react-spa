@@ -16,7 +16,7 @@ const meta = {
 export default class extends Component {
   callApi() {
     nx.$api.profile().then((res) => {
-      console.log(res)
+      console.log(res);
       nx.$local = {
         'shared.profile': res,
       };

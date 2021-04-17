@@ -1,5 +1,5 @@
 import bgImg from '@/assets/images/bg.jpg';
-import ReactFullImage from '@feizheng/react-full-image';
+import ReactFullImage from '@jswork/react-full-image';
 import { Button, Form } from 'antd';
 import FormBuilder from 'antd-form-builder';
 import React, { Component } from 'react';
@@ -35,7 +35,7 @@ export default class extends Component {
     return (
       <div className="h100 rel">
         <ReactFullImage src={bgImg} />
-        <div className="p20 bg-f shadow-5 abs webkit-sassui-transform-center-xy login-view">
+        <div className="p20 bg-f shadow-5 abs wsui-transform-center-xy login-view">
           <nx.$Layout value="la" className="mb10">
             <div className="bg-e p10">left</div>
             <div className="bg-8 p10">right</div>

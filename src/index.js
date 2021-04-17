@@ -1,6 +1,6 @@
 import '@/assets/styles/index.scss';
-import NxOfflineSw from '@feizheng/next-offline-sw';
-import { ReduxAppBase, reduxRender } from '@feizheng/next-react-redux';
+import NxOfflineSw from '@jswork/next-offline-sw';
+import { ReduxAppBase, reduxRender } from '@jswork/next-react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import { renderRoutes } from 'react-router-config';
@@ -26,6 +26,11 @@ export default class extends ReduxAppBase {
         login: { username: 'afei', password: '123123' },
       },
     };
+  }
+
+  constructor(inProps) {
+    super(inProps);
+    nx.set(nx, '$app', this);
   }
 
   componentDidMount() {

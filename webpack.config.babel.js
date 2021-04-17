@@ -1,6 +1,6 @@
-require('@feizheng/next-js-core2');
-require('@feizheng/next-values');
-require('@feizheng/next-flatten');
+require('@jswork/next');
+require('@jswork/next-values');
+require('@jswork/next-flatten');
 
 export default (inEnv) => {
   const NODE_ENV = process.env.NODE_ENV;

@@ -1,4 +1,4 @@
-import { configs, inputs, loaders, outputs, plugins } from '@feizheng/webpack-app-kits';
+import { configs, inputs, loaders, outputs, plugins } from '@jswork/webpack-app-kits';
 import { resolve } from 'path';
 import config from './config';
 
@@ -22,8 +22,8 @@ export default (inEnv) => {
         loaders.babel({
           include: [
             resolve(__dirname, '../src'),
-            resolve(__dirname, '../node_modules/mixin-decorator'),
-            resolve(__dirname, '../node_modules/service-decorator'),
+            resolve(__dirname, '../node_modules/@jswork/mixin-decorator'),
+            resolve(__dirname, '../node_modules/@jswork/service-decorator'),
           ],
         }),
         loaders.environment(),
@@ -46,12 +46,12 @@ export default (inEnv) => {
       plugins.loaderOptions(),
       plugins.fallback(),
       plugins.provide({
-        service: '@feizheng/service-decorator',
-        renderNull: '@feizheng/render-null-decorator',
-        bomb: '@feizheng/bomb-decorator',
-        IfElse: ['@feizheng/react-if-else', 'default'],
-        RCM: ['@feizheng/react-condition-manager', 'default'],
-        RSM: ['@feizheng/react-status-manager', 'default'],
+        service: '@jswork/service-decorator',
+        renderNull: '@jswork/render-null-decorator',
+        bomb: '@jswork/bomb-decorator',
+        IfElse: ['@jswork/react-if-else', 'default'],
+        RCM: ['@jswork/react-condition-manager', 'default'],
+        RSM: ['@jswork/react-status-manager', 'default'],
         cx: 'classnames',
       }),
     ]),

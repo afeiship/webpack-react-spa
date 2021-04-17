@@ -1,4 +1,4 @@
-import { plugins } from '@feizheng/webpack-app-kits';
+import { plugins } from '@jswork/webpack-app-kits';
 import merge from 'webpack-merge';
 import config from './config';
 import base from './webpack.base';

@@ -1,1 +1,1 @@
-export default require('@feizheng/react-mixin-on-change').default(nx.$app);
+export default require('@jswork/mixin-react-on-change').default(nx.$app);

@@ -1,15 +1,15 @@
 //vendors:
-@import '~@feizheng/webkit-sass-functions';
-@import '~@feizheng/webkit-sass-mixins';
-@import '~@feizheng/webkit-sass-generators';
-@import '~@feizheng/webkit-sass-reset';
-@import '~@feizheng/webkit-sassui-transform-center';
+@import '~@jswork/wsui-functions';
+@import '~@jswork/wsui-mixins';
+@import '~@jswork/wsui-generators';
+@import '~@jswork/wsui-reset';
+@import '~@jswork/wsui-transform-center';
 
 @import 'generators';
 @import 'app';
 
-@import '~@feizheng/react-full-image/dist/style.scss';
-@import '~@feizheng/react-layout-trbla/dist/style.scss';
+@import '~@jswork/react-full-image/dist/style.scss';
+@import '~@jswork/react-layout-trbla/dist/style.scss';
 
 // override styles
-@import '~@feizheng/webkit-sassui-short-name';
+@import '~@jswork/wsui-shorty';

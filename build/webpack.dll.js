@@ -1,4 +1,4 @@
-import { configs, inputs, outputs, plugins } from '@feizheng/webpack-app-kits';
+import { configs, inputs, outputs, plugins } from '@jswork/webpack-app-kits';
 import { vendors } from './config';
 
 export default (inEnv) => {

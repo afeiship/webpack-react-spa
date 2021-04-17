@@ -41,6 +41,7 @@
     "@jswork/next-global": "^1.0.0",
     "@jswork/next-offline-sw": "^1.0.2",
     "@jswork/next-react-redux": "^1.0.3",
+    "@jswork/next-sets": "^1.0.0",
     "@jswork/next-store": "^1.0.1",
     "@jswork/next-values": "^1.0.0",
     "@jswork/react-condition-manager": "^1.0.0",

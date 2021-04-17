@@ -5,17 +5,19 @@ import '@jswork/next-offline-sw';
 import '@jswork/next-react-redux';
 import '@jswork/next-store';
 import '@jswork/next-values';
+import '@jswork/next-sets';
 
-import ReactLayoutTrbla from '@jswork/react-layout-trbla';
-import ReactIfElse from '@jswork/react-if-else';
-import RCM from '@jswork/react-condition-manager';
-import RSM from '@jswork/react-status-manager';
+// layout
+import layout from '@jswork/react-layout-trbla';
+import ife from '@jswork/react-if-else';
+import rcm from '@jswork/react-condition-manager';
+import rsm from '@jswork/react-status-manager';
+
+// service
 import $api from '@/services/api';
+import $http from '@/services/http';
+import $loadable from '@/services/loadable';
 
-nx.$api = $api;
-nx.$rc = {
-  layout: ReactLayoutTrbla,
-  ife: ReactIfElse,
-  rcm: RCM,
-  rsm: RSM,
-};
+// inject - layout|service
+nx.$rc = { layout, ife, rcm, rsm };
+nx.sets(nx, { $api, $http, $loadable });

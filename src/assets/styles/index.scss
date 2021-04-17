@@ -4,12 +4,12 @@
 @import '~@jswork/wsui-generators';
 @import '~@jswork/wsui-reset';
 @import '~@jswork/wsui-transform-center';
+@import '~@jswork/wsui-layout-trbla';
 
 @import 'generators';
 @import 'app';
 
 @import '~@jswork/react-full-image/dist/style.scss';
-@import '~@jswork/react-layout-trbla/dist/style.scss';
 
 // override styles
 @import '~@jswork/wsui-shorty';

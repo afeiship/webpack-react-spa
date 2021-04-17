@@ -4,6 +4,7 @@ import { ReduxAppBase, reduxRender } from '@jswork/next-react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import { renderRoutes } from 'react-router-config';
+import ServiceReactRoute from '@jswork/service-react-route';
 import { HashRouter as Router, Switch } from 'react-router-dom';
 import './global';
 import routes from './routes';
@@ -20,7 +21,6 @@ export default class extends ReduxAppBase {
         collapsed: false,
       },
       memory: {
-        hasUpdate: false,
         orders: {},
         users: {},
         login: { username: 'afei', password: '123123' },
@@ -28,19 +28,14 @@ export default class extends ReduxAppBase {
     };
   }
 
-  constructor(inProps) {
-    super(inProps);
+  initAppService() {
     nx.set(nx, '$app', this);
+    nx.set(nx, '$route', ServiceReactRoute.getInstance({ context: this.root, module: 'admin' }));
   }
 
   componentDidMount() {
     const { history } = this.root;
-    NxOfflineSw.install({
-      onUpdateReady: function () {
-        nx.$memory = { hasUpdate: true };
-        // console.log('SW Event::', 'onUpdateReady');
-      },
-    });
+    this.initAppService();
     nx.$memory = { history };
   }
 

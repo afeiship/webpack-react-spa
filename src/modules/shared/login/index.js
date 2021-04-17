@@ -12,11 +12,11 @@ const meta = {
   ],
 };
 
-@service(['route', 'api'])
 @mixin(['on-change'])
 export default class extends Component {
   callApi() {
-    this.$api.profile().then((res) => {
+    nx.$api.profile().then((res) => {
+      console.log(res)
       nx.$local = {
         'shared.profile': res,
       };
@@ -27,19 +27,19 @@ export default class extends Component {
     this.callApi();
   }
 
-  handleFinish = (event) => {
-    this.$route.push(`/admin/orders/index`);
+  handleFinish = () => {
+    nx.$route.to('orders/index');
   };
 
   render() {
     return (
       <div className="h100 rel">
         <ReactFullImage src={bgImg} />
-        <div className="p20 bg-f shadow-5 abs wsui-transform-center-xy login-view">
-          <nx.$Layout value="la" className="mb10">
-            <div className="bg-e p10">left</div>
-            <div className="bg-8 p10">right</div>
-          </nx.$Layout>
+        <div className="p-20 bg-f shadow-5 abs wsui-transform-center-xy login-view">
+          <nx.$rc.layout value="la" className="mb-10">
+            <div className="bg-e p-10">left</div>
+            <div className="bg-8 p-10">right</div>
+          </nx.$rc.layout>
           <Form onFinish={this.handleFinish}>
             <FormBuilder meta={meta} />
             <Form.Item wrapperCol={{ span: 16, offset: 8 }}>

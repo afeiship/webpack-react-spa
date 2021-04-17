@@ -6,10 +6,7 @@ const Http = nx.declare({
   methods: {
     getToken: function () {
       const { token } = nx.$local;
-      if (token) {
-        return `Bearer ${token}`;
-      }
-      return null;
+      return token ? `Bearer ${token}` : null;
     },
     setTokenInterceptor: function () {
       this.axios.interceptors.request.use((config) => {

@@ -9,7 +9,6 @@ import { Route } from 'react-router-dom';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-@service(['route'])
 export default class extends React.Component {
   state = {
     collapsed: false,
@@ -21,7 +20,7 @@ export default class extends React.Component {
   };
 
   handleClick = (event) => {
-    this.$route.push(event.key);
+    // this.$route.push(event.key);
   };
 
   render() {

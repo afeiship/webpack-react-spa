@@ -1,11 +1,10 @@
-import '@/assets/styles/index.scss';
-import NxOfflineSw from '@jswork/next-offline-sw';
 import { ReduxAppBase, reduxRender } from '@jswork/next-react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import { renderRoutes } from 'react-router-config';
 import ServiceReactRoute from '@jswork/service-react-route';
 import { HashRouter as Router, Switch } from 'react-router-dom';
+import '@/assets/styles/index.scss';
 import './global';
 import routes from './routes';
 
@@ -35,8 +34,8 @@ export default class extends ReduxAppBase {
 
   componentDidMount() {
     const { history } = this.root;
-    this.initAppService();
     nx.$memory = { history };
+    this.initAppService();
   }
 
   render() {

@@ -46,6 +46,7 @@
   "plugins": ["react"],
   "globals": {
     "window": true,
+    "styled": true,
     "nx": true,
     "mixin": true,
     "service": true,

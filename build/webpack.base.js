@@ -53,6 +53,7 @@ export default (inEnv) => {
         RCM: ['@jswork/react-condition-manager', 'default'],
         RSM: ['@jswork/react-status-manager', 'default'],
         cx: 'classnames',
+        styled: ['styled-components', 'default'],
       }),
     ]),
   };

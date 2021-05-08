@@ -3,7 +3,11 @@ import ReactFullImage from '@jswork/react-full-image';
 import { Button, Form } from 'antd';
 import FormBuilder from 'antd-form-builder';
 import React, { Component } from 'react';
-import './style.scss';
+
+const Container = styled.div`
+  width: 400px;
+  top: 37.5%;
+`;
 
 const meta = {
   fields: [
@@ -35,7 +39,7 @@ export default class extends Component {
     return (
       <div className="h100 rel">
         <ReactFullImage src={bgImg} />
-        <div className="p-20 bg-f shadow-5 abs wsui-transform-center-xy login-view">
+        <Container className="p-20 bg-f shadow-5 abs wsui-transform-center-xy">
           <nx.$rc.layout value="la" className="mb-10">
             <div className="bg-e p-10">left</div>
             <div className="bg-8 p-10">right</div>
@@ -48,7 +52,7 @@ export default class extends Component {
               </Button>
             </Form.Item>
           </Form>
-        </div>
+        </Container>
       </div>
     );
   }

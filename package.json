@@ -52,6 +52,7 @@
     "@jswork/render-null-decorator": "^1.0.0",
     "@jswork/service-decorator": "^1.0.0",
     "@jswork/service-react-route": "^1.0.0",
+    "@jswork/styled-box": "^1.0.2",
     "@jswork/wsui-functions": "^1.0.4",
     "@jswork/wsui-generators": "^1.0.1",
     "@jswork/wsui-mixins": "^1.0.0",

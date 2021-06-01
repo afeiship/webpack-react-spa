@@ -52,6 +52,7 @@ export default (inEnv) => {
         IfElse: ['@jswork/react-if-else', 'default'],
         RCM: ['@jswork/react-condition-manager', 'default'],
         RSM: ['@jswork/react-status-manager', 'default'],
+        View: ['@jswork/styled-box', 'default'],
         cx: 'classnames',
         styled: ['styled-components', 'default'],
       }),

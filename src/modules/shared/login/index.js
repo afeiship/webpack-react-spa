@@ -3,7 +3,6 @@ import ReactFullImage from '@jswork/react-full-image';
 import { Button, Form } from 'antd';
 import FormBuilder from 'antd-form-builder';
 import React, { Component } from 'react';
-import StyledBox from '@jswork/styled-box';
 
 const Container = styled.div`
   width: 400px;
@@ -41,12 +40,10 @@ export default class extends Component {
       <div className="h100 rel">
         <ReactFullImage src={bgImg} />
         <Container className="p-20 bg-f shadow-5 abs wsui-transform-center-xy">
-          <StyledBox mb={20} c={'red'} px={10}>
-            <nx.$rc.layout value="la" className="mb-10">
-              <div className="bg-e p-10">left</div>
-              <div className="bg-8 p-10">right</div>
-            </nx.$rc.layout>
-          </StyledBox>
+          <View plugin="flexbox:la" p_={10} mb={20} debug>
+            <div className="bg-e">left</div>
+            <div className="bg-8">right</div>
+          </View>
           <Form onFinish={this.handleFinish}>
             <FormBuilder meta={meta} />
             <Form.Item wrapperCol={{ span: 16, offset: 8 }}>

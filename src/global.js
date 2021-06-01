@@ -18,6 +18,11 @@ import $api from '@/services/api';
 import $http from '@/services/http';
 import $loadable from '@/services/loadable';
 
+import styled, { css } from 'styled-components';
+
 // inject - layout|service
 nx.$rc = { layout, ife, rcm, rsm };
 nx.sets({ $api, $http, $loadable });
+
+// setting styled-box
+Object.assign(View.defaultProps, { engine: { styled, css } });

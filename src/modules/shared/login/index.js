@@ -38,13 +38,13 @@ export default class extends Component {
   render() {
     return (
       <div className="h100 rel">
-        <ReactFullImage src={bgImg} />
+        <code>state.value: {JSON.stringify(nx.$state.value, null, 2)}</code>
         {/* <Container className="p-20 bg-f shadow-5 abs wsui-transform-center-xy"> */}
         <View plugin="flexbox:la" p_={10} mb={20} debug>
           <div className="bg-e">left</div>
           <div className="bg-8">right</div>
         </View>
-        <View w={400} p={20} radius={4} bg="#fff" plugin="transform-center:xy; shadow:4;">
+        <View bg="#eee" p={20} wp={4} radius={10} auto plugin="transform-center:xy">
           <Form onFinish={this.handleFinish}>
             <FormBuilder meta={meta} />
             <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
@@ -53,6 +53,14 @@ export default class extends Component {
               </Button>
             </Form.Item>
           </Form>
+        </View>
+        <View wp={1} bg="red" plugin="em-justify-list:2; transform-center:xy" z={2}>
+          <View bg="#eee" className="is-item">
+            item1
+          </View>
+          <View bg="#eee" className="is-item">
+            item2
+          </View>
         </View>
         {/* </Container> */}
       </div>

@@ -37,6 +37,7 @@
     "@jswork/mixin-decorator": "^1.0.0",
     "@jswork/mixin-react-on-change": "^1.0.1",
     "@jswork/next": "^1.0.5",
+    "@jswork/next-active-state": "^1.0.4",
     "@jswork/next-axios": "^1.0.2",
     "@jswork/next-global": "^1.0.0",
     "@jswork/next-offline-sw": "^1.0.2",

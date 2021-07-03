@@ -7,6 +7,17 @@ import { HashRouter as Router, Switch } from 'react-router-dom';
 import '@/assets/styles/index.scss';
 import './global';
 import routes from './routes';
+import NxActiveState from '@jswork/next-active-state';
+
+const instance = new NxActiveState({});
+
+nx.$state = instance.state;
+instance.one('change', () => {
+  console.log('forceupdate.');
+  setTimeout(() => {
+    window.ss.forceUpdate();
+  }, 0);
+});
 
 @reduxRender('root', { prefix: 'react-spa' })
 export default class extends ReduxAppBase {
@@ -36,6 +47,7 @@ export default class extends ReduxAppBase {
     const { history } = this.root;
     nx.$memory = { history };
     this.initAppService();
+    window.ss = this;
   }
 
   render() {

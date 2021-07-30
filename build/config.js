@@ -29,7 +29,7 @@ module.exports = {
       reactDom: '/react-dom/umd/react-dom.development.js'
     })
   },
-  test: {
+  beta: {
     publicPath: '/app/',
     libs: libs
   },

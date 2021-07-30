@@ -77,6 +77,7 @@
     "@jswork/next-flatten": "^1.0.0",
     "@jswork/webpack-app-kits": "^1.0.2",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^1.13.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",

@@ -19,10 +19,13 @@ import $http from '@/services/http';
 import $loadable from '@/services/loadable';
 
 import styled, { css } from 'styled-components';
+import Root from '@/stores';
+
+const $root = new Root();
 
 // inject - layout|service
 nx.$rc = { layout, ife, rcm, rsm };
-nx.sets({ $api, $http, $loadable });
+nx.sets({ $api, $http, $loadable, $root });
 
 // setting styled-box
 Object.assign(View.defaultProps, { engine: { styled, css } });

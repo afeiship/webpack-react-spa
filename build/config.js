@@ -6,7 +6,7 @@ const libs = {
 };
 
 module.exports = {
-  port: '3006',
+  port: '3009',
   proxy: {
     '/api': {
       target: 'http://120.27.13.225:80',
